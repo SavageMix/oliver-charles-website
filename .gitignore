@@ -5,7 +5,7 @@
 node_modules/
 
 # Build output
-dist/
+# dist/  # Included for static hosting
 
 # Logs
 *.log
