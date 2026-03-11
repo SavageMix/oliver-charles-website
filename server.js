@@ -48,6 +48,25 @@ app.use(helmet({
 const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 const PLACE_ID = process.env.GOOGLE_PLACE_ID;
 
+// Explicitly serve sitemap and robots.txt for crawlers (bypass any potential issues)
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'sitemap.xml'), {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600'
+    }
+  });
+});
+
+app.get('/robots.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'robots.txt'), {
+    headers: {
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=86400'
+    }
+  });
+});
+
 // SendGrid configuration
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL || 'enquiries@olivercharles.construction';
