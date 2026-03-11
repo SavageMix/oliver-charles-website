@@ -43,23 +43,6 @@ app.use(helmet({
   crossOriginEmbedderPolicy: false,
 }));
 
-// Security: Rate limiting - prevent API abuse
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
-  message: 'Too many requests from this IP, please try again later.',
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-app.use(limiter);
-
-// Security: Stricter rate limit for API endpoints
-const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 30, // limit each IP to 30 API requests per windowMs
-  message: 'Too many API requests from this IP, please try again later.',
-});
-
 // Google Places API configuration
 const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 const PLACE_ID = process.env.GOOGLE_PLACE_ID;
@@ -70,6 +53,30 @@ const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL || 'enquiries@olivercharles.co
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
 }
+
+// Rate limiting ONLY for API endpoints - not for static files
+// Stricter rate limit for contact form (prevent spam)
+const contactLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 10, // limit each IP to 10 contact form submissions per hour
+  message: 'Too many contact form submissions from this IP, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// Moderate rate limit for Google Reviews API
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 API requests per windowMs
+  message: 'Too many API requests from this IP, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// Health check endpoint (for monitoring) - NO RATE LIMIT
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
 
 // API endpoint to fetch Google reviews (with rate limiting)
 app.get('/api/reviews', apiLimiter, async (req, res) => {
@@ -106,18 +113,7 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
   }
 });
 
-// Health check endpoint (for monitoring)
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
-});
-
 // Contact form endpoint with stricter rate limiting
-const contactLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 5, // limit each IP to 5 contact form submissions per hour
-  message: 'Too many contact form submissions from this IP, please try again later.',
-});
-
 app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
   const { firstName, lastName, phone, service, message } = req.body;
   
@@ -178,10 +174,10 @@ ${message}
   }
 });
 
-// Serve static files from the dist directory
+// Serve static files from the dist directory - NO RATE LIMITING
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Handle React routing, return all requests to React app
+// Handle React routing, return all requests to React app - NO RATE LIMITING
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
