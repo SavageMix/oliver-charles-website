@@ -29,7 +29,7 @@ const services = [
     id: "garden-landscaping",
     title: "Garden Landscaping",
     description: "Complete garden transformations from design to completion. Hard and soft landscaping tailored to your vision.",
-    image: "/images/landscaping-service.jpg",
+    image: "/images/landscaping.jpg",
     features: ["Complete redesign", "Hard & soft landscaping", "Water features", "5-year guarantee"],
   },
 ];
