@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata: Metadata = {
   title: "Garden Design & Landscaping High Wycombe HP10-HP15 | Oliver Charles",
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
     description: "Garden design & build specialists in High Wycombe",
     url: "https://www.olivercharlesgardendesign.com/areas/high-wycombe/",
   },
-  alternates: {
-    canonical: "https://www.olivercharlesgardendesign.com/areas/high-wycombe/",
-  },
+  ...generateCanonicalMetadata("/areas/high-wycombe"),
 };
 
 const services = [

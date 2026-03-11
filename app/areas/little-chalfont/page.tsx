@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata: Metadata = {
   title: "Garden Design & Landscaping Little Chalfont HP7 | Oliver Charles",
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
     description: "Garden design & build specialists in Little Chalfont",
     url: "https://www.olivercharlesgardendesign.com/areas/little-chalfont/",
   },
-  alternates: {
-    canonical: "https://www.olivercharlesgardendesign.com/areas/little-chalfont/",
-  },
+  ...generateCanonicalMetadata("/areas/little-chalfont"),
 };
 
 const services = [

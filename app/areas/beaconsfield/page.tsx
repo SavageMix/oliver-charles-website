@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata: Metadata = {
   title: "Garden Design & Landscaping Beaconsfield HP9 | Oliver Charles",
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
     description: "Garden design & build specialists in Beaconsfield",
     url: "https://www.olivercharlesgardendesign.com/areas/beaconsfield/",
   },
-  alternates: {
-    canonical: "https://www.olivercharlesgardendesign.com/areas/beaconsfield/",
-  },
+  ...generateCanonicalMetadata("/areas/beaconsfield"),
 };
 
 const services = [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata: Metadata = {
   title: "Garden Design & Landscaping Chalfont St Giles HP8 | Oliver Charles",
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
     description: "Garden design & build specialists in Chalfont St Giles",
     url: "https://www.olivercharlesgardendesign.com/areas/chalfont-st-giles/",
   },
-  alternates: {
-    canonical: "https://www.olivercharlesgardendesign.com/areas/chalfont-st-giles/",
-  },
+  ...generateCanonicalMetadata("/areas/chalfont-st-giles"),
 };
 
 const services = [

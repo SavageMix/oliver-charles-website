@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { ArrowRight, CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
+import { generateCanonicalMetadata } from "../lib/metadata";
 
 export const metadata: Metadata = {
   title: "About Us | Oliver Charles Garden Design | Family-Run Landscapers Amersham",
@@ -12,9 +13,7 @@ export const metadata: Metadata = {
     description: "Family-run landscaping specialists in Amersham & Buckinghamshire",
     url: "https://www.olivercharlesgardendesign.com/about/",
   },
-  alternates: {
-    canonical: "https://www.olivercharlesgardendesign.com/about/",
-  },
+  ...generateCanonicalMetadata("/about"),
 };
 
 export const dynamic = "force-static";
