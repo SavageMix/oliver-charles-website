@@ -6,12 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next build",
-    "server": "node server.js",
-    "stop": "node stop-server.js",
-    "restart": "node stop-server.js && npm run build && node server.js"
+    "start": "node server.js",
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
