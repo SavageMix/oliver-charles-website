@@ -40,9 +40,6 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-  alternates: {
-    canonical: "https://www.olivercharlesgardendesign.com",
-  },
 };
 
 export default function RootLayout({
