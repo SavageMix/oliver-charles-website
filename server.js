@@ -38,6 +38,7 @@ app.use(helmet({
       scriptSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", "data:", "https:"],
       connectSrc: ["'self'", "https://maps.googleapis.com"],
+      frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk"],
     },
   },
   crossOriginEmbedderPolicy: false,
