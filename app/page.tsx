@@ -89,7 +89,7 @@ const projects = [
     size: '150m²',
     description: 'A complete garden transformation featuring premium decking with glass balustrade, raised porcelain patio, contemporary planting scheme and ambient garden lighting.',
     image: '/images/projects/project-3/garden-transformation-bourne-end-patio-2.jpg',
-    images: ['/images/projects/project-3/garden-transformation-bourne-end-before-after-1.jpg', '/images/projects/project-3/garden-transformation-bourne-end-patio-2.jpg', '/images/projects/project-3/garden-transformation-bourne-end-decking-3.jpg', '/images/projects/project-3/garden-transformation-bourne-end-glass-balustrade-4.jpg'],
+    images: ['/images/projects/project-3/garden-transformation-bourne-end-before-after-1.jpg', '/images/projects/project-3/garden-transformation-bourne-end-glass-balustrade-4.jpg', '/images/projects/project-3/garden-transformation-bourne-end-detail-6.jpg', '/images/projects/project-3/garden-transformation-bourne-end-patio-2.jpg'],
     features: ['Composite decking', 'Glass balustrade', 'Porcelain patio', 'Retaining wall', 'Garden lighting'],
     testimonial: {
       quote: "We couldn't be happier with our new garden. The team was professional, hardworking and the attention to detail was outstanding. The glass balustrade on the retaining wall looks amazing!",
