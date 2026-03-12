@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Amersham HP6 HP7 | Oliver Charles",
-  description: "Local landscapers in Amersham. Porcelain patios, composite decking & glass balustrades. Family-run business with 5-year guarantee. Free quotes in Amersham.",
-  keywords: "landscaping Amersham, garden design Amersham, patio Amersham, decking Amersham, HP6, HP7, Old Amersham",
-  openGraph: {
-    title: "Landscaping Services in Amersham",
-    description: "Your local garden design & build specialists in Amersham",
-    url: "https://www.olivercharlesgardendesign.com/areas/amersham/",
-  },
-  ...generateCanonicalMetadata("/areas/amersham"),
-};
+export const metadata = generateCanonicalMetadata("/areas/amersham");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "The Elephant & Castle",
   "Memorial Gardens",
 ];
-
-export const dynamic = "force-static";
 
 export default function AmershamPage() {
   return (

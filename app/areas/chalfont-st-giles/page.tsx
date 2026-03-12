@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Chalfont St Giles HP8 | Oliver Charles",
-  description: "Local landscapers in Chalfont St Giles. Porcelain patios, composite decking, glass balustrades. Family-run with 5-year guarantee. Free quotes in HP8.",
-  keywords: "landscaping Chalfont St Giles, garden design Chalfont St Giles, patio Chalfont St Giles, decking Chalfont St Giles, HP8, Milton's Cottage",
-  openGraph: {
-    title: "Landscaping Services in Chalfont St Giles",
-    description: "Garden design & build specialists in Chalfont St Giles",
-    url: "https://www.olivercharlesgardendesign.com/areas/chalfont-st-giles/",
-  },
-  ...generateCanonicalMetadata("/areas/chalfont-st-giles"),
-};
+export const metadata = generateCanonicalMetadata("/areas/chalfont-st-giles");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "St Giles Church",
   "Chalfont Park",
 ];
-
-export const dynamic = "force-static";
 
 export default function ChalfontStGilesPage() {
   return (

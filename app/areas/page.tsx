@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Areas We Cover | Landscaping Services Buckinghamshire | Oliver Charles",
-  description: "Garden design & landscaping services across Buckinghamshire including Amersham, Chesham, Beaconsfield, Chalfont St Giles & surrounding areas. Free quotes.",
-  keywords: "landscaping Amersham, garden design Chesham, patio Beaconsfield, decking Chalfont St Giles, Buckinghamshire",
-  openGraph: {
-    title: "Areas We Cover | Buckinghamshire Landscaping",
-    description: "Serving Amersham, Chesham, Beaconsfield & surrounding areas",
-    url: "https://www.olivercharlesgardendesign.com/areas/",
-  },
-  ...generateCanonicalMetadata("/areas"),
-};
+export const metadata = generateCanonicalMetadata("/areas");
 
 const areas = [
   {
@@ -80,8 +69,6 @@ const areas = [
     href: "/areas/high-wycombe/",
   },
 ];
-
-export const dynamic = "force-static";
 
 export default function AreasPage() {
   return (

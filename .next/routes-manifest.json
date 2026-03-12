@@ -1,0 +1,202 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "priority": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/areas",
+      "regex": "^/areas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas(?:/)?$"
+    },
+    {
+      "page": "/areas/amersham",
+      "regex": "^/areas/amersham(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/amersham(?:/)?$"
+    },
+    {
+      "page": "/areas/beaconsfield",
+      "regex": "^/areas/beaconsfield(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/beaconsfield(?:/)?$"
+    },
+    {
+      "page": "/areas/chalfont-st-giles",
+      "regex": "^/areas/chalfont\\-st\\-giles(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/chalfont\\-st\\-giles(?:/)?$"
+    },
+    {
+      "page": "/areas/chesham",
+      "regex": "^/areas/chesham(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/chesham(?:/)?$"
+    },
+    {
+      "page": "/areas/chorleywood",
+      "regex": "^/areas/chorleywood(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/chorleywood(?:/)?$"
+    },
+    {
+      "page": "/areas/great-missenden",
+      "regex": "^/areas/great\\-missenden(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/great\\-missenden(?:/)?$"
+    },
+    {
+      "page": "/areas/high-wycombe",
+      "regex": "^/areas/high\\-wycombe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/high\\-wycombe(?:/)?$"
+    },
+    {
+      "page": "/areas/little-chalfont",
+      "regex": "^/areas/little\\-chalfont(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/areas/little\\-chalfont(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/faq",
+      "regex": "^/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/faq(?:/)?$"
+    },
+    {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/projects",
+      "regex": "^/projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projects(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/services/composite-decking",
+      "regex": "^/services/composite\\-decking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/composite\\-decking(?:/)?$"
+    },
+    {
+      "page": "/services/garden-landscaping",
+      "regex": "^/services/garden\\-landscaping(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/garden\\-landscaping(?:/)?$"
+    },
+    {
+      "page": "/services/glass-balustrades",
+      "regex": "^/services/glass\\-balustrades(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/glass\\-balustrades(?:/)?$"
+    },
+    {
+      "page": "/services/porcelain-patios",
+      "regex": "^/services/porcelain\\-patios(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/porcelain\\-patios(?:/)?$"
+    },
+    {
+      "page": "/terms",
+      "regex": "^/terms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms(?:/)?$"
+    },
+    {
+      "page": "/testimonials",
+      "regex": "^/testimonials(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/testimonials(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

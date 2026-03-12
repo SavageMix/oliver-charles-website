@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Great Missenden HP16 | Oliver Charles",
-  description: "Expert landscapers in Great Missenden. Porcelain patios, composite decking, glass balustrades. 5-year guarantee. Free quotes in Great Missenden HP16.",
-  keywords: "landscaping Great Missenden, garden design Great Missenden, patio Great Missenden, decking Great Missenden, HP16, Roald Dahl Museum",
-  openGraph: {
-    title: "Landscaping Services in Great Missenden",
-    description: "Garden design & build specialists in Great Missenden",
-    url: "https://www.olivercharlesgardendesign.com/areas/great-missenden/",
-  },
-  ...generateCanonicalMetadata("/areas/great-missenden"),
-};
+export const metadata = generateCanonicalMetadata("/areas/great-missenden");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "St Peter & St Paul's Church",
   "Great Missenden Railway Station",
 ];
-
-export const dynamic = "force-static";
 
 export default function GreatMissendenPage() {
   return (

@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Host: https://www.olivercharlesgardendesign.com
+Sitemap: https://www.olivercharlesgardendesign.com/sitemap.xml

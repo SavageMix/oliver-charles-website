@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/areas/layout,_N_T_/areas/great-missenden/layout,_N_T_/areas/great-missenden/page,_N_T_/areas/great-missenden/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/areas/great-missenden/__PAGE__",
+    "/areas/great-missenden",
+    "/areas",
+    "/_index",
+    "/_head"
+  ]
+}

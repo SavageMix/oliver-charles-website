@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Chorleywood WD3 | Oliver Charles",
-  description: "Local landscapers in Chorleywood. Porcelain patios, composite decking, glass balustrades. Family-run with 5-year guarantee. Free quotes in Chorleywood WD3.",
-  keywords: "landscaping Chorleywood, garden design Chorleywood, patio Chorleywood, decking Chorleywood, WD3, Chorleywood Common",
-  openGraph: {
-    title: "Landscaping Services in Chorleywood",
-    description: "Garden design & build specialists in Chorleywood",
-    url: "https://www.olivercharlesgardendesign.com/areas/chorleywood/",
-  },
-  ...generateCanonicalMetadata("/areas/chorleywood"),
-};
+export const metadata = generateCanonicalMetadata("/areas/chorleywood");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "The Black Horse",
   "Chorleywood House Estate",
 ];
-
-export const dynamic = "force-static";
 
 export default function ChorleywoodPage() {
   return (

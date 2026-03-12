@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/services/layout,_N_T_/services/porcelain-patios/layout,_N_T_/services/porcelain-patios/page,_N_T_/services/porcelain-patios/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/services/porcelain-patios/__PAGE__",
+    "/services/porcelain-patios",
+    "/services",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,22 +1,8 @@
-import type { Metadata } from "next";
 import Image from "next/image";
-
 import { ArrowRight, CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Us | Oliver Charles Garden Design | Family-Run Landscapers Amersham",
-  description: "Meet Oliver Charles Garden Design & Build - your trusted family-run landscaping specialists in Amersham. 10+ years experience, 5-year guarantee, premium materials.",
-  keywords: "about us, garden designers, landscaping company, family business, Amersham, Buckinghamshire",
-  openGraph: {
-    title: "About Oliver Charles Garden Design & Build",
-    description: "Family-run landscaping specialists in Amersham & Buckinghamshire",
-    url: "https://www.olivercharlesgardendesign.com/about/",
-  },
-  ...generateCanonicalMetadata("/about"),
-};
-
-export const dynamic = "force-static";
+export const metadata = generateCanonicalMetadata("/about");
 
 export default function AboutPage() {
   return (

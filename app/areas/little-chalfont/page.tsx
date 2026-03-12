@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Little Chalfont HP7 | Oliver Charles",
-  description: "Local landscapers in Little Chalfont. Porcelain patios, composite decking, glass balustrades. 5-year guarantee. Free quotes in Little Chalfont HP7.",
-  keywords: "landscaping Little Chalfont, garden design Little Chalfont, patio Little Chalfont, decking Little Chalfont, HP7, Chalfont Park",
-  openGraph: {
-    title: "Landscaping Services in Little Chalfont",
-    description: "Garden design & build specialists in Little Chalfont",
-    url: "https://www.olivercharlesgardendesign.com/areas/little-chalfont/",
-  },
-  ...generateCanonicalMetadata("/areas/little-chalfont"),
-};
+export const metadata = generateCanonicalMetadata("/areas/little-chalfont");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   " local Nature Reserve",
   "The Greyhound",
 ];
-
-export const dynamic = "force-static";
 
 export default function LittleChalfontPage() {
   return (

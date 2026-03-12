@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping High Wycombe HP10-HP15 | Oliver Charles",
-  description: "Expert landscapers in High Wycombe. Porcelain patios, composite decking, glass balustrades. 5-year guarantee. Free quotes in High Wycombe and surrounding areas.",
-  keywords: "landscaping High Wycombe, garden design High Wycombe, patio High Wycombe, decking High Wycombe, HP10, HP11, HP12, HP13, HP14, HP15",
-  openGraph: {
-    title: "Landscaping Services in High Wycombe",
-    description: "Garden design & build specialists in High Wycombe",
-    url: "https://www.olivercharlesgardendesign.com/areas/high-wycombe/",
-  },
-  ...generateCanonicalMetadata("/areas/high-wycombe"),
-};
+export const metadata = generateCanonicalMetadata("/areas/high-wycombe");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "Wycombe Museum",
   "Hellfire Caves",
 ];
-
-export const dynamic = "force-static";
 
 export default function HighWycombePage() {
   return (

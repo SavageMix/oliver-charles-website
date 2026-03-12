@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Beaconsfield HP9 | Oliver Charles",
-  description: "Expert landscapers in Beaconsfield. Porcelain patios, composite decking, glass balustrades. 5-year guarantee. Free quotes in Beaconsfield HP9, New Town & Old Town.",
-  keywords: "landscaping Beaconsfield, garden design Beaconsfield, patio Beaconsfield, decking Beaconsfield, HP9, Old Town Beaconsfield, New Town Beaconsfield",
-  openGraph: {
-    title: "Landscaping Services in Beaconsfield",
-    description: "Garden design & build specialists in Beaconsfield",
-    url: "https://www.olivercharlesgardendesign.com/areas/beaconsfield/",
-  },
-  ...generateCanonicalMetadata("/areas/beaconsfield"),
-};
+export const metadata = generateCanonicalMetadata("/areas/beaconsfield");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "Fulmer Hall",
   "Beaconsfield New Town",
 ];
-
-export const dynamic = "force-static";
 
 export default function BeaconsfieldPage() {
   return (

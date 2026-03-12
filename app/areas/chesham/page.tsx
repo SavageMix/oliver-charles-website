@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Garden Design & Landscaping Chesham HP5 | Oliver Charles",
-  description: "Expert landscapers in Chesham. Porcelain patios, composite decking, glass balustrades. Local service with 5-year guarantee. Free quotes in Chesham HP5.",
-  keywords: "landscaping Chesham, garden design Chesham, patio Chesham, decking Chesham, HP5, Lowndes Park",
-  openGraph: {
-    title: "Landscaping Services in Chesham",
-    description: "Garden design & build specialists in Chesham",
-    url: "https://www.olivercharlesgardendesign.com/areas/chesham/",
-  },
-  ...generateCanonicalMetadata("/areas/chesham"),
-};
+export const metadata = generateCanonicalMetadata("/areas/chesham");
 
 const services = [
   "Porcelain Patio Installation",
@@ -30,8 +19,6 @@ const landmarks = [
   "Chesham United FC",
   "Heritage Trail",
 ];
-
-export const dynamic = "force-static";
 
 export default function CheshamPage() {
   return (
