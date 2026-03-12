@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/high-wycombe");
+export const metadata = generateCanonicalMetadata("/areas/high-wycombe", {
+  title: "Garden Design & Landscaping High Wycombe HP10-HP15 | Oliver Charles",
+  description: "Expert garden landscaping in High Wycombe & surrounding areas. Porcelain patios, decking & garden design. Serving HP10-HP15 postcodes."
+});
 
 const services = [
   "Porcelain Patio Installation",

@@ -3,7 +3,10 @@ import { ArrowRight, Check, Phone, MapPin, Calendar, Ruler } from "lucide-react"
 import { generateCanonicalMetadata } from "../../lib/metadata";
 import ProjectModal from "./ProjectModal";
 
-export const metadata = generateCanonicalMetadata("/services/porcelain-patios");
+export const metadata = generateCanonicalMetadata("/services/porcelain-patios", {
+  title: "Porcelain Patio Installation | Amersham & Buckinghamshire",
+  description: "Stunning porcelain patio installations in Amersham & Buckinghamshire. Frost-resistant, slip-proof, stain-proof. 10+ year lifespan. Free quotes."
+});
 
 const projects = [
   {

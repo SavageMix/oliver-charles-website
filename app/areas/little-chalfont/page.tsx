@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/little-chalfont");
+export const metadata = generateCanonicalMetadata("/areas/little-chalfont", {
+  title: "Garden Design & Landscaping Little Chalfont HP7 | Oliver Charles",
+  description: "Professional garden landscaping in Little Chalfont. Porcelain patios, composite decking & glass balustrades. Free quotes for HP7 postcode."
+});
 
 const services = [
   "Porcelain Patio Installation",

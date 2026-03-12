@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas");
+export const metadata = generateCanonicalMetadata("/areas", {
+  title: "Areas We Cover | Landscaping Services Buckinghamshire",
+  description: "Garden design & landscaping services across Buckinghamshire including Amersham, Chesham, Beaconsfield, Chalfont St Giles & surrounding areas."
+});
 
 const areas = [
   {

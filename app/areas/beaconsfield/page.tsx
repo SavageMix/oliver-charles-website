@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/beaconsfield");
+export const metadata = generateCanonicalMetadata("/areas/beaconsfield", {
+  title: "Garden Design & Landscaping Beaconsfield HP9 | Oliver Charles",
+  description: "Premium garden landscaping in Beaconsfield. Porcelain patios, glass balustrades & composite decking. Serving Old & New Town. Free quotes."
+});
 
 const services = [
   "Porcelain Patio Installation",

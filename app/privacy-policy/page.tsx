@@ -1,7 +1,10 @@
 import { Shield, Lock, Eye, FileText, Mail, Phone, ArrowRight } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/privacy-policy");
+export const metadata = generateCanonicalMetadata("/privacy-policy", {
+  title: "Privacy Policy | Oliver Charles Garden Design",
+  description: "Our privacy policy explains how we collect, use and protect your personal information when you use our website or services."
+});
 
 export default function PrivacyPolicyPage() {
   return (

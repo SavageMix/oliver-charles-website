@@ -1,7 +1,10 @@
 import { ArrowRight, FileText, Scale, Gavel, Clock, PoundSterling, AlertCircle, Phone, Mail } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/terms");
+export const metadata = generateCanonicalMetadata("/terms", {
+  title: "Terms of Service | Oliver Charles Garden Design",
+  description: "Please read these terms carefully before using our website and landscaping services."
+});
 
 export default function TermsOfServicePage() {
   return (

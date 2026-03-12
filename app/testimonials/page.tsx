@@ -2,7 +2,10 @@ import { Star, ArrowRight, Quote } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 import GoogleReviews from "./GoogleReviews";
 
-export const metadata = generateCanonicalMetadata("/testimonials");
+export const metadata = generateCanonicalMetadata("/testimonials", {
+  title: "Customer Reviews | Testimonials | Oliver Charles",
+  description: "Read what our customers say about their garden transformations. 5-star rated landscaping company in Amersham & Buckinghamshire."
+});
 
 // Static testimonials for SEO (rendered in HTML immediately, used as fallback)
 const staticTestimonials = [

@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/chalfont-st-giles");
+export const metadata = generateCanonicalMetadata("/areas/chalfont-st-giles", {
+  title: "Garden Design & Landscaping Chalfont St Giles HP8 | Oliver Charles",
+  description: "Expert landscaping services in Chalfont St Giles. Garden design, porcelain patios & decking. Free quotes for HP8 postcode area."
+});
 
 const services = [
   "Porcelain Patio Installation",

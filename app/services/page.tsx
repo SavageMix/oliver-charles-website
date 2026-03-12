@@ -2,7 +2,10 @@ import Image from "next/image";
 import { ArrowRight, Phone, Check } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/services");
+export const metadata = generateCanonicalMetadata("/services", {
+  title: "Our Services | Porcelain Patios, Decking & Glass Balustrades",
+  description: "Premium landscaping services in Amersham & Buckinghamshire. Porcelain patios, composite decking, glass balustrades and complete garden transformations."
+});
 
 const services = [
   {

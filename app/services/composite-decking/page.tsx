@@ -3,7 +3,10 @@ import { ArrowRight, Check, Phone, MapPin, Calendar, Ruler } from "lucide-react"
 import { generateCanonicalMetadata } from "../../lib/metadata";
 import ProjectModal from "./ProjectModal";
 
-export const metadata = generateCanonicalMetadata("/services/composite-decking");
+export const metadata = generateCanonicalMetadata("/services/composite-decking", {
+  title: "Composite Decking Installation | Amersham & Buckinghamshire",
+  description: "Premium composite decking with 25+ year warranty. No maintenance required, slip-resistant, eco-friendly. Free quotes in Amersham & Buckinghamshire."
+});
 
 const projects = [
   {

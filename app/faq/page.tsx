@@ -1,7 +1,10 @@
 import { generateCanonicalMetadata } from "../lib/metadata";
 import FAQAccordion from "./FAQAccordion";
 
-export const metadata = generateCanonicalMetadata("/faq");
+export const metadata = generateCanonicalMetadata("/faq", {
+  title: "FAQ | Garden Landscaping Questions | Oliver Charles",
+  description: "Find answers to common questions about porcelain patios, composite decking, glass balustrades and our landscaping services in Buckinghamshire."
+});
 
 // Static FAQ data for SEO (rendered in HTML immediately)
 const faqs = [

@@ -2,7 +2,10 @@ import { generateCanonicalMetadata } from "../lib/metadata";
 import { ArrowRight } from "lucide-react";
 import ProjectGrid from "./ProjectGrid";
 
-export const metadata = generateCanonicalMetadata("/projects");
+export const metadata = generateCanonicalMetadata("/projects", {
+  title: "Our Projects | Garden Landscaping Portfolio | Buckinghamshire",
+  description: "Browse our portfolio of completed porcelain patios, composite decking, and glass balustrade installations across Amersham and Buckinghamshire."
+});
 
 // Static projects data for SEO (rendered in HTML)
 const projects = [

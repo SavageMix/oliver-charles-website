@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/chorleywood");
+export const metadata = generateCanonicalMetadata("/areas/chorleywood", {
+  title: "Garden Design & Landscaping Chorleywood WD3 | Oliver Charles",
+  description: "Professional landscaping services in Chorleywood. Porcelain patios, decking & glass balustrades. Serving WD3 postcode area. Free quotes."
+});
 
 const services = [
   "Porcelain Patio Installation",

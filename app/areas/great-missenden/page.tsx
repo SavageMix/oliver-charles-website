@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/great-missenden");
+export const metadata = generateCanonicalMetadata("/areas/great-missenden", {
+  title: "Garden Design & Landscaping Great Missenden HP16 | Oliver Charles",
+  description: "Garden landscaping services in Great Missenden & surrounding villages. Multi-level decking, patios & garden design. HP16 postcode."
+});
 
 const services = [
   "Porcelain Patio Installation",

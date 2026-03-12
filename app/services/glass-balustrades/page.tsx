@@ -3,7 +3,10 @@ import { ArrowRight, Check, Phone, MapPin, Calendar, Ruler } from "lucide-react"
 import { generateCanonicalMetadata } from "../../lib/metadata";
 import ProjectModal from "./ProjectModal";
 
-export const metadata = generateCanonicalMetadata("/services/glass-balustrades");
+export const metadata = generateCanonicalMetadata("/services/glass-balustrades", {
+  title: "Glass Balustrade Installation | Frameless & Framed | Amersham",
+  description: "Stunning glass balustrade installations for balconies, decks & stairs. Toughened safety glass, BS compliant. Free quotes in Buckinghamshire."
+});
 
 const projects = [
   {

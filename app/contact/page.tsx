@@ -2,7 +2,10 @@ import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from "lucide-reac
 import { generateCanonicalMetadata } from "../lib/metadata";
 import ContactForm from "./ContactForm";
 
-export const metadata = generateCanonicalMetadata("/contact");
+export const metadata = generateCanonicalMetadata("/contact", {
+  title: "Contact Us | Free Quotes | Oliver Charles Garden Design",
+  description: "Get in touch for a free quote on your garden project. Call 07837 666 766 or fill out our contact form. Serving Amersham, Chesham & Buckinghamshire."
+});
 
 export default function ContactPage() {
   return (

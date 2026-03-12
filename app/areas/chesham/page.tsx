@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/chesham");
+export const metadata = generateCanonicalMetadata("/areas/chesham", {
+  title: "Garden Design & Landscaping Chesham HP5 | Oliver Charles",
+  description: "Expert landscaping services in Chesham. Porcelain patios, composite decking & garden design. Free quotes for HP5 postcode area."
+});
 
 const services = [
   "Porcelain Patio Installation",

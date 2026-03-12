@@ -3,7 +3,10 @@ import { ArrowRight, Check, Phone, MapPin, Calendar, Ruler } from "lucide-react"
 import { generateCanonicalMetadata } from "../../lib/metadata";
 import ProjectModal from "./ProjectModal";
 
-export const metadata = generateCanonicalMetadata("/services/garden-landscaping");
+export const metadata = generateCanonicalMetadata("/services/garden-landscaping", {
+  title: "Garden Landscaping Services | Design & Build | Amersham",
+  description: "Complete garden landscaping services in Amersham & Buckinghamshire. From design to completion, we create beautiful outdoor spaces."
+});
 
 const projects = [
   {

@@ -1,7 +1,10 @@
 import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/areas/amersham");
+export const metadata = generateCanonicalMetadata("/areas/amersham", {
+  title: "Garden Design & Landscaping Amersham HP6 HP7 | Oliver Charles",
+  description: "Professional garden landscaping services in Amersham. Porcelain patios, composite decking, glass balustrades. Free quotes for HP6 & HP7 postcodes."
+});
 
 const services = [
   "Porcelain Patio Installation",

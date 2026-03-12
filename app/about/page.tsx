@@ -2,7 +2,10 @@ import Image from "next/image";
 import { ArrowRight, CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
-export const metadata = generateCanonicalMetadata("/about");
+export const metadata = generateCanonicalMetadata("/about", {
+  title: "About Us | Oliver Charles Garden Design | Family-Run Landscapers",
+  description: "Meet Oliver Charles Garden Design & Build - your trusted family-run landscaping specialists in Amersham. 10+ years experience, 5-year guarantee."
+});
 
 export default function AboutPage() {
   return (
