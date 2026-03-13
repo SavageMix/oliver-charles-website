@@ -29,17 +29,19 @@ interface ProjectGridProps {
 
 export default function ProjectGrid({ projects, categories }: ProjectGridProps) {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number>(0);
   const modalImagesRef = useRef<HTMLDivElement>(null);
   const targetImageIndexRef = useRef<number>(0);
 
-  // Clear project modal when category changes
+  // Clear project modal and reset showAll when category changes
   useEffect(() => {
     setSelectedProject(null);
     setLightboxImage(null);
     setLightboxIndex(0);
+    setShowAll(false);
   }, [selectedCategory]);
 
   // Clear lightbox when project modal closes
@@ -88,7 +90,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
   }, [lightboxImage, selectedProject]);
 
   const filteredProjects = selectedCategory === 'All' 
-    ? projects
+    ? (showAll ? projects : projects.slice(0, 6))
     : projects.filter(p => p.category === selectedCategory);
 
   return (
@@ -168,6 +170,32 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
           </div>
         ))}
       </div>
+
+      {/* See More / Show Less Button - Only show on "All" tab when more than 6 projects */}
+      {selectedCategory === 'All' && projects.length > 6 && (
+        <div className="mt-10 text-center">
+          {!showAll ? (
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center px-5 py-2.5 border border-[#c9b896] text-[#2c2c2c] hover:bg-[#c9b896] font-medium rounded-full transition-colors text-sm"
+            >
+              See More Projects
+              <ArrowRight className="ml-1.5 w-4 h-4" />
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setShowAll(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-800 font-medium rounded-full transition-colors text-sm"
+            >
+              <X className="mr-1.5 w-4 h-4" />
+              Show Less
+            </button>
+          )}
+        </div>
+      )}
 
       {/* Project Detail Modal */}
       {selectedProject && !lightboxImage && (
