@@ -307,7 +307,7 @@ export default function ProjectModal({ projects }: ProjectModalProps) {
                   onClick={() => setSelectedProject(null)}
                   className="block w-full text-center bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-6 py-3 rounded-lg transition-colors"
                 >
-                  Enquire About Similar Project
+                  Enquire about a similar {selectedProject?.title || 'porcelain patio'} project
                 </a>
               </div>
             </div>

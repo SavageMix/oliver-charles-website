@@ -101,7 +101,7 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.description}
           </p>
           <span className="inline-flex items-center text-[#c9b896] font-semibold text-sm group-hover:text-[#a8956e]">
-            View Project Details
+            View {project.title} details
             <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </span>
         </div>

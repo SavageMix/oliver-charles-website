@@ -161,7 +161,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
                 {project.description}
               </p>
               <button className="inline-flex items-center text-[#c9b896] font-semibold text-sm group-hover:text-[#a8956e]">
-                View Project Details
+                View {project.title} details
                 <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -281,7 +281,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
                   onClick={() => setSelectedProject(null)}
                   className="block w-full text-center bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-6 py-3 rounded-lg transition-colors"
                 >
-                  Enquire About Similar Project
+                  Enquire about a {selectedProject.title} style project
                 </a>
               </div>
             </div>
