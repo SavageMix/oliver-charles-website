@@ -141,6 +141,33 @@ const projects = [
       location: "Woburn Green",
     },
   },
+  {
+    id: 12,
+    title: "Raised Porcelain Patio with Lighting",
+    location: "High Wycombe",
+    date: "Feb 2023",
+    size: "110m²",
+    description:
+      "A new raised porcelain patio with lighting around the perimeter, creating a stunning outdoor entertaining space for evening use.",
+    features: [
+      "Raised porcelain patio",
+      "Perimeter lighting",
+      "110m² installation",
+      "Evening entertaining space",
+      "Modern design",
+    ],
+    images: [
+      "/images/projects/project-12/porcelain-patio-high-wycombe-1.jpg",
+      "/images/projects/project-12/porcelain-patio-high-wycombe-2.jpg",
+      "/images/projects/project-12/porcelain-patio-high-wycombe-3.jpg",
+      "/images/projects/project-12/porcelain-patio-high-wycombe-4.jpg",
+    ],
+    testimonial: {
+      quote: "TLDR",
+      author: "Tom",
+      location: "High Wycombe",
+    },
+  },
 ];
 
 const features = [
