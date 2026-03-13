@@ -81,20 +81,20 @@ const projects = [
     }
   },
   {
-    id: 3,
-    title: 'Garden Transformation - Bourne End',
-    location: 'Bourne End, SL8',
-    category: 'Full Landscaping',
-    date: 'October 2025',
-    size: '150m²',
-    description: 'A complete garden transformation featuring premium decking with glass balustrade, raised porcelain patio, contemporary planting scheme and ambient garden lighting.',
-    image: '/images/projects/project-3/garden-transformation-bourne-end-before-after-1.jpg',
-    images: ['/images/projects/project-3/garden-transformation-bourne-end-before-after-1.jpg', '/images/projects/project-3/garden-transformation-bourne-end-glass-balustrade-4.jpg', '/images/projects/project-3/garden-transformation-bourne-end-detail-6.jpg', '/images/projects/project-3/garden-transformation-bourne-end-patio-2.jpg'],
-    features: ['Composite decking', 'Glass balustrade', 'Porcelain patio', 'Retaining wall', 'Garden lighting'],
+    id: 12,
+    title: 'Raised Porcelain Patio with Lighting',
+    location: 'High Wycombe',
+    category: 'Porcelain Patio',
+    date: 'Feb 2023',
+    size: '110m²',
+    description: 'A new raised porcelain patio with lighting around the perimeter, creating a stunning outdoor entertaining space for evening use.',
+    image: '/images/projects/project-12/porcelain-patio-high-wycombe-4.jpg',
+    images: ['/images/projects/project-12/porcelain-patio-high-wycombe-4.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-3.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-1.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-2.jpg'],
+    features: ['Raised porcelain patio', 'Perimeter lighting', '110m² installation', 'Evening entertaining space', 'Modern design'],
     testimonial: {
-      quote: "We couldn't be happier with our new garden. The team was professional, hardworking and the attention to detail was outstanding. The glass balustrade on the retaining wall looks amazing!",
-      author: "Hannah",
-      location: "Bourne End"
+      quote: "TLDR",
+      author: "Tom",
+      location: "High Wycombe"
     }
   }
 ];
