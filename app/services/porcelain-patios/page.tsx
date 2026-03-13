@@ -130,9 +130,10 @@ const projects = [
       "Privacy screening",
     ],
     images: [
-      "/images/projects/project-0/porcelain-patio-woburn-green-1.jpg",
-      "/images/projects/project-0/porcelain-patio-woburn-green-2.jpg",
-      "/images/projects/project-0/porcelain-patio-woburn-green-3.jpg",
+      "/images/projects/project-10/porcelain-patio-woburn-green-1.jpg",
+      "/images/projects/project-10/porcelain-patio-woburn-green-2.jpg",
+      "/images/projects/project-10/porcelain-patio-woburn-green-3.jpg",
+      "/images/projects/project-10/porcelain-patio-woburn-green-4.jpg",
     ],
     testimonial: {
       quote: "TLDR",
