@@ -90,7 +90,8 @@ export default function ServicesPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
+                      loading={service.id === 'porcelain-patios' ? 'eager' : 'lazy'}
+                      priority={service.id === 'porcelain-patios'}
                     />
                   </div>
                   <div className="p-8 flex flex-col justify-center">

@@ -37,13 +37,15 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 8000);
         
-        // Always use relative path - same origin avoids CSP issues
-        const API_URL = '/api/reviews';
+        // Use full URL in dev (localhost), relative in production
+        const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api/reviews' : '/api/reviews';
+        console.log('Fetching reviews from:', API_URL);
         
         const response = await fetch(API_URL, {
           signal: controller.signal,
           headers: { 'Accept': 'application/json' }
         });
+        console.log('Response status:', response.status);
         
         clearTimeout(timeoutId);
         
@@ -71,6 +73,9 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
         }
       } catch (err) {
         console.error("Failed to fetch reviews:", err);
+        if (err instanceof Error) {
+          console.error("Error name:", err.name, "Message:", err.message);
+        }
         // Keep using fallback testimonials on error
       } finally {
         if (isMounted) {

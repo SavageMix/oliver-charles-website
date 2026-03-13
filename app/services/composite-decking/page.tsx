@@ -135,7 +135,8 @@ export default function CompositeDeckingPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                loading="lazy"
+                loading="eager"
+                priority
               />
             </div>
             <div className="order-1 lg:order-2">

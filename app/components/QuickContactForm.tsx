@@ -17,7 +17,8 @@ export default function QuickContactForm() {
     setFormStatus('submitting');
 
     try {
-      const response = await fetch('/api/contact', {
+      const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api/contact' : '/api/contact';
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -30,6 +30,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Security: Helmet - sets security headers
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -37,7 +38,9 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
       scriptSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: ["'self'", "https://maps.googleapis.com"],
+      connectSrc: isDev 
+        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com"]
+        : ["'self'", "https://maps.googleapis.com"],
       frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk"],
     },
   },

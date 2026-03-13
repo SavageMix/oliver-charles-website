@@ -1,26 +1,46 @@
 # Oliver Charles Garden Design & Build
 
-This workspace contains a static website for Oliver Charles Garden Design & Build. The files were copied from the provided `Kimi_Agent_Deployment_v2` package.
+A Next.js 16 static website for Oliver Charles Garden Design & Build.
+
+## Stack
+
+- **Framework**: Next.js 16.1.6 (Static Export)
+- **Runtime**: React 19 + TypeScript
+- **Styling**: Tailwind CSS 3.4
+- **Server**: Express.js (API routes for contact form & reviews)
+- **Deployment**: Render (Web Service)
 
 ## Structure
 
-- `index.html` - entry point
-- `assets/` - compiled JS/CSS
-- `images/` - project and hero images
+- `app/` - Next.js App Router (pages & components)
+- `public/images/` - Static images
+- `dist/` - Build output (static files)
+- `server.js` - Express server with API endpoints
 
-## Viewing the site
+## Development
 
-You can open `index.html` directly in your browser, or run a simple static server:
+```bash
+# Install dependencies
+npm install
 
-```powershell
-# From the workspace root
-python -m http.server 8000
-# or
-npx serve .
+# Run dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Then visit `http://localhost:8000` to see the site.
+## API Endpoints
 
-## Notes
+- `GET /api/reviews` - Fetches Google Reviews
+- `POST /api/contact` - Contact form submission (SendGrid)
 
-This is a pre-built React Single-Page Application; source code is not included here. To modify content, edit the HTML/CSS or rebuild the original React project.
+## Environment Variables
+
+Required in `.env`:
+- `GOOGLE_PLACES_API_KEY`
+- `GOOGLE_PLACE_ID`
+- `SENDGRID_API_KEY`
