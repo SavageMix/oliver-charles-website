@@ -157,7 +157,7 @@ const projects = [
   {
     id: 12,
     title: 'Raised Porcelain Patio with Lighting',
-    location: 'High Wycombe',
+    location: 'Amersham',
     category: 'Porcelain Patio',
     date: 'Feb 2023',
     size: '110m²',
@@ -167,7 +167,7 @@ const projects = [
     testimonial: {
       quote: "TLDR",
       author: "Tom",
-      location: "High Wycombe"
+      location: "Amersham"
     }
   }
 ];

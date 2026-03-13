@@ -144,7 +144,7 @@ const projects = [
   {
     id: 12,
     title: "Raised Porcelain Patio with Lighting",
-    location: "High Wycombe",
+    location: "Amersham",
     date: "Feb 2023",
     size: "110m²",
     description:
