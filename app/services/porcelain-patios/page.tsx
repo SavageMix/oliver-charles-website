@@ -114,6 +114,32 @@ const projects = [
       location: "Holmer Green",
     },
   },
+  {
+    id: 10,
+    title: "Patio with Kerb Edgings",
+    location: "Woburn Green",
+    date: "March 2022",
+    size: "11m²",
+    description:
+      "A new porcelain patio installation with kerb edgings and composite fencing for privacy, featuring picket fence sections to create an open, airy garden feel.",
+    features: [
+      "Porcelain patio",
+      "Kerb edgings",
+      "Composite fencing",
+      "Picket fence sections",
+      "Privacy screening",
+    ],
+    images: [
+      "/images/projects/project-0/porcelain-patio-woburn-green-1.jpg",
+      "/images/projects/project-0/porcelain-patio-woburn-green-2.jpg",
+      "/images/projects/project-0/porcelain-patio-woburn-green-3.jpg",
+    ],
+    testimonial: {
+      quote: "TLDR",
+      author: "Jonathon",
+      location: "Woburn Green",
+    },
+  },
 ];
 
 const features = [
