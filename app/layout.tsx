@@ -150,7 +150,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-white/80">
               We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
-              <a href="/privacy-policy/" className="text-[#c9b896] hover:underline ml-1">Learn more</a>
+              <a href="/privacy-policy/" className="text-[#c9b896] hover:underline ml-1">View our Privacy Policy</a>
             </p>
             <div className="flex gap-3">
               <button 
