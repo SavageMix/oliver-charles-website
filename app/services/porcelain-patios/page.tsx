@@ -52,8 +52,8 @@ const projects = [
       "Frost resistant",
     ],
     images: [
-      "/images/wood-effect-patio-little-chalfont-main-1.jpg",
-      "/images/wood-effect-patio-little-chalfont-detail-2.jpg",
+      "/images/wood-effect-patio-little-chalfont-1.jpg",
+      "/images/wood-effect-patio-little-chalfont-2.jpg",
     ],
     testimonial: {
       quote:

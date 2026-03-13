@@ -82,7 +82,7 @@ const projects = [
     size: '38m²',
     description: 'Beautiful wood-effect porcelain patio that combines the warmth of timber with the durability and low maintenance of porcelain.',
     features: ['Wood-effect porcelain', 'Natural timber look', 'Zero maintenance', 'Frost resistant'],
-    images: ['/images/wood-effect-patio-little-chalfont-main-1.jpg', '/images/wood-effect-patio-little-chalfont-detail-2.jpg'],
+    images: ['/images/wood-effect-patio-little-chalfont-1.jpg', '/images/wood-effect-patio-little-chalfont-2.jpg'],
     testimonial: {
       quote: "We wanted the look of wood without the maintenance. This porcelain patio is perfect – looks amazing and needs no upkeep!",
       author: "Robert & Helen Parker",
