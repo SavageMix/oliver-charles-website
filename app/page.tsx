@@ -96,23 +96,6 @@ const projects = [
       author: "Hannah",
       location: "Bourne End"
     }
-  },
-  {
-    id: 4,
-    title: 'Porcelain Patio with Kerb Edgings',
-    location: 'Woburn Green',
-    category: 'Porcelain Patio',
-    date: 'March 2022',
-    size: '11m²',
-    description: 'A new porcelain patio installation with kerb edgings and composite fencing for privacy, featuring picket fence sections to create an open, airy garden feel.',
-    image: '/images/projects/project-0/porcelain-patio-woburn-green-1.jpg',
-    images: ['/images/projects/project-0/porcelain-patio-woburn-green-1.jpg', '/images/projects/project-0/porcelain-patio-woburn-green-2.jpg', '/images/projects/project-0/porcelain-patio-woburn-green-3.jpg'],
-    features: ['Porcelain patio', 'Kerb edgings', 'Composite fencing', 'Picket fence sections', 'Privacy screening'],
-    testimonial: {
-      quote: "TLDR",
-      author: "Jonathon",
-      location: "Woburn Green"
-    }
   }
 ];
 
