@@ -88,7 +88,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
   }, [lightboxImage, selectedProject]);
 
   const filteredProjects = selectedCategory === 'All' 
-    ? projects.filter(p => p.id <= 6)
+    ? projects
     : projects.filter(p => p.category === selectedCategory);
 
   return (

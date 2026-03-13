@@ -64,6 +64,34 @@ const projects = [
       location: "Bourne End",
     },
   },
+  {
+    id: 13,
+    title: "Wooden Decking",
+    location: "Chesham",
+    date: "May 2023",
+    size: "80m²",
+    description:
+      "A new raised wooden decking that transformed the garden. We also renewed the fence and installed some sleeper planters.",
+    features: [
+      "Raised wooden decking",
+      "Fence renewal",
+      "Sleeper planters",
+      "Garden transformation",
+      "80m² installation",
+    ],
+    images: [
+      "/images/projects/project-13/composite-decking-chesham-1.jpg",
+      "/images/projects/project-13/composite-decking-chesham-2.jpg",
+      "/images/projects/project-13/composite-decking-chesham-3.jpg",
+      "/images/projects/project-13/composite-decking-chesham-4.jpg",
+      "/images/projects/project-13/composite-decking-chesham-5.jpg",
+    ],
+    testimonial: {
+      quote: "TLDR",
+      author: "Neil",
+      location: "Chesham",
+    },
+  },
 ];
 
 const features = [
