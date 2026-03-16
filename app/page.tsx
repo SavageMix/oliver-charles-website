@@ -54,7 +54,7 @@ const projects = [
     date: 'July 2024',
     size: '90m²',
     description: 'A stunning 90m² modern porcelain patio installation featuring Kandla grey tiles with elegant two-tone border detailing. The project included professionally recessed manholes and seamless integration with bi-fold doors.',
-    image: '/images/projects/project-7/porcelain-patio-hemel-hempstead-kandla-grey-tiles-1.jpg',
+    image: '/images/projects/project-7/porcelain-patio-hemel-hempstead-bifold-integration-4.jpg',
     images: ['/images/projects/project-7/porcelain-patio-hemel-hempstead-kandla-grey-tiles-1.jpg', '/images/projects/project-7/porcelain-patio-hemel-hempstead-recessed-manhole-2.jpg', '/images/projects/project-7/porcelain-patio-hemel-hempstead-two-tone-border-3.jpg', '/images/projects/project-7/porcelain-patio-hemel-hempstead-bifold-integration-4.jpg'],
     features: ['Kandla grey porcelain tiles', 'Recessed manholes', 'Two-tone border detail', '90m² installation', 'Bi-fold door integration'],
     testimonial: {
