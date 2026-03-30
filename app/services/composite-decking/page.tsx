@@ -117,6 +117,32 @@ const projects = [
       location: "Stokenchurch",
     },
   },
+  {
+    id: 17,
+    title: "Pinewood Deck",
+    location: "Bovingdon",
+    date: "July 2024",
+    size: "16m²",
+    description:
+      "We installed a new composite pine decking, with a simple fence and handrail, the existing decking had rotted out, so we had to install around the existing pergola.",
+    features: [
+      "Composite pine decking",
+      "Simple fence",
+      "Handrail",
+      "Pergola integration",
+      "16m² installation",
+    ],
+    images: [
+      "/images/projects/project-17/composite-decking-bovingdon-1.jpg",
+      "/images/projects/project-17/composite-decking-bovingdon-2.jpg",
+      "/images/projects/project-17/composite-decking-bovingdon-3.jpg",
+    ],
+    testimonial: {
+      quote: "TLDR",
+      author: "Tony Shock",
+      location: "Bovingdon",
+    },
+  },
 ];
 
 const features = [
