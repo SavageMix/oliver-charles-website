@@ -138,7 +138,7 @@ const projects = [
       "/images/projects/project-17/composite-decking-bovingdon-3.jpg",
     ],
     testimonial: {
-      quote: "TLDR",
+      quote: "We had the deck and railings of a pergola replaced and Ollie was extremely competent and completed a superb job. He was happy to modify the plan based on our constantly changing minds and super friendly with it all. I would highly recommend.",
       author: "Tony Shock",
       location: "Bovingdon",
     },
