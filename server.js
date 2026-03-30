@@ -72,7 +72,7 @@ app.get('/robots.txt', (req, res) => {
 
 // SendGrid configuration
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL || 'oliver@olivercharles.construction';
+const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL || 'enquiries@olivercharles.construction';
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
 }

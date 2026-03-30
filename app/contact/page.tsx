@@ -53,10 +53,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
                     <a
-                      href="mailto:oliver@olivercharles.construction"
+                      href="mailto:enquiries@olivercharles.construction"
                       className="text-white/70 hover:text-[#c9b896] transition-colors"
                     >
-                      oliver@olivercharles.construction
+                      enquiries@olivercharles.construction
                     </a>
                     <p className="text-sm text-white/50 mt-1">
                       We&apos;ll respond within 24 hours
