@@ -201,6 +201,22 @@ const projects = [
       author: "Neil",
       location: "High Wycombe"
     }
+  },
+  {
+    id: 15,
+    title: 'Natural Grey Porcelain patio',
+    location: 'Watford',
+    category: 'Porcelain Patio',
+    date: 'October 2023',
+    size: '30m²',
+    description: 'We installed a new porcelain patio in Watford, we transformed the main patio area, and pathways with recessed manholes details.',
+    features: ['Natural grey porcelain tiles', 'Recessed manholes', 'Pathway installation', 'Patio transformation', '30m² installation'],
+    images: ['/images/projects/project-15/porcelain-patio-watford-1.jpg', '/images/projects/project-15/porcelain-patio-watford-2.jpg', '/images/projects/project-15/porcelain-patio-watford-3.jpg', '/images/projects/project-15/porcelain-patio-watford-4.jpg'],
+    testimonial: {
+      quote: "tldr",
+      author: "Mary",
+      location: "Watford"
+    }
   }
 ];
 
