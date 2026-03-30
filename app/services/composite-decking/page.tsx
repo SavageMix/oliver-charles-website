@@ -92,6 +92,31 @@ const projects = [
       location: "Chesham",
     },
   },
+  {
+    id: 16,
+    title: "Raised composite Decking",
+    location: "Stokenchurch",
+    date: "July 2023",
+    size: "45m²",
+    description:
+      "We installed a new composite decking around our customers garden room.",
+    features: [
+      "Raised composite decking",
+      "Garden room integration",
+      "45m² installation",
+      "Modern decking solution",
+    ],
+    images: [
+      "/images/projects/project-16/composite-decking-stokenchurch-1.jpg",
+      "/images/projects/project-16/composite-decking-stokenchurch-2.jpg",
+      "/images/projects/project-16/composite-decking-stokenchurch-3.jpg",
+    ],
+    testimonial: {
+      quote: "tldr",
+      author: "Ian",
+      location: "Stokenchurch",
+    },
+  },
 ];
 
 const features = [
