@@ -69,6 +69,34 @@ const projects = [
       location: "Bourne End",
     },
   },
+  {
+    id: 14,
+    title: "Small garden Rebuild",
+    location: "High Wycombe",
+    date: "Sept 2023",
+    size: "40m²",
+    description:
+      "A new build garden revamp, we extended the existing patio, and built a retaining garden wall to split the tier level of the garden, we installed a new path and a planter border around the edge of the garden.",
+    features: [
+      "Patio extension",
+      "Retaining garden wall",
+      "Tiered garden levels",
+      "New path installation",
+      "Planter border",
+    ],
+    images: [
+      "/images/projects/project-14/full-landscaping-high-wycombe-1.jpg",
+      "/images/projects/project-14/full-landscaping-high-wycombe-2.jpg",
+      "/images/projects/project-14/full-landscaping-high-wycombe-3.jpg",
+      "/images/projects/project-14/full-landscaping-high-wycombe-4.jpg",
+      "/images/projects/project-14/full-landscaping-high-wycombe-5.jpg",
+    ],
+    testimonial: {
+      quote: "tldr",
+      author: "Neil",
+      location: "High Wycombe",
+    },
+  },
 ];
 
 const features = [
