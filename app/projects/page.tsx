@@ -265,6 +265,22 @@ const projects = [
       author: "Mark",
       location: "Stokenchurch"
     }
+  },
+  {
+    id: 19,
+    title: 'Sandstone Patio With sleeper retaining wall',
+    location: 'High Wycombe',
+    category: 'Porcelain Patio',
+    date: 'August 2024',
+    size: '30m²',
+    description: 'A stunning 30m² raised Kandla grey sandstone patio installation in High Wycombe, framed by robust oak sleeper retaining walls that elegantly manage the garden\'s level change. The natural tonal variations of the sandstone create a beautiful, organic surface, while integrated oak sleeper steps provide easy access from the lawn. A new featheredge fence with secure gate completes this fully enclosed outdoor entertaining space.',
+    features: ['Kandla grey sandstone patio', 'Oak sleeper retaining walls', 'Integrated oak steps', 'Featheredge fencing with gate', '30m² installation', 'Raised patio design'],
+    images: ['/images/projects/project-19/porcelain-patio-high-wycombe-1.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-2.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-3.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-4.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-5.jpg'],
+    testimonial: {
+      quote: "TLDR",
+      author: "James",
+      location: "High Wycombe"
+    }
   }
 ];
 
