@@ -143,6 +143,33 @@ const projects = [
       location: "Bovingdon",
     },
   },
+  {
+    id: 18,
+    title: "Raised Composite Decking",
+    location: "Stokenchurch",
+    date: "July 2024",
+    size: "35m²",
+    description:
+      "A contemporary raised composite decking installation wrapping a cedar-clad garden room with a living green roof. We designed the deck with a bespoke tree cutout to preserve the mature tree, creating a seamless transition between the bi-fold doors and the surrounding woodland. Integrated steps provide gentle access down to the garden below.",
+    features: [
+      "Raised composite decking",
+      "Garden room with green roof",
+      "Bespoke tree cutout",
+      "Cedar cladding integration",
+      "35m² installation",
+    ],
+    images: [
+      "/images/projects/project-18/composite-decking-stokenchurch-1.jpg",
+      "/images/projects/project-18/composite-decking-stokenchurch-2.jpg",
+      "/images/projects/project-18/composite-decking-stokenchurch-3.jpg",
+      "/images/projects/project-18/composite-decking-stokenchurch-4.jpg",
+    ],
+    testimonial: {
+      quote: "TLDR",
+      author: "Mark",
+      location: "Stokenchurch",
+    },
+  },
 ];
 
 const features = [
