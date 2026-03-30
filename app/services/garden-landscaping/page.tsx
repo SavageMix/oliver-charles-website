@@ -85,11 +85,11 @@ const projects = [
       "Planter border",
     ],
     images: [
+      "/images/projects/project-14/full-landscaping-high-wycombe-5.jpg",
       "/images/projects/project-14/full-landscaping-high-wycombe-1.jpg",
       "/images/projects/project-14/full-landscaping-high-wycombe-2.jpg",
       "/images/projects/project-14/full-landscaping-high-wycombe-3.jpg",
       "/images/projects/project-14/full-landscaping-high-wycombe-4.jpg",
-      "/images/projects/project-14/full-landscaping-high-wycombe-5.jpg",
     ],
     testimonial: {
       quote: "tldr",
