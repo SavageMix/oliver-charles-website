@@ -128,7 +128,7 @@ export default function AboutPage() {
             <div className="text-center p-6 bg-[#f5f0e6] rounded-xl">
               <Mail className="w-8 h-8 text-[#c9b896] mx-auto mb-4" />
               <h3 className="font-bold text-[#2c2c2c] mb-2">Email</h3>
-              <a href="mailto:enquiries@olivercharlesgardendesign.com" className="text-[#666666] hover:text-[#c9b896]">enquiries@olivercharlesgardendesign.com</a>
+              <a href="mailto:oliver@olivercharles.construction" className="text-[#666666] hover:text-[#c9b896]">oliver@olivercharles.construction</a>
             </div>
             <div className="text-center p-6 bg-[#f5f0e6] rounded-xl">
               <MapPin className="w-8 h-8 text-[#c9b896] mx-auto mb-4" />

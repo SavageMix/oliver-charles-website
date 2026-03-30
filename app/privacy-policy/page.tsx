@@ -165,9 +165,9 @@ export default function PrivacyPolicyPage() {
                   <Phone className="w-5 h-5" />
                   07837 666 766
                 </a>
-                <a href="mailto:enquiries@olivercharles.construction" className="flex items-center gap-3 text-[#c9b896] hover:underline">
+                <a href="mailto:oliver@olivercharles.construction" className="flex items-center gap-3 text-[#c9b896] hover:underline">
                   <Mail className="w-5 h-5" />
-                  enquiries@olivercharles.construction
+                  oliver@olivercharles.construction
                 </a>
               </div>
             </div>

@@ -58,11 +58,11 @@ const Footer = () => {
                 07837666766
               </a>
               <a 
-                href="mailto:enquiries@olivercharlesgardendesign.com" 
+                href="mailto:oliver@olivercharles.construction" 
                 className="flex items-center gap-3 text-white/60 hover:text-[#c9b896] transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                enquiries@olivercharlesgardendesign.com
+                oliver@olivercharles.construction
               </a>
               <div className="flex items-center gap-3 text-white/50">
                 <MapPin className="w-5 h-5" />
