@@ -25,10 +25,10 @@ const projects = [
       "Bi-fold door integration",
     ],
     images: [
-      "/images/projects/project-7/porcelain-patio-hemel-hempstead-kandla-grey-tiles-1.jpg",
-      "/images/projects/project-7/porcelain-patio-hemel-hempstead-recessed-manhole-2.jpg",
-      "/images/projects/project-7/porcelain-patio-hemel-hempstead-two-tone-border-3.jpg",
-      "/images/projects/project-7/porcelain-patio-hemel-hempstead-bifold-integration-4.jpg",
+      "/images/projects/project-11/porcelain-patio-hemel-hempstead-kandla-grey-tiles-1.jpg",
+      "/images/projects/project-11/porcelain-patio-hemel-hempstead-recessed-manhole-2.jpg",
+      "/images/projects/project-11/porcelain-patio-hemel-hempstead-two-tone-border-3.jpg",
+      "/images/projects/project-11/porcelain-patio-hemel-hempstead-bifold-integration-4.jpg",
     ],
     testimonial: {
       quote:
