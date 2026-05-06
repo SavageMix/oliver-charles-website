@@ -48,6 +48,7 @@ const services = [
 const projects = [
   {
     id: 1,
+    slug: 'modern-porcelain-patio-hemel-hempstead',
     title: 'Modern Porcelain Patio - Hemel Hempstead',
     location: 'Hemel Hempstead, HP3',
     category: 'Porcelain Patio',
@@ -65,6 +66,7 @@ const projects = [
   },
   {
     id: 2,
+    slug: 'egyptian-limestone-patio-herringbone-beaconsfield',
     title: 'Egyptian Limestone Patio',
     location: 'Beaconsfield, HP9',
     category: 'Full Landscaping',
@@ -82,6 +84,7 @@ const projects = [
   },
   {
     id: 12,
+    slug: 'raised-porcelain-patio-lighting-amersham',
     title: 'Raised Porcelain Patio with Lighting',
     location: 'Amersham',
     category: 'Porcelain Patio',
