@@ -6,6 +6,7 @@ import { MapPin, Calendar, Ruler, ArrowRight, X } from "lucide-react";
 
 interface Project {
   id: number;
+  slug: string;
   title: string;
   location: string;
   category: string;
@@ -304,6 +305,12 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
                   )}
                 </div>
 
+                <a
+                  href={`/projects/${selectedProject.slug}/`}
+                  className="block w-full text-center bg-white border-2 border-[#c9b896] hover:bg-[#c9b896] text-[#2c2c2c] font-semibold px-6 py-3 rounded-lg transition-colors"
+                >
+                  View full project page
+                </a>
                 <a
                   href="/contact/"
                   onClick={() => setSelectedProject(null)}

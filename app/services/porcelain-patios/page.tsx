@@ -11,6 +11,7 @@ export const metadata = generateCanonicalMetadata("/services/porcelain-patios", 
 const projects = [
   {
     id: 1,
+    slug: "modern-porcelain-patio-hemel-hempstead",
     title: "Modern Porcelain Patio",
     location: "Hemel Hempstead, HP3",
     date: "July 2024",
@@ -39,6 +40,7 @@ const projects = [
   },
   {
     id: 5,
+    slug: "wood-effect-porcelain-patio-little-chalfont",
     title: "Wood-Effect Porcelain Patio",
     location: "Little Chalfont, HP7",
     date: "August 2025",
@@ -64,6 +66,7 @@ const projects = [
   },
   {
     id: 8,
+    slug: "porcelain-patio-sleeper-retaining-wall-bovingdon",
     title: "Patio with Sleeper Wall",
     location: "Bovingdon, HP3",
     date: "March 2021",
@@ -91,6 +94,7 @@ const projects = [
   },
   {
     id: 9,
+    slug: "porcelain-patio-charcoal-border-holmer-green",
     title: "Charcoal Border Patio",
     location: "Holmer Green, HP15",
     date: "March 2023",
@@ -116,6 +120,7 @@ const projects = [
   },
   {
     id: 10,
+    slug: "porcelain-patio-kerb-edgings-woburn-green",
     title: "Patio with Kerb Edgings",
     location: "Woburn Green",
     date: "March 2022",
@@ -143,6 +148,7 @@ const projects = [
   },
   {
     id: 12,
+    slug: "raised-porcelain-patio-lighting-amersham",
     title: "Raised Porcelain Patio with Lighting",
     location: "Amersham",
     date: "Feb 2023",
@@ -170,6 +176,7 @@ const projects = [
   },
   {
     id: 15,
+    slug: "natural-grey-porcelain-patio-watford",
     title: "Natural Grey Porcelain patio",
     location: "Watford",
     date: "October 2023",
@@ -197,6 +204,7 @@ const projects = [
   },
   {
     id: 19,
+    slug: "sandstone-patio-sleeper-retaining-wall-high-wycombe",
     title: "Sandstone Patio With sleeper retaining wall",
     location: "High Wycombe",
     date: "August 2024",

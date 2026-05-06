@@ -11,6 +11,7 @@ export const metadata = generateCanonicalMetadata("/services/composite-decking",
 const projects = [
   {
     id: 6,
+    slug: "multi-level-decking-great-missenden",
     title: "Multi-Level Decking",
     location: "Great Missenden, HP16",
     date: "July 2025",
@@ -36,6 +37,7 @@ const projects = [
   },
   {
     id: 3,
+    slug: "garden-transformation-bourne-end",
     title: "Garden Transformation",
     location: "Bourne End, SL8",
     date: "February 2024",
@@ -66,6 +68,7 @@ const projects = [
   },
   {
     id: 13,
+    slug: "wooden-decking-chesham",
     title: "Wooden Decking",
     location: "Chesham",
     date: "May 2023",
@@ -94,6 +97,7 @@ const projects = [
   },
   {
     id: 16,
+    slug: "raised-composite-decking-stokenchurch",
     title: "Raised composite Decking",
     location: "Stokenchurch",
     date: "July 2023",
@@ -119,6 +123,7 @@ const projects = [
   },
   {
     id: 17,
+    slug: "pinewood-deck-bovingdon",
     title: "Pinewood Deck",
     location: "Bovingdon",
     date: "July 2024",
@@ -145,6 +150,7 @@ const projects = [
   },
   {
     id: 18,
+    slug: "raised-composite-decking-garden-room-stokenchurch",
     title: "Raised Composite Decking",
     location: "Stokenchurch",
     date: "July 2024",
