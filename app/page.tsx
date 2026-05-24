@@ -13,7 +13,7 @@ const services = [
     subtitle: 'Elegant & Low-Maintenance Outdoor Living',
     description: 'Transform your garden with stunning porcelain patio installations in Amersham and Buckinghamshire. Our premium porcelain paving offers timeless beauty with minimal maintenance requirements.',
     features: ['Frost & slip-resistant surfaces', 'Stain and scratch-proof', 'Wide range of styles & colours', '10+ year lifespan', 'Easy to clean & maintain', 'Adds property value'],
-    image: '/images/porcelain-patio.jpg',
+    image: '/images/porcelain-patio.webp',
     href: '/services/porcelain-patios/'
   },
   {
@@ -22,7 +22,7 @@ const services = [
     subtitle: 'Durable & Beautiful Outdoor Spaces',
     description: 'Elevate your outdoor living with premium composite decking solutions. Perfect for Amersham gardens, our decking combines natural wood aesthetics with modern durability.',
     features: ['No sanding or staining required', 'Weather-resistant materials', 'Anti-slip surface', 'Eco-friendly recycled materials', '25+ year warranty', 'Wide colour selection'],
-    image: '/images/composite-decking.jpg',
+    image: '/images/composite-decking.webp',
     href: '/services/composite-decking/'
   },
   {
@@ -31,7 +31,7 @@ const services = [
     subtitle: 'Modern Safety with Uninterrupted Views',
     description: 'Enhance your property with custom glass balustrade installations. From balconies to staircases, our glass solutions provide safety without compromising on style or views.',
     features: ['Toughened safety glass', 'Frameless & framed options', 'BS building regulations compliant', 'Unobstructed views', 'Easy to clean', 'Modern aesthetic appeal'],
-    image: '/images/glass-balustrade.jpg',
+    image: '/images/glass-balustrade.webp',
     href: '/services/glass-balustrades/'
   },
   {
@@ -40,7 +40,7 @@ const services = [
     subtitle: 'Complete Outdoor Transformations',
     description: 'Full-service garden landscaping across Buckinghamshire. From design to completion, we create beautiful outdoor spaces tailored to your lifestyle and preferences.',
     features: ['Bespoke garden design', 'Hard & soft landscaping', 'Garden lighting', 'Water features', 'Planting schemes', 'Ongoing maintenance'],
-    image: '/images/landscaping.jpg',
+    image: '/images/landscaping.webp',
     href: '/services/garden-landscaping/'
   }
 ];
@@ -128,7 +128,7 @@ export default function HomePage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-patio.jpg"
+            src="/images/hero-patio.webp"
             alt="Beautiful porcelain patio installation in Amersham garden"
             fill
             className="object-cover"
@@ -403,7 +403,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/about-team.jpg"
+                  src="/images/about-team.webp"
                   alt="Oliver Charles Garden Design team at work on a landscaping project in Buckinghamshire"
                   width={600}
                   height={500}

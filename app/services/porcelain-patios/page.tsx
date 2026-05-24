@@ -317,7 +317,7 @@ export default function PorcelainPatiosPage() {
             </div>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/porcelain-patio.jpg"
+                src="/images/porcelain-patio.webp"
                 alt="Beautiful porcelain patio installation in Amersham garden with grey tiles"
                 fill
                 className="object-cover"

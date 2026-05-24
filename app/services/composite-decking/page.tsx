@@ -242,7 +242,7 @@ export default function CompositeDeckingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/composite-decking.jpg"
+                src="/images/composite-decking.webp"
                 alt="Composite decking installation in Amersham garden - low maintenance outdoor living"
                 fill
                 className="object-cover"

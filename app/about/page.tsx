@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/about-team.jpg"
+                  src="/images/about-team.webp"
                   alt="Oliver Charles Garden Design team at work on a landscaping project in Buckinghamshire"
                   width={600}
                   height={500}

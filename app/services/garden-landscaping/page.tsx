@@ -163,7 +163,7 @@ export default function GardenLandscapingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/landscaping.jpg"
+                src="/images/landscaping.webp"
                 alt="Complete garden landscaping transformation in Buckinghamshire featuring patio installation and professional planting schemes"
                 fill
                 className="object-cover"

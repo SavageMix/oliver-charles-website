@@ -149,7 +149,7 @@ export default function GlassBalustradesPage() {
             </div>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/glass-balustrade.jpg"
+                src="/images/glass-balustrade.webp"
                 alt="Frameless glass balustrade installation on balcony in Beaconsfield"
                 fill
                 className="object-cover"
