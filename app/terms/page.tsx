@@ -239,9 +239,9 @@ export default function TermsOfServicePage() {
                   <Phone className="w-5 h-5" />
                   07837 666 766
                 </a>
-                <a href="mailto:enquiries@olivercharles.construction" className="flex items-center gap-3 text-white/80 hover:text-[#c9b896]">
+                <a href="mailto:info@ocgardendesign.co.uk" className="flex items-center gap-3 text-white/80 hover:text-[#c9b896]">
                   <Mail className="w-5 h-5" />
-                  enquiries@olivercharles.construction
+                  info@ocgardendesign.co.uk
                 </a>
                 <p className="text-white/80">Amersham, Buckinghamshire</p>
               </div>

@@ -51,7 +51,7 @@ const structuredData = {
   "description": "Family-run garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades.",
   "url": "https://www.olivercharlesgardendesign.com",
   "telephone": "+447837666766",
-  "email": "enquiries@olivercharles.construction",
+  "email": "info@ocgardendesign.co.uk",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Amersham",
