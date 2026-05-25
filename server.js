@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import cors from 'cors';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -70,12 +70,10 @@ app.get('/robots.txt', (req, res) => {
   });
 });
 
-// SendGrid configuration
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+// Resend configuration
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL || 'info@ocgardendesign.co.uk';
-if (SENDGRID_API_KEY) {
-  sgMail.setApiKey(SENDGRID_API_KEY);
-}
+const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 
 // Rate limiting ONLY for API endpoints - not for static files
 // Stricter rate limit for contact form (prevent spam)
@@ -153,49 +151,36 @@ app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
   
   const fullName = `${firstName} ${lastName}`;
   
-  // If SendGrid is configured, send email
-  if (SENDGRID_API_KEY) {
+  // If Resend is configured, send email
+  if (resend) {
     try {
-      const msg = {
+      const { data, error } = await resend.emails.send({
+        from: BUSINESS_EMAIL,
         to: BUSINESS_EMAIL,
-        from: BUSINESS_EMAIL, // Must be verified in SendGrid
         subject: `New Enquiry from ${fullName}`,
-        text: `
-Name: ${fullName}
-Phone: ${phone}
-Service: ${service || 'Not specified'}
+        text: `Name: ${fullName}\nPhone: ${phone}\nService: ${service || 'Not specified'}\n\nMessage:\n${message}`,
+        html: `<h2>New Website Enquiry</h2><p><strong>Name:</strong> ${fullName}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Service:</strong> ${service || 'Not specified'}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+      });
 
-Message:
-${message}
-        `,
-        html: `
-<h2>New Website Enquiry</h2>
-<p><strong>Name:</strong> ${fullName}</p>
-<p><strong>Phone:</strong> ${phone}</p>
-<p><strong>Service:</strong> ${service || 'Not specified'}</p>
-<p><strong>Message:</strong></p>
-<p>${message.replace(/\n/g, '<br>')}</p>
-        `,
-      };
-      
-      await sgMail.send(msg);
-      console.log(`Contact form submitted by ${fullName}`);
-      res.json({ success: true, message: 'Thank you! We will contact you soon.' });
-    } catch (error) {
-      console.error('SendGrid error:', error);
-      if (error.response) {
-        console.error('SendGrid error body:', JSON.stringify(error.response.body, null, 2));
+      if (error) {
+        console.error('Resend error:', error);
+        res.status(500).json({ error: 'Failed to send email. Please try again later.' });
+      } else {
+        console.log(`Contact form submitted by ${fullName}`, data);
+        res.json({ success: true, message: 'Thank you! We will contact you soon.' });
       }
+    } catch (error) {
+      console.error('Resend error:', error);
       res.status(500).json({ error: 'Failed to send email. Please try again later.' });
     }
   } else {
-    // SendGrid not configured - just log it
-    console.log('Contact form submission (SendGrid not configured):');
+    // Resend not configured - just log it
+    console.log('Contact form submission (Resend not configured):');
     console.log({ fullName, phone, service, message });
-    res.json({ 
-      success: true, 
+    res.json({
+      success: true,
       message: 'Thank you! We will contact you soon. (Email service not configured)',
-      demo: true 
+      demo: true
     });
   }
 });
