@@ -80,7 +80,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/contact/"
+            href="/contact/#contact-form"
             className="inline-flex items-center justify-center px-6 py-3 bg-[#c9b896] text-[#2c2c2c] rounded-lg font-semibold hover:bg-[#a8956e] transition-colors"
           >
             Contact Us

@@ -289,7 +289,7 @@ export default function ProjectDetailClient({
 
               {/* CTA */}
               <a
-                href="/contact/"
+                href="/contact/#contact-form"
                 className="block w-full text-center bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-6 py-4 rounded-xl transition-colors"
               >
                 Enquire about a similar {project.category.toLowerCase()} project
@@ -381,7 +381,7 @@ export default function ProjectDetailClient({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact/"
+              href="/contact/#contact-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
             >
               Get a Free Quote

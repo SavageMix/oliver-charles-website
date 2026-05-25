@@ -281,7 +281,7 @@ export default function ProjectModal({ projects }: ProjectModalProps) {
                   View full project page
                 </a>
                 <a
-                  href="/contact/"
+                  href="/contact/#contact-form"
                   onClick={() => setSelectedProject(null)}
                   className="block w-full text-center bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-6 py-3 rounded-lg transition-colors"
                 >

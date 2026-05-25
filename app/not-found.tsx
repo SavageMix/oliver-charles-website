@@ -43,7 +43,7 @@ export default function NotFoundPage() {
               { href: "/about/", label: "About Us" },
               { href: "/testimonials/", label: "Testimonials" },
               { href: "/areas/", label: "Areas We Cover" },
-              { href: "/contact/", label: "Contact Us" },
+              { href: "/contact/#contact-form", label: "Contact Us" },
             ].map((link) => (
               <a
                 key={link.href}

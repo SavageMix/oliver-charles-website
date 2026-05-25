@@ -138,7 +138,7 @@ export default function AboutPage() {
           </div>
           <div className="text-center mt-12">
             <a
-              href="/contact/"
+              href="/contact/#contact-form"
               className="inline-flex items-center px-8 py-4 bg-[#c9b896] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#a8956e] transition-colors"
             >
               Contact Us

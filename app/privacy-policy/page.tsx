@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
             Get in touch today for a free, no-obligation quote.
           </p>
           <a
-            href="/contact/"
+            href="/contact/#contact-form"
             className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
           >
             Get Your Free Quote

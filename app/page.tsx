@@ -195,7 +195,7 @@ export default function HomePage() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/contact/"
+                  href="/contact/#contact-form"
                   className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] text-lg font-semibold rounded-lg transition-colors group"
                 >
                   Get Your Free Quote
@@ -336,7 +336,7 @@ export default function HomePage() {
               Not sure which service is right for your project?
             </p>
             <a
-              href="/contact/"
+              href="/contact/#contact-form"
               className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
             >
               Get Free Expert Advice
@@ -550,7 +550,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact/"
+              href="/contact/#contact-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] text-lg font-semibold rounded-lg transition-colors"
             >
               Get Your Free Quote

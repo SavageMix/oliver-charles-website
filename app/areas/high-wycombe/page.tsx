@@ -129,7 +129,7 @@ export default function HighWycombePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact/"
+              href="/contact/#contact-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#a8956e] transition-colors"
             >
               Request Free Quote

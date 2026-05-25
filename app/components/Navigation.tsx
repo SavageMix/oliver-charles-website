@@ -26,7 +26,7 @@ const Navigation = () => {
     { href: "/testimonials/", label: "Testimonials" },
     { href: "/areas/", label: "Areas" },
     { href: "/faq/", label: "FAQ" },
-    { href: "/contact/", label: "Contact" },
+    { href: "/contact/#contact-form", label: "Contact" },
   ];
 
   // Determine if we're on a page that should have transparent nav initially
@@ -78,7 +78,7 @@ const Navigation = () => {
                 <span className="xl:hidden">Call Us</span>
               </a>
               <a
-                href="/contact/"
+                href="/contact/#contact-form"
                 className="bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-2 xl:px-3 py-2 rounded-md transition-colors text-xs xl:text-base whitespace-nowrap"
               >
                 <span className="hidden xl:inline">CONTACT US</span>
@@ -127,7 +127,7 @@ const Navigation = () => {
                 07837666766
               </a>
               <a
-                href="/contact/"
+                href="/contact/#contact-form"
                 className="block w-full text-center mt-2 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-4 py-3 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

@@ -37,7 +37,7 @@ export default function ProjectsPage() {
           {/* View All CTA */}
           <div className="mt-12 text-center">
             <a
-              href="/contact/"
+              href="/contact/#contact-form"
               className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
             >
               Start Your Project

@@ -140,7 +140,7 @@ export default function TestimonialsPage() {
             Ready to transform your outdoor space? Get your free quote today.
           </p>
           <a
-            href="/contact/"
+            href="/contact/#contact-form"
             className="inline-flex items-center px-8 py-4 bg-[#c9b896] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#a8956e] transition-colors"
           >
             Get Your Free Quote
