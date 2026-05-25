@@ -7,6 +7,7 @@ export default function QuickContactForm() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    email: '',
     phone: '',
     service: '',
     message: ''
@@ -24,7 +25,7 @@ export default function QuickContactForm() {
         body: JSON.stringify({
           firstName: formData.firstName,
           lastName: formData.lastName,
-          email: '',
+          email: formData.email,
           phone: formData.phone,
           service: formData.service,
           postcode: '',
@@ -34,7 +35,7 @@ export default function QuickContactForm() {
 
       if (response.ok) {
         setFormStatus('success');
-        setFormData({ firstName: '', lastName: '', phone: '', service: '', message: '' });
+        setFormData({ firstName: '', lastName: '', email: '', phone: '', service: '', message: '' });
       } else {
         setFormStatus('error');
       }
@@ -73,6 +74,17 @@ export default function QuickContactForm() {
               required
             />
           </div>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-white/90 mb-1">Email Address</label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#c9b896]"
+            placeholder="john@example.com"
+            required
+          />
         </div>
         <div>
           <label className="block text-sm font-medium text-white/90 mb-1">Phone Number</label>

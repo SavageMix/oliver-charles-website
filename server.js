@@ -136,7 +136,7 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
 
 // Contact form endpoint with stricter rate limiting
 app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
-  const { firstName, lastName, phone, service, message } = req.body;
+  const { firstName, lastName, email, phone, service, message } = req.body;
   
   // Validation
   if (!firstName || !lastName || !phone || !message) {
