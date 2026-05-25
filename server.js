@@ -183,6 +183,9 @@ ${message}
       res.json({ success: true, message: 'Thank you! We will contact you soon.' });
     } catch (error) {
       console.error('SendGrid error:', error);
+      if (error.response) {
+        console.error('SendGrid error body:', JSON.stringify(error.response.body, null, 2));
+      }
       res.status(500).json({ error: 'Failed to send email. Please try again later.' });
     }
   } else {
