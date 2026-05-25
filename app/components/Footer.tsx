@@ -174,6 +174,9 @@ const Footer = () => {
               <a href="/terms/" className="hover:text-[#c9b896] transition-colors">
                 Terms of Service
               </a>
+              <a href="/workmanship-guarantee/" className="hover:text-[#c9b896] transition-colors">
+                Workmanship Guarantee
+              </a>
               <button
                 onClick={scrollToTop}
                 className="w-10 h-10 bg-[#c9b896] rounded-lg flex items-center justify-center hover:bg-[#a8956e] transition-colors"
