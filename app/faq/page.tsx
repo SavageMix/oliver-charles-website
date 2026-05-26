@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "Do you offer a guarantee on your work?",
-    answer: "Yes, all our installations come with a comprehensive 10-year workmanship guarantee. This covers any issues arising from our installation work. Additionally, the materials we use come with their own manufacturer warranties – composite decking typically has 25+ year warranties, and porcelain paving is guaranteed for 10+ years."
+    answer: "Yes, all our installations come with a comprehensive 5-year workmanship guarantee. This covers any issues arising from our installation work. Additionally, the materials we use come with their own manufacturer warranties – composite decking typically has 25+ year warranties, and porcelain paving is guaranteed for 10+ years."
   },
   {
     question: "What areas do you cover besides Amersham?",

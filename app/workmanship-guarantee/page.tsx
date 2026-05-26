@@ -29,9 +29,9 @@ export default function WorkmanshipGuaranteePage() {
             <div className="flex justify-center mb-6">
               <Shield className="w-16 h-16 text-[#c9b896]" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Workmanship Guarantee</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">5-Year Workmanship Guarantee</h1>
             <p className="text-xl text-gray-300">
-              We stand behind the quality of our installation work. This page explains exactly what our guarantee covers and what it does not.
+              We stand behind the quality of our installation work. This page explains exactly what our 5-year guarantee covers and what it does not.
             </p>
           </div>
         </div>
@@ -46,10 +46,10 @@ export default function WorkmanshipGuaranteePage() {
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-[#2c2c2c] mb-4 flex items-center gap-3">
                 <Wrench className="w-6 h-6 text-[#c9b896]" />
-                What Is a Workmanship Guarantee?
+                What Is Our 5-Year Workmanship Guarantee?
               </h2>
               <p className="text-[#666666] leading-relaxed">
-                Our workmanship guarantee is a promise that the installation work we carry out is performed to a professional standard 
+                Our 5-year workmanship guarantee is a promise that the installation work we carry out is performed to a professional standard 
                 using correct building techniques and industry best practices. It covers failures that arise directly from defects 
                 in our labour or installation methods — not from the natural characteristics or ageing of the materials themselves.
               </p>
