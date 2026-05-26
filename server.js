@@ -119,6 +119,15 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
     const response = await fetch(url);
     const data = await response.json();
 
+    if (data.status !== 'OK') {
+      console.error('Google Places API error:', data.status, data.error_message || '');
+      return res.status(502).json({
+        error: 'Google Places API returned an error',
+        googleStatus: data.status,
+        googleErrorMessage: data.error_message || null
+      });
+    }
+
     if (data.result && data.result.reviews) {
       // Sort by newest first and take top 6
       const sortedReviews = data.result.reviews

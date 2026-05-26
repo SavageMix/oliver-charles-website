@@ -28,6 +28,7 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
   const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
   const [loading, setLoading] = useState(true);
   const [hasGoogleReviews, setHasGoogleReviews] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -50,7 +51,8 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
         clearTimeout(timeoutId);
         
         if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.googleStatus || `HTTP ${response.status}`);
         }
         
         const data = await response.json();
@@ -75,6 +77,7 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
         console.error("Failed to fetch reviews:", err);
         if (err instanceof Error) {
           console.error("Error name:", err.name, "Message:", err.message);
+          setLoadError(err.message);
         }
         // Keep using fallback testimonials on error
       } finally {
@@ -105,6 +108,14 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
           <p className="text-[#c9b896] font-semibold mb-2">✓ Verified Google Reviews</p>
           <p className="text-[#666666] text-sm">
             Latest reviews from our Google Business Profile
+          </p>
+        </div>
+      )}
+
+      {loadError && loadError !== 'HTTP 502' && (
+        <div className="text-center mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
+          <p className="text-yellow-800 text-sm">
+            ⚠️ Could not load live Google reviews. Showing our featured testimonials instead.
           </p>
         </div>
       )}
