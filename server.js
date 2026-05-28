@@ -36,11 +36,11 @@ app.use(helmet({
     directives: {
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ["'self'", "'unsafe-inline'"],
-      imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: isDev 
-        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com"]
-        : ["'self'", "https://maps.googleapis.com"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
+      imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com", "https://www.googletagmanager.com"],
+      connectSrc: isDev
+        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com"]
+        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com"],
       frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk"],
     },
   },
