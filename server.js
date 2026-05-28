@@ -99,6 +99,46 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
+// Diagnostic endpoint for Google Reviews setup - NO RATE LIMIT
+app.get('/api/reviews/status', async (req, res) => {
+  const hasKey = !!GOOGLE_API_KEY;
+  const hasPlaceId = !!PLACE_ID;
+  
+  if (!hasKey || !hasPlaceId) {
+    return res.json({
+      configured: false,
+      hasApiKey: hasKey,
+      hasPlaceId: hasPlaceId,
+      message: 'GOOGLE_PLACES_API_KEY and/or GOOGLE_PLACE_ID environment variables are not set.'
+    });
+  }
+  
+  try {
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${GOOGLE_API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    res.json({
+      configured: true,
+      hasApiKey: true,
+      hasPlaceId: true,
+      googleStatus: data.status,
+      googleErrorMessage: data.error_message || null,
+      reviewCount: data.result?.reviews?.length || 0,
+      placeName: data.result?.name || null,
+    });
+  } catch (error) {
+    res.json({
+      configured: true,
+      hasApiKey: true,
+      hasPlaceId: true,
+      googleStatus: 'FETCH_ERROR',
+      googleErrorMessage: error.message,
+      reviewCount: 0,
+    });
+  }
+});
+
 // API endpoint to fetch Google reviews (with rate limiting)
 app.get('/api/reviews', apiLimiter, async (req, res) => {
   // If no API key or Place ID is configured, return sample/demo data
