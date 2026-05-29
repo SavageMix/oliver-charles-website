@@ -155,9 +155,19 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
   }
 
   try {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${GOOGLE_API_KEY}`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,user_ratings_total,rating,formatted_address,name&key=${GOOGLE_API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
+
+    console.log('Google Places API response:', JSON.stringify({
+      status: data.status,
+      hasResult: !!data.result,
+      name: data.result?.name,
+      rating: data.result?.rating,
+      userRatingsTotal: data.result?.user_ratings_total,
+      reviewCount: data.result?.reviews?.length || 0,
+      error_message: data.error_message || null
+    }, null, 2));
 
     if (data.status !== 'OK') {
       console.error('Google Places API error:', data.status, data.error_message || '');
@@ -168,13 +178,14 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
       });
     }
 
-    if (data.result && data.result.reviews) {
+    if (data.result && data.result.reviews && data.result.reviews.length > 0) {
       // Sort by newest first and take top 6
       const sortedReviews = data.result.reviews
         .sort((a, b) => b.time - a.time)
         .slice(0, 6);
       res.json(sortedReviews);
     } else {
+      console.log('No reviews found in Google Places API response for place:', PLACE_ID);
       res.json([]);
     }
   } catch (error) {
