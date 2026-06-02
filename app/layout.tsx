@@ -108,7 +108,9 @@ const structuredData = {
   "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
   "image": "https://www.olivercharlesgardendesign.com/og-image.jpg",
   "sameAs": [
-    "https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY"
+    "https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY",
+    "https://www.facebook.com/OlivercharlesGardenDesign",
+    "https://www.instagram.com/ocgardendesign.uk/"
   ]
 };
 

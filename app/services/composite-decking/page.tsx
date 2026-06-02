@@ -201,6 +201,22 @@ const areas = [
 export default function CompositeDeckingPage() {
   return (
     <main className="min-h-screen">
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.com/services/' },
+              { '@type': 'ListItem', position: 3, name: 'Composite Decking', item: 'https://www.olivercharlesgardendesign.com/services/composite-decking/' }
+            ]
+          })
+        }}
+      />
+
       {/* Schema.org Service Structured Data */}
       <script
         type="application/ld+json"
@@ -228,7 +244,13 @@ export default function CompositeDeckingPage() {
               '@type': 'City',
               name: area
             })),
-            serviceType: 'Composite Decking Installation'
+            serviceType: 'Composite Decking Installation',
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '50',
+              bestRating: '5'
+            }
           }),
         }}
       />

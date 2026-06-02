@@ -75,6 +75,14 @@ export default function ProjectDetailClient({
 
   const locationShort = project.location.split(",")[0];
 
+  const categoryServiceUrl: Record<string, string> = {
+    'Porcelain Patio': '/services/porcelain-patios/',
+    'Composite Decking': '/services/composite-decking/',
+    'Glass Balustrade': '/services/glass-balustrades/',
+    'Full Landscaping': '/services/garden-landscaping/',
+  };
+  const serviceUrl = categoryServiceUrl[project.category];
+
   return (
     <main className="min-h-screen">
       {/* Breadcrumb */}
@@ -210,6 +218,19 @@ export default function ProjectDetailClient({
                   {project.description}
                 </p>
               </div>
+
+              {/* Service Link */}
+              {serviceUrl && (
+                <div className="bg-[#f5f0e6] rounded-2xl p-5">
+                  <Link
+                    href={serviceUrl}
+                    className="inline-flex items-center text-[#c9b896] font-semibold hover:underline"
+                  >
+                    View more {project.category} projects
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </div>
+              )}
 
               {/* Features */}
               <div className="bg-[#f5f0e6] rounded-2xl p-6">

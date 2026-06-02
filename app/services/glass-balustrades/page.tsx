@@ -89,6 +89,22 @@ const areas = [
 export default function GlassBalustradesPage() {
   return (
     <main className="min-h-screen">
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.com/services/' },
+              { '@type': 'ListItem', position: 3, name: 'Glass Balustrades', item: 'https://www.olivercharlesgardendesign.com/services/glass-balustrades/' }
+            ]
+          })
+        }}
+      />
+
       {/* Schema.org Service Structured Data */}
       <script
         type="application/ld+json"
@@ -116,7 +132,13 @@ export default function GlassBalustradesPage() {
               '@type': 'City',
               name: area
             })),
-            serviceType: 'Glass Balustrade Installation'
+            serviceType: 'Glass Balustrade Installation',
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '50',
+              bestRating: '5'
+            }
           }),
         }}
       />

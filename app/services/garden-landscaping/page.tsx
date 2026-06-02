@@ -122,6 +122,22 @@ const areas = [
 export default function GardenLandscapingPage() {
   return (
     <main className="min-h-screen">
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.com/services/' },
+              { '@type': 'ListItem', position: 3, name: 'Garden Landscaping', item: 'https://www.olivercharlesgardendesign.com/services/garden-landscaping/' }
+            ]
+          })
+        }}
+      />
+
       {/* Schema.org Service Structured Data */}
       <script
         type="application/ld+json"
@@ -149,7 +165,13 @@ export default function GardenLandscapingPage() {
               '@type': 'City',
               name: area
             })),
-            serviceType: 'Garden Landscaping'
+            serviceType: 'Garden Landscaping',
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '50',
+              bestRating: '5'
+            }
           }),
         }}
       />

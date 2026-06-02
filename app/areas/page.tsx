@@ -76,6 +76,21 @@ const areas = [
 export default function AreasPage() {
   return (
     <main className="min-h-screen">
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Areas', item: 'https://www.olivercharlesgardendesign.com/areas/' }
+            ]
+          })
+        }}
+      />
+
       {/* Schema.org Place & Service Structured Data */}
       <script
         type="application/ld+json"

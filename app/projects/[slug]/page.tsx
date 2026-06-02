@@ -132,11 +132,25 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     };
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Projects', item: `${BASE_URL}/projects/` },
+      { '@type': 'ListItem', position: 3, name: project.title, item: `${BASE_URL}/projects/${project.slug}/` }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ProjectDetailClient project={project} relatedProjects={relatedProjects} />
     </>
