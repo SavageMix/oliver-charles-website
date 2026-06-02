@@ -131,10 +131,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     projectSchema['review'] = {
       '@type': 'Review',
       itemReviewed: {
-        '@type': 'LocalBusiness',
+        '@type': 'HomeAndConstructionBusiness',
         name: 'Oliver Charles Garden Design & Build LTD',
         url: 'https://www.olivercharlesgardendesign.com',
         telephone: '+447837666766',
+        email: 'info@ocgardendesign.co.uk',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Suite 103, Unit 5, Chiltern business center, 63-65 Woodside Rd',
@@ -142,7 +143,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           addressRegion: 'Buckinghamshire',
           postalCode: 'HP6 6AA',
           addressCountry: 'GB'
-        }
+        },
+        sameAs: [
+          'https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY',
+          'https://www.facebook.com/OlivercharlesGardenDesign',
+          'https://www.instagram.com/ocgardendesign.uk/'
+        ]
       },
       reviewRating: {
         '@type': 'Rating',
