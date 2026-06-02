@@ -173,7 +173,7 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
 
       <div className="text-center mt-8">
         <a
-          href="https://maps.google.com/?q=Oliver+Charles+Garden+Design"
+          href="https://www.google.com/maps/search/?api=1&query=Oliver+Charles+Garden+Design%26Build+LTD"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm text-[#666666] hover:text-[#c9b896] transition-colors"
