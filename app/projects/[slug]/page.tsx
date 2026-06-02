@@ -118,13 +118,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     }
   };
 
+  function cleanAuthorName(name: string): string {
+    // Strip business-name suffixes that look spammy to Google's filters
+    return name
+      .replace(/'s Patio$/i, '')
+      .replace(/'s Deck$/i, '')
+      .replace(/'s Garden$/i, '')
+      .trim() || name;
+  }
+
   if (project.testimonial && project.testimonial.quote && project.testimonial.quote.toLowerCase() !== 'tldr') {
     projectSchema['review'] = {
       '@type': 'Review',
       itemReviewed: {
-        '@type': 'CreativeWork',
-        name: project.title,
-        url: `${BASE_URL}/projects/${project.slug}/`
+        '@type': 'LocalBusiness',
+        name: 'Oliver Charles Garden Design & Build LTD',
+        url: 'https://www.olivercharlesgardendesign.com',
+        telephone: '+447837666766',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Suite 103, Unit 5, Chiltern business center, 63-65 Woodside Rd',
+          addressLocality: 'Amersham',
+          addressRegion: 'Buckinghamshire',
+          postalCode: 'HP6 6AA',
+          addressCountry: 'GB'
+        }
       },
       reviewRating: {
         '@type': 'Rating',
@@ -134,7 +152,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       reviewBody: project.testimonial.quote,
       author: {
         '@type': 'Person',
-        name: project.testimonial.author
+        name: cleanAuthorName(project.testimonial.author)
       }
     };
   }
