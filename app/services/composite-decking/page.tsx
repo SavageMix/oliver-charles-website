@@ -201,6 +201,38 @@ const areas = [
 export default function CompositeDeckingPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org Service Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'Composite Decking Installation',
+            description: 'Premium composite decking solutions that combine the natural beauty of wood with zero maintenance requirements. Perfect for Amersham, Chesham & Beaconsfield gardens.',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'Oliver Charles Garden Design & Build',
+              url: 'https://www.olivercharlesgardendesign.com',
+              telephone: '+447837666766',
+              email: 'info@ocgardendesign.co.uk',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Amersham',
+                addressRegion: 'Buckinghamshire',
+                addressCountry: 'GB'
+              },
+              image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+            },
+            areaServed: areas.map((area) => ({
+              '@type': 'City',
+              name: area
+            })),
+            serviceType: 'Composite Decking Installation'
+          }),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative py-24 bg-[#2c2c2c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

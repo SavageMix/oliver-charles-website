@@ -64,6 +64,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+function parseDateToISO(dateStr: string): string {
+  const months: Record<string, string> = {
+    jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+    jul: '07', aug: '08', sept: '09', sep: '09', oct: '10', nov: '11', dec: '12'
+  };
+  const parts = dateStr.toLowerCase().trim().split(' ');
+  if (parts.length === 2) {
+    const month = months[parts[0].replace('.', '')];
+    const year = parts[1];
+    if (month && year) {
+      return `${year}-${month}-01`;
+    }
+  }
+  return dateStr;
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -73,5 +89,56 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   const relatedProjects = getRelatedProjects(project, 3);
 
-  return <ProjectDetailClient project={project} relatedProjects={relatedProjects} />;
+  const projectSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.title,
+    description: project.description,
+    image: `${BASE_URL}${project.images[0]}`,
+    location: {
+      '@type': 'Place',
+      name: project.location
+    },
+    dateCreated: parseDateToISO(project.date),
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Oliver Charles Garden Design & Build',
+      url: 'https://www.olivercharlesgardendesign.com',
+      telephone: '+447837666766',
+      email: 'info@ocgardendesign.co.uk',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Amersham',
+        addressRegion: 'Buckinghamshire',
+        addressCountry: 'GB'
+      },
+      image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+    }
+  };
+
+  if (project.testimonial && project.testimonial.quote && project.testimonial.quote.toLowerCase() !== 'tldr') {
+    projectSchema['review'] = {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5'
+      },
+      reviewBody: project.testimonial.quote,
+      author: {
+        '@type': 'Person',
+        name: project.testimonial.author
+      }
+    };
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
+      <ProjectDetailClient project={project} relatedProjects={relatedProjects} />
+    </>
+  );
 }

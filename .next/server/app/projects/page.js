@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/projects/page.js")
-R.c("server/chunks/ssr/_6a7f58c5._.js")
+R.c("server/chunks/ssr/_99cc7f18._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__5d5aaa26._.js")
 R.c("server/chunks/ssr/_20f5e190._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__a016c8a1._.js")

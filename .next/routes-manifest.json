@@ -34,7 +34,16 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/projects/[slug]",
+      "regex": "^/projects/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/projects/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -179,6 +188,12 @@
       "regex": "^/testimonials(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/testimonials(?:/)?$"
+    },
+    {
+      "page": "/workmanship-guarantee",
+      "regex": "^/workmanship\\-guarantee(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/workmanship\\-guarantee(?:/)?$"
     }
   ],
   "dataRoutes": [],

@@ -15,6 +15,7 @@
   "/faq/page": "/faq",
   "/page": "/",
   "/privacy-policy/page": "/privacy-policy",
+  "/projects/[slug]/page": "/projects/[slug]",
   "/projects/page": "/projects",
   "/services/composite-decking/page": "/services/composite-decking",
   "/services/garden-landscaping/page": "/services/garden-landscaping",
@@ -22,5 +23,6 @@
   "/services/page": "/services",
   "/services/porcelain-patios/page": "/services/porcelain-patios",
   "/terms/page": "/terms",
-  "/testimonials/page": "/testimonials"
+  "/testimonials/page": "/testimonials",
+  "/workmanship-guarantee/page": "/workmanship-guarantee"
 }

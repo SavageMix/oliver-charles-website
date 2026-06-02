@@ -76,6 +76,51 @@ const areas = [
 export default function AreasPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org Place & Service Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Place',
+              name: 'Amersham',
+              description: 'Amersham, Buckinghamshire - our home base and primary service area.',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Amersham',
+                addressRegion: 'Buckinghamshire',
+                addressCountry: 'GB'
+              }
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Service',
+              name: 'Garden Landscaping Services',
+              description: 'Garden design & landscaping services across Buckinghamshire including Amersham, Chesham, Beaconsfield, Chalfont St Giles & surrounding areas.',
+              provider: {
+                '@type': 'LocalBusiness',
+                name: 'Oliver Charles Garden Design & Build',
+                url: 'https://www.olivercharlesgardendesign.com',
+                telephone: '+447837666766',
+                email: 'info@ocgardendesign.co.uk',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Amersham',
+                  addressRegion: 'Buckinghamshire',
+                  addressCountry: 'GB'
+                },
+                image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+              },
+              areaServed: areas.map((area) => ({
+                '@type': 'City',
+                name: area.name
+              }))
+            }
+          ]),
+        }}
+      />
+
       {/* Section Header */}
       <section className="py-24 bg-[#f5f0e6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

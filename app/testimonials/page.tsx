@@ -64,6 +64,56 @@ const stats = [
 export default function TestimonialsPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org AggregateRating & Review Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '50',
+              bestRating: '5',
+              worstRating: '1',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                name: 'Oliver Charles Garden Design & Build',
+                url: 'https://www.olivercharlesgardendesign.com',
+                telephone: '+447837666766',
+                email: 'info@ocgardendesign.co.uk',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Amersham',
+                  addressRegion: 'Buckinghamshire',
+                  addressCountry: 'GB'
+                },
+                image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+              }
+            },
+            ...staticTestimonials.map((t) => ({
+              '@context': 'https://schema.org',
+              '@type': 'Review',
+              reviewRating: {
+                '@type': 'Rating',
+                ratingValue: String(t.rating),
+                bestRating: '5'
+              },
+              reviewBody: t.quote,
+              author: {
+                '@type': 'Person',
+                name: t.author
+              },
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                name: 'Oliver Charles Garden Design & Build',
+                url: 'https://www.olivercharlesgardendesign.com'
+              }
+            }))
+          ]),
+        }}
+      />
+
       {/* Breadcrumb */}
       <div className="bg-[#f5f0e6] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

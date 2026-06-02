@@ -41,6 +41,41 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org ItemList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: services.map((service, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'Service',
+                name: service.title,
+                description: service.description,
+                url: `https://www.olivercharlesgardendesign.com/services/${service.id}/`,
+                provider: {
+                  '@type': 'LocalBusiness',
+                  name: 'Oliver Charles Garden Design & Build',
+                  url: 'https://www.olivercharlesgardendesign.com',
+                  telephone: '+447837666766',
+                  email: 'info@ocgardendesign.co.uk',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Amersham',
+                    addressRegion: 'Buckinghamshire',
+                    addressCountry: 'GB'
+                  },
+                  image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+                }
+              }
+            }))
+          }),
+        }}
+      />
+
       {/* Hero */}
       <section className="relative py-24 bg-[#2c2c2c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

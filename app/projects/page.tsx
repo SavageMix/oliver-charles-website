@@ -1,4 +1,4 @@
-import { generateCanonicalMetadata } from "../lib/metadata";
+import { generateCanonicalMetadata, BASE_URL } from "../lib/metadata";
 import { ArrowRight } from "lucide-react";
 import ProjectGrid from "./ProjectGrid";
 import { projects, categories } from "../lib/projects";
@@ -11,6 +11,28 @@ export const metadata = generateCanonicalMetadata("/projects", {
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org CollectionPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Our Projects | Garden Landscaping Portfolio | Buckinghamshire',
+            description: 'Browse our portfolio of completed porcelain patios, composite decking, and glass balustrade installations across Amersham and Buckinghamshire.',
+            url: `${BASE_URL}/projects/`,
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: projects.map((project, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                url: `${BASE_URL}/projects/${project.slug}/`
+              }))
+            }
+          }),
+        }}
+      />
+
       {/* Hero */}
       <section className="py-24 bg-[#2c2c2c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

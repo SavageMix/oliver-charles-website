@@ -15,6 +15,7 @@
   "/faq/page": "app/faq/page.js",
   "/page": "app/page.js",
   "/privacy-policy/page": "app/privacy-policy/page.js",
+  "/projects/[slug]/page": "app/projects/[slug]/page.js",
   "/projects/page": "app/projects/page.js",
   "/services/composite-decking/page": "app/services/composite-decking/page.js",
   "/services/garden-landscaping/page": "app/services/garden-landscaping/page.js",
@@ -22,5 +23,6 @@
   "/services/page": "app/services/page.js",
   "/services/porcelain-patios/page": "app/services/porcelain-patios/page.js",
   "/terms/page": "app/terms/page.js",
-  "/testimonials/page": "app/testimonials/page.js"
+  "/testimonials/page": "app/testimonials/page.js",
+  "/workmanship-guarantee/page": "app/workmanship-guarantee/page.js"
 }

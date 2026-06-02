@@ -10,6 +10,35 @@ export const metadata = generateCanonicalMetadata("/contact", {
 export default function ContactPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org ContactPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact Us | Free Quotes | Oliver Charles Garden Design',
+            description: 'Get in touch for a free quote on your garden project. Call 07837 666 766 or fill out our contact form. Serving Amersham, Chesham & Buckinghamshire.',
+            url: 'https://www.olivercharlesgardendesign.com/contact/',
+            mainEntity: {
+              '@type': 'LocalBusiness',
+              name: 'Oliver Charles Garden Design & Build',
+              url: 'https://www.olivercharlesgardendesign.com',
+              telephone: '+447837666766',
+              email: 'info@ocgardendesign.co.uk',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Amersham',
+                addressRegion: 'Buckinghamshire',
+                addressCountry: 'GB'
+              },
+              image: 'https://www.olivercharlesgardendesign.com/og-image.jpg',
+              openingHours: 'Mo-Fr 08:00-18:00, Sa 09:00-14:00'
+            }
+          }),
+        }}
+      />
+
       {/* Contact Section - Dark Background */}
       <section id="contact" className="py-24 bg-[#2c2c2c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

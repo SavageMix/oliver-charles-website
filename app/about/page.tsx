@@ -10,6 +10,39 @@ export const metadata = generateCanonicalMetadata("/about", {
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
+      {/* Schema.org AboutPage & Organization Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'AboutPage',
+              name: 'About Us | Oliver Charles Garden Design | Family-Run Landscapers',
+              description: 'Meet Oliver Charles Garden Design & Build - your trusted family-run landscaping specialists in Amersham. 10+ years experience, 5-year guarantee.',
+              url: 'https://www.olivercharlesgardendesign.com/about/',
+              mainEntity: {
+                '@type': 'Organization',
+                name: 'Oliver Charles Garden Design & Build',
+                url: 'https://www.olivercharlesgardendesign.com',
+                telephone: '+447837666766',
+                email: 'info@ocgardendesign.co.uk',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Amersham',
+                  addressRegion: 'Buckinghamshire',
+                  addressCountry: 'GB'
+                },
+                image: 'https://www.olivercharlesgardendesign.com/og-image.jpg',
+                sameAs: [
+                  'https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY'
+                ]
+              }
+            }
+          ]),
+        }}
+      />
+
       {/* Breadcrumb */}
       <div className="bg-[#f5f0e6] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
