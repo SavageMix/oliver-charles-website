@@ -119,6 +119,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (project.testimonial && project.testimonial.quote && project.testimonial.quote.toLowerCase() !== 'tldr') {
     projectSchema['review'] = {
       '@type': 'Review',
+      itemReviewed: {
+        '@type': 'CreativeWork',
+        name: project.title,
+        url: `${BASE_URL}/projects/${project.slug}/`
+      },
       reviewRating: {
         '@type': 'Rating',
         ratingValue: '5',
