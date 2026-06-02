@@ -122,8 +122,10 @@ export default function GlassBalustradesPage() {
               email: 'info@ocgardendesign.co.uk',
               address: {
                 '@type': 'PostalAddress',
+                streetAddress: 'Suite 103, Unit 5, Chiltern business center, 63-65 Woodside Rd',
                 addressLocality: 'Amersham',
                 addressRegion: 'Buckinghamshire',
+                postalCode: 'HP6 6AA',
                 addressCountry: 'GB'
               },
               image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
