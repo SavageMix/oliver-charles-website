@@ -139,7 +139,9 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/OlivercharlesGardenDesign"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#c9b896] transition-colors group"
                 aria-label="Facebook"
               >
