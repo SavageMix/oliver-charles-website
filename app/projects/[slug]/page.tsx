@@ -99,12 +99,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   const projectSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'LandscapeService',
+    '@type': 'Product',
     name: project.title,
     description: project.description,
     image: `${BASE_URL}${project.images[0]}`,
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
+    brand: {
+      '@type': 'LocalBusiness',
       name: 'Oliver Charles Garden Design & Build LTD',
       url: 'https://www.olivercharlesgardendesign.com',
       telephone: '+447837666766',
@@ -122,6 +122,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         'https://www.facebook.com/OlivercharlesGardenDesign',
         'https://www.instagram.com/ocgardendesign.uk/'
       ]
+    },
+    offers: {
+      '@type': 'Offer',
+      url: `${BASE_URL}/contact/#contact-form`,
+      price: '0',
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+      areaServed: {
+        '@type': 'Place',
+        name: project.location
+      }
     }
   };
 
