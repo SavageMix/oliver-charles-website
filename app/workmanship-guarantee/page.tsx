@@ -62,7 +62,7 @@ export default function WorkmanshipGuaranteePage() {
                 What Is Covered
               </h2>
               <p className="text-[#666666] mb-4">
-                Our guarantee covers structural failures that result directly from defects in our installation work, including:
+                Our guarantee covers <strong>structural integrity</strong> failures that result directly from defects in our installation work. This includes issues affecting the stability, safety, or load-bearing performance of the installation — not surface appearance or cosmetic wear.
               </p>
               <ul className="space-y-3 text-[#666666]">
                 <li className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export default function WorkmanshipGuaranteePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                  <span><strong>Loose or detaching materials</strong> where the cause is improper adhesion, fixing, or installation technique rather than material defect.</span>
+                  <span><strong>Loose, lifting, or detaching materials</strong> including loose tiles, sinking bases, or failing sub-structures where the cause is improper adhesion, fixing, or installation technique.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
@@ -95,10 +95,22 @@ export default function WorkmanshipGuaranteePage() {
                 What Is <span className="underline">Not</span> Covered
               </h2>
               <p className="text-[#666666] mb-4">
-                Our workmanship guarantee does <strong>not</strong> cover issues arising from the natural behaviour of materials, 
+                Our workmanship guarantee does <strong>not</strong> cover cosmetic issues, the natural behaviour of materials, 
                 environmental factors, or events outside our control. Specifically excluded are:
               </p>
               <ul className="space-y-3 text-[#666666]">
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
+                  <span><strong>Cosmetic issues from natural product behaviour</strong>, including minor grout shrinkage, hairline surface cracking due to thermal expansion, and natural weathering. These do not affect structural performance.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
+                  <span><strong>Initial settling and minor hairline cracks</strong>. Grout lines are subject to extreme temperature swings and moisture changes. Minor cosmetic hairline cracks do not affect the patio&apos;s lifespan, load-bearing capacity, or overall performance.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
+                  <span><strong>Ground movement and environmental conditions</strong>. Our guarantee strictly excludes damage, sinking, shifting, or cracking caused by natural ground movement, soil shrinkage or swelling due to extreme weather conditions (such as severe heatwaves or prolonged drought), subsidence, or root ingress from nearby vegetation. The contractor cannot be held liable for the natural behaviour of regional clay soils under extreme climatic events.</span>
+                </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
                   <span><strong>Fading, colour change, or weathering</strong> of materials (including composite decking, porcelain, timber, or glass) due to normal UV exposure and ageing.</span>
@@ -114,10 +126,6 @@ export default function WorkmanshipGuaranteePage() {
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
                   <span><strong>Damage from third parties</strong> including accidental damage, vandalism, or work carried out by other contractors after our installation.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
-                  <span><strong>Ground movement from subsidence, tree roots, or underground water</strong> that occurs after installation and is unrelated to our preparation work.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
