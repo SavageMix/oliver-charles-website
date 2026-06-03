@@ -131,7 +131,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     projectSchema['review'] = {
       '@type': 'Review',
       itemReviewed: {
-        '@type': 'HomeAndConstructionBusiness',
+        '@type': 'LocalBusiness',
         name: 'Oliver Charles Garden Design & Build LTD',
         url: 'https://www.olivercharlesgardendesign.com',
         telephone: '+447837666766',
