@@ -2,7 +2,7 @@ import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/great-missenden", {
-  title: "Garden Design & Landscaping Great Missenden HP16 | Oliver Charles",
+  title: "Porcelain Patios, Composite Decking & Landscaping Great Missenden HP16 | Oliver Charles",
   description: "Garden landscaping services in Great Missenden & surrounding villages. Multi-level decking, patios & garden design. HP16 postcode."
 });
 
@@ -64,7 +64,7 @@ export default function GreatMissendenPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-[#2c2c2c] mb-6">
-                Garden Design & Landscaping in Great Missenden
+                Porcelain Patios, Composite Decking & Landscaping in Great Missenden
               </h2>
               <p className="text-[#666666] text-lg mb-6">
                 We provide expert landscaping services throughout Great Missenden and the 
@@ -72,8 +72,13 @@ export default function GreatMissendenPage() {
                 over the Chiltern Hills or a more traditional plot, we have the expertise to help.
               </p>
               <p className="text-[#666666] text-lg mb-8">
-                Our Great Missenden portfolio includes multi-level composite decking installations 
-                that make the most of sloping gardens and create distinct outdoor living zones.
+                We are specialists in constructing premium{' '}
+                <a href="/services/porcelain-patios/" className="text-[#c9b896] hover:underline font-medium">porcelain patios</a>{' '}
+                and heavy-duty{' '}
+                <a href="/services/composite-decking/" className="text-[#c9b896] hover:underline font-medium">composite decking</a>{' '}
+                across the HP16 area. Our team also installs{' '}
+                <a href="/services/glass-balustrades/" className="text-[#c9b896] hover:underline font-medium">glass balustrades</a>{' '}
+                for properties throughout Great Missenden and the Chiltern villages.
               </p>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4">Services we offer:</h3>
               <ul className="space-y-3 mb-8">

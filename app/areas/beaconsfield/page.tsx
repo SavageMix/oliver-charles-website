@@ -2,7 +2,7 @@ import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/beaconsfield", {
-  title: "Garden Design & Landscaping Beaconsfield HP9 | Oliver Charles",
+  title: "Porcelain Patios, Composite Decking & Landscaping Beaconsfield HP9 | Oliver Charles",
   description: "Premium garden landscaping in Beaconsfield. Porcelain patios, glass balustrades & composite decking. Serving Old & New Town. Free quotes."
 });
 
@@ -64,7 +64,7 @@ export default function BeaconsfieldPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-[#2c2c2c] mb-6">
-                Garden Design & Landscaping in Beaconsfield
+                Porcelain Patios, Composite Decking & Landscaping in Beaconsfield
               </h2>
               <p className="text-[#666666] text-lg mb-6">
                 We provide expert landscaping services throughout Beaconsfield, serving both 
@@ -72,8 +72,13 @@ export default function BeaconsfieldPage() {
                 property or a traditional home, we create outdoor spaces that complement your property.
               </p>
               <p className="text-[#666666] text-lg mb-8">
-                Our portfolio includes stunning projects in Beaconsfield, from Egyptian limestone 
-                patios with herringbone patterns to elegant glass balustrade installations.
+                We are specialists in constructing premium{' '}
+                <a href="/services/porcelain-patios/" className="text-[#c9b896] hover:underline font-medium">porcelain patios</a>{' '}
+                and heavy-duty{' '}
+                <a href="/services/composite-decking/" className="text-[#c9b896] hover:underline font-medium">composite decking</a>{' '}
+                across the HP9 area. Our team also installs{' '}
+                <a href="/services/glass-balustrades/" className="text-[#c9b896] hover:underline font-medium">glass balustrades</a>{' '}
+                for properties throughout Beaconsfield Old Town and New Town.
               </p>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4">Services we offer:</h3>
               <ul className="space-y-3 mb-8">

@@ -2,7 +2,7 @@ import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/chalfont-st-giles", {
-  title: "Garden Design & Landscaping Chalfont St Giles HP8 | Oliver Charles",
+  title: "Porcelain Patios, Composite Decking & Landscaping Chalfont St Giles HP8 | Oliver Charles",
   description: "Expert landscaping services in Chalfont St Giles. Garden design, porcelain patios & decking. Free quotes for HP8 postcode area."
 });
 
@@ -64,7 +64,7 @@ export default function ChalfontStGilesPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-[#2c2c2c] mb-6">
-                Garden Design & Landscaping in Chalfont St Giles
+                Porcelain Patios, Composite Decking & Landscaping in Chalfont St Giles
               </h2>
               <p className="text-[#666666] text-lg mb-6">
                 We provide expert landscaping services in Chalfont St Giles and the surrounding 
@@ -72,8 +72,13 @@ export default function ChalfontStGilesPage() {
                 we create beautiful outdoor spaces that respect the village's character.
               </p>
               <p className="text-[#666666] text-lg mb-8">
-                Our team understands the specific requirements of Chalfont St Giles properties, 
-                including conservation area considerations and the village's unique charm.
+                We are specialists in constructing premium{' '}
+                <a href="/services/porcelain-patios/" className="text-[#c9b896] hover:underline font-medium">porcelain patios</a>{' '}
+                and heavy-duty{' '}
+                <a href="/services/composite-decking/" className="text-[#c9b896] hover:underline font-medium">composite decking</a>{' '}
+                across the HP8 area. Our team also installs{' '}
+                <a href="/services/glass-balustrades/" className="text-[#c9b896] hover:underline font-medium">glass balustrades</a>{' '}
+                for properties throughout Chalfont St Giles and the surrounding villages.
               </p>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4">Services we offer:</h3>
               <ul className="space-y-3 mb-8">

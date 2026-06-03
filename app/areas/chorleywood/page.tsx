@@ -2,7 +2,7 @@ import { MapPin, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/chorleywood", {
-  title: "Garden Design & Landscaping Chorleywood WD3 | Oliver Charles",
+  title: "Porcelain Patios, Composite Decking & Landscaping Chorleywood WD3 | Oliver Charles",
   description: "Professional landscaping services in Chorleywood. Porcelain patios, decking & glass balustrades. Serving WD3 postcode area. Free quotes."
 });
 
@@ -64,7 +64,7 @@ export default function ChorleywoodPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-[#2c2c2c] mb-6">
-                Garden Design & Landscaping in Chorleywood
+                Porcelain Patios, Composite Decking & Landscaping in Chorleywood
               </h2>
               <p className="text-[#666666] text-lg mb-6">
                 We provide expert landscaping services in Chorleywood, serving properties near 
@@ -72,8 +72,13 @@ export default function ChorleywoodPage() {
                 the mix of period homes and modern developments in the area.
               </p>
               <p className="text-[#666666] text-lg mb-8">
-                Whether you're looking to enhance your garden with a porcelain patio, composite 
-                decking, or glass balustrades, we bring the same dedication to every project.
+                We are specialists in constructing premium{' '}
+                <a href="/services/porcelain-patios/" className="text-[#c9b896] hover:underline font-medium">porcelain patios</a>{' '}
+                and heavy-duty{' '}
+                <a href="/services/composite-decking/" className="text-[#c9b896] hover:underline font-medium">composite decking</a>{' '}
+                across the WD3 area. Our team also installs{' '}
+                <a href="/services/glass-balustrades/" className="text-[#c9b896] hover:underline font-medium">glass balustrades</a>{' '}
+                for properties throughout Chorleywood and nearby areas.
               </p>
               <h3 className="text-xl font-bold text-[#2c2c2c] mb-4">Services we offer:</h3>
               <ul className="space-y-3 mb-8">
