@@ -1,5 +1,5 @@
 // Helper to generate metadata with self-referencing canonical URL
-const BASE_URL = "https://www.olivercharlesgardendesign.com";
+const BASE_URL = "https://www.olivercharlesgardendesign.co.uk";
 
 interface MetadataParams {
   title?: string;

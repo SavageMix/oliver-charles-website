@@ -8,13 +8,16 @@ export const metadata: Metadata = {
   title: "Oliver Charles Garden Design & Build | Landscaping Amersham",
   description: "Family-run garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades. Free quotes, 5-year guarantee.",
   keywords: "garden design, landscaping, porcelain patio, composite decking, glass balustrade, Amersham, Buckinghamshire, HP6, HP7",
+  alternates: {
+    canonical: "https://www.olivercharlesgardendesign.co.uk",
+  },
   openGraph: {
     title: "Oliver Charles Garden Design & Build",
     description: "Premium landscaping services in Amersham & Buckinghamshire",
-    url: "https://www.olivercharlesgardendesign.com",
+    url: "https://www.olivercharlesgardendesign.co.uk",
     siteName: "Oliver Charles Garden Design",
     images: [{
-      url: "https://www.olivercharlesgardendesign.com/og-image.jpg",
+      url: "https://www.olivercharlesgardendesign.co.uk/og-image.jpg",
       width: 1200,
       height: 630,
     }],
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oliver Charles Garden Design & Build",
     description: "Premium landscaping services in Amersham & Buckinghamshire",
-    images: ["https://www.olivercharlesgardendesign.com/og-image.jpg"],
+    images: ["https://www.olivercharlesgardendesign.co.uk/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -39,7 +42,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "peIlLoA_JHK_k8SpjoMjDVBNIQjAZ75aZD4g8ymQO-k",
   },
 };
 
@@ -47,9 +50,9 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Oliver Charles Garden Design & Build",
+  "name": "Oliver Charles Garden Design & Build LTD",
   "description": "Family-run garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades.",
-  "url": "https://www.olivercharlesgardendesign.com",
+  "url": "https://www.olivercharlesgardendesign.co.uk",
   "telephone": "+447837666766",
   "email": "info@ocgardendesign.co.uk",
   "address": {
@@ -99,16 +102,50 @@ const structuredData = {
       "name": "High Wycombe"
     }
   ],
-  "serviceType": [
-    "Porcelain Patio Installation",
-    "Composite Decking",
-    "Glass Balustrades",
-    "Garden Landscaping",
-    "Garden Design"
-  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Garden Construction Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Porcelain Patio Installation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Composite Decking"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Glass Balustrades"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garden Landscaping"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garden Design"
+        }
+      }
+    ]
+  },
   "priceRange": "££",
   "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
-  "image": "https://www.olivercharlesgardendesign.com/og-image.jpg",
+  "image": "https://www.olivercharlesgardendesign.co.uk/og-image.jpg",
   "sameAs": [
     "https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY",
     "https://www.facebook.com/OlivercharlesGardenDesign",
