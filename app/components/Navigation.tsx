@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 
 const Navigation = () => {
@@ -35,8 +36,15 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full border border-[var(--color-bronze)] flex items-center justify-center text-[var(--color-bronze)] font-serif text-lg group-hover:bg-[var(--color-bronze)] group-hover:text-[var(--color-forest)] transition-colors">
-                OC
+              <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/new-website-design/logo.jpg"
+                  alt="Oliver Charles Garden Design & Build"
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-[11px] sm:text-xs font-medium tracking-[0.2em] text-[var(--color-bronze)] uppercase">
