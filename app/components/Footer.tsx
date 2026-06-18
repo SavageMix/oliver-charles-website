@@ -1,13 +1,12 @@
 "use client";
 
-
 import { Phone, Mail, MapPin, Facebook, Instagram, ArrowUp } from "lucide-react";
 
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services/' },
   { label: 'About Us', href: '/about/' },
-  { label: 'Projects', href: '/testimonials/' },
+  { label: 'Projects', href: '/projects/' },
   { label: 'Testimonials', href: '/testimonials/' },
   { label: 'Areas We Cover', href: '/areas/' },
   { label: 'FAQ', href: '/faq/' },
@@ -34,14 +33,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#1a1a1a] text-white/70">
+    <footer className="bg-[var(--color-forest-dark)] text-white/70">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <span className="block text-sm text-white/50 tracking-wider">OLIVER CHARLES</span>
+              <span className="block text-sm text-[var(--color-bronze)] tracking-wider">OLIVER CHARLES</span>
               <span className="block text-xl font-bold text-white tracking-wide">GARDEN DESIGN & BUILD</span>
             </div>
             <p className="text-white/60 mb-6 leading-relaxed">
@@ -52,14 +51,14 @@ const Footer = () => {
             <div className="space-y-3">
               <a 
                 href="tel:07837666766" 
-                className="flex items-center gap-3 text-white/60 hover:text-[#c9b896] transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-[var(--color-bronze)] transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 07837666766
               </a>
               <a 
                 href="mailto:info@ocgardendesign.co.uk" 
-                className="flex items-center gap-3 text-white/60 hover:text-[#c9b896] transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-[var(--color-bronze)] transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 info@ocgardendesign.co.uk
@@ -79,7 +78,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a 
                     href={link.href}
-                    className="text-white/60 hover:text-[#c9b896] transition-colors"
+                    className="text-white/60 hover:text-[var(--color-bronze)] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -96,7 +95,7 @@ const Footer = () => {
                 <li key={service.label}>
                   <a 
                     href={service.href}
-                    className="text-white/60 hover:text-[#c9b896] transition-colors"
+                    className="text-white/60 hover:text-[var(--color-bronze)] transition-colors"
                   >
                     {service.label}
                   </a>
@@ -109,7 +108,7 @@ const Footer = () => {
                 <li key={area.label}>
                   <a 
                     href={area.href}
-                    className="text-white/60 hover:text-[#c9b896] transition-colors"
+                    className="text-white/60 hover:text-[var(--color-bronze)] transition-colors"
                   >
                     {area.label}
                   </a>
@@ -142,19 +141,19 @@ const Footer = () => {
                 href="https://www.facebook.com/OlivercharlesGardenDesign"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#c9b896] transition-colors group"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[var(--color-bronze)] transition-colors group"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5 group-hover:text-[#2c2c2c]" />
+                <Facebook className="w-5 h-5 group-hover:text-[var(--color-forest)]" />
               </a>
               <a 
                 href="https://www.instagram.com/ocgardendesign.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#c9b896] transition-colors group"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[var(--color-bronze)] transition-colors group"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 group-hover:text-[#2c2c2c]" />
+                <Instagram className="w-5 h-5 group-hover:text-[var(--color-forest)]" />
               </a>
             </div>
           </div>
@@ -172,21 +171,21 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-6 text-sm text-white/50">
-              <a href="/privacy-policy/" className="hover:text-[#c9b896] transition-colors">
+              <a href="/privacy-policy/" className="hover:text-[var(--color-bronze)] transition-colors">
                 Privacy Policy
               </a>
-              <a href="/terms/" className="hover:text-[#c9b896] transition-colors">
+              <a href="/terms/" className="hover:text-[var(--color-bronze)] transition-colors">
                 Terms of Service
               </a>
-              <a href="/workmanship-guarantee/" className="hover:text-[#c9b896] transition-colors">
+              <a href="/workmanship-guarantee/" className="hover:text-[var(--color-bronze)] transition-colors">
                 Workmanship Guarantee
               </a>
               <button
                 onClick={scrollToTop}
-                className="w-10 h-10 bg-[#c9b896] rounded-lg flex items-center justify-center hover:bg-[#a8956e] transition-colors"
+                className="w-10 h-10 bg-[var(--color-bronze)] rounded-lg flex items-center justify-center hover:bg-[var(--color-bronze-light)] transition-colors"
                 aria-label="Scroll to top"
               >
-                <ArrowUp className="w-5 h-5 text-[#2c2c2c]" />
+                <ArrowUp className="w-5 h-5 text-[var(--color-forest)]" />
               </button>
             </div>
           </div>

@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { Phone, ArrowRight, MapPin, Shield, Award, Check, Star, Calendar, Ruler } from "lucide-react";
+import { Phone, ArrowRight, MapPin, Shield, Award, Check, Star, Ruler, Leaf, Hammer, Sprout } from "lucide-react";
 import { generateCanonicalMetadata } from "./lib/metadata";
 import { ProjectCard } from "./components/ProjectCard";
-import ContactForm from "./components/QuickContactForm";
-
+import HeroContactForm from "./components/HeroContactForm";
 
 export const metadata = generateCanonicalMetadata("/");
 
@@ -121,102 +120,105 @@ const areas = [
   { name: 'Great Missenden', postcode: 'HP16', description: 'Bringing our expertise to Great Missenden and surrounding Chiltern villages.', landmarks: ['Roald Dahl Museum', 'Missenden Abbey', 'Chiltern Hills'], distance: '8 miles' },
 ];
 
+const heroFeatures = [
+  {
+    icon: Ruler,
+    title: 'Bespoke Design',
+    description: 'Tailored to you and your lifestyle'
+  },
+  {
+    icon: Leaf,
+    title: 'Quality Materials',
+    description: 'Carefully selected for lasting beauty'
+  },
+  {
+    icon: Hammer,
+    title: 'Expert Build',
+    description: 'Skilled craftsmanship in every detail'
+  },
+  {
+    icon: Sprout,
+    title: 'Made to Last',
+    description: 'Built to be enjoyed for years to come'
+  }
+];
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-patio.webp"
-            alt="Beautiful porcelain patio installation in Amersham garden"
+            src="/images/new-website-design/hero-page.png"
+            alt="Beautifully lit porcelain patio and garden design at night"
             fill
             className="object-cover"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2c2c2c]/90 via-[#2c2c2c]/70 to-[#2c2c2c]/40" />
         </div>
 
+        {/* Forest Green Overlay - Left Side */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[var(--color-forest)] via-[var(--color-forest)]/85 to-transparent md:from-[var(--color-forest)] md:via-[var(--color-forest)]/80 md:to-transparent" />
+        <div className="absolute inset-0 z-[1] hidden md:block bg-[var(--color-forest)]/75" style={{ clipPath: 'polygon(0 0, 55% 0, 45% 100%, 0% 100%)' }} />
+
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Main Content */}
             <div className="text-white space-y-8">
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#c9b896]/20 backdrop-blur-sm border border-[#c9b896]/30 rounded-full text-sm font-medium text-[#c9b896]">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--color-bronze)]/20 backdrop-blur-sm border border-[var(--color-bronze)]/30 text-sm font-medium text-[var(--color-bronze)]">
                   <Shield className="w-4 h-4" />
                   5-Year Guarantee
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium text-white/90">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-white/90">
                   <Award className="w-4 h-4" />
                   Family Run
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium text-white/90">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-white/90">
                   <MapPin className="w-4 h-4" />
                   Amersham & Buckinghamshire
                 </span>
               </div>
 
               {/* Main Heading */}
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-wide">
-                  OLIVER CHARLES
-                  <span className="block text-[#c9b896]">GARDEN DESIGN & BUILD</span>
+              <div className="space-y-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-medium leading-[1.1]">
+                  Exceptional outdoor spaces, beautifully built.
                 </h1>
-                <p className="text-xl text-white/90 max-w-xl">
-                  Specialising in Landscaping & Construction
+                <div className="w-16 h-[2px] bg-[var(--color-bronze)]" />
+                <p className="text-lg sm:text-xl text-white/80 max-w-xl leading-relaxed">
+                  We create considered gardens through thoughtful design, expert craftsmanship and meticulous construction.
                 </p>
-                <p className="text-lg text-white/80 max-w-xl">
-                  Premium porcelain patios, composite decking, and glass balustrades 
-                  installed by Amersham&apos;s trusted family-run landscaping specialists. 
-                  Serving Buckinghamshire including Chesham, Beaconsfield & Chalfont.
-                </p>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="grid sm:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#c9b896] rounded-full" />
-                  <span>Free Site Survey</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#c9b896] rounded-full" />
-                  <span>Competitive Pricing</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#c9b896] rounded-full" />
-                  <span>Fully Insured</span>
-                </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <a
-                  href="/contact/#contact-form"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] text-lg font-semibold rounded-lg transition-colors group"
+                  href="/projects/"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors group"
                 >
-                  Get Your Free Quote
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  View Our Work
                 </a>
                 <a
-                  href="tel:07837666766"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] text-lg font-semibold rounded-lg transition-colors"
+                  href="/contact/#contact-form"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-[var(--color-bronze)] text-white hover:text-[var(--color-bronze)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
                 >
-                  <Phone className="mr-2 w-5 h-5" />
-                  Call 07837666766
+                  Book a Consultation
                 </a>
               </div>
 
               {/* Social Proof */}
-              <div className="flex items-center gap-4 pt-4 border-t border-white/20">
+              <div className="flex items-center gap-4 pt-4 border-t border-white/20 max-w-md">
                 <div className="flex -space-x-3">
                   {['O', 'C', 'G', 'D'].map((letter, i) => (
                     <div
                       key={i}
-                      className="w-10 h-10 rounded-full bg-[#c9b896] border-2 border-white flex items-center justify-center text-[#2c2c2c] text-xs font-bold"
+                      className="w-10 h-10 rounded-full bg-[var(--color-bronze)] border-2 border-white flex items-center justify-center text-[var(--color-forest)] text-xs font-bold"
                     >
                       {letter}
                     </div>
@@ -225,47 +227,64 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-5 h-5 text-[#c9b896] fill-[#c9b896]" />
+                      <Star key={i} className="w-4 h-4 text-[var(--color-bronze)] fill-[var(--color-bronze)]" />
                     ))}
                   </div>
                   <p className="text-sm text-white/80">
-                    <a href="/testimonials/" className="font-semibold text-white hover:text-[#c9b896] transition-colors underline decoration-[#c9b896]/50 hover:decoration-[#c9b896]">
+                    <a href="/testimonials/" className="font-medium text-white hover:text-[var(--color-bronze)] transition-colors underline decoration-[var(--color-bronze)]/50 hover:decoration-[var(--color-bronze)]">
                       Five Star reviews
-                    </a> from our Happy customers
+                    </a> from our happy customers
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Quick Contact Form */}
+            {/* Right Column - Project Enquiry Form */}
             <div className="hidden lg:block">
-              <ContactForm />
+              <HeroContactForm />
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#services" className="text-white/60 hover:text-white transition-colors">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </a>
+      {/* Hero Features Bar */}
+      <section className="bg-[var(--color-forest)] border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {heroFeatures.map((feature, index) => (
+              <div key={index} className="text-center md:text-left">
+                <feature.icon className="w-8 h-8 text-[var(--color-bronze)] mx-auto md:mx-0 mb-4" strokeWidth={1.5} />
+                <h3 className="text-white font-semibold tracking-[0.05em] uppercase text-sm mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-white/60 text-sm">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Hero Form */}
+      <section className="lg:hidden bg-[var(--color-stone)] py-16">
+        <div className="max-w-md mx-auto px-4 sm:px-6">
+          <HeroContactForm />
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-[#f5f0e6]">
+      <section id="services" className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#2c2c2c] rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
               Our Services
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2c2c2c] mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
               Our Landscaping Services
             </h2>
-            <p className="text-lg text-[#666666]">
+            <p className="text-lg text-[var(--color-text-light)]">
               Specialising in porcelain patios, composite decking, and glass balustrades, 
               we bring years of experience and a commitment to excellence to every project 
               across HP6, HP7 and surrounding areas.
@@ -277,7 +296,7 @@ export default function HomePage() {
             {services.map((service) => (
               <div 
                 key={service.id}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white rounded-xl h-full"
+                className="group overflow-hidden bg-[var(--color-off-white)] shadow-md hover:shadow-xl transition-all duration-300 h-full"
               >
                 <div className="grid md:grid-cols-2 h-full">
                   {/* Image */}
@@ -291,19 +310,19 @@ export default function HomePage() {
                       loading={service.id === 'porcelain-patios' ? 'eager' : 'lazy'}
                       priority={service.id === 'porcelain-patios'}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c2c2c]/60 to-transparent md:bg-gradient-to-r" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-forest)]/60 to-transparent md:bg-gradient-to-r" />
                   </div>
 
                   {/* Content */}
                   <div className="p-6 lg:p-8 flex flex-col justify-between">
                     <div>
-                      <span className="text-[#c9b896] text-sm font-semibold uppercase tracking-wide">
+                      <span className="text-[var(--color-bronze)] text-xs font-semibold tracking-[0.15em] uppercase">
                         {service.subtitle}
                       </span>
-                      <h3 className="text-2xl font-bold text-[#2c2c2c] mt-2 mb-4">
+                      <h3 className="text-2xl font-serif font-medium text-[var(--color-text)] mt-2 mb-4">
                         {service.title}
                       </h3>
-                      <p className="text-[#666666] mb-6 leading-relaxed">
+                      <p className="text-[var(--color-text-light)] mb-6 leading-relaxed">
                         {service.description}
                       </p>
 
@@ -311,8 +330,8 @@ export default function HomePage() {
                       <ul className="space-y-2 mb-6">
                         {service.features.slice(0, 4).map((feature, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <Check className="w-5 h-5 text-[#c9b896] flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[#666666]">{feature}</span>
+                            <Check className="w-5 h-5 text-[var(--color-bronze)] flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[var(--color-text-light)]">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -320,7 +339,7 @@ export default function HomePage() {
 
                     <a
                       href={service.href}
-                      className="w-full flex items-center justify-center px-4 py-3 border-2 border-[#c9b896] text-[#2c2c2c] hover:bg-[#c9b896] rounded-lg font-medium transition-colors group/btn"
+                      className="w-full flex items-center justify-center px-4 py-3 border border-[var(--color-forest)] text-[var(--color-forest)] hover:bg-[var(--color-forest)] hover:text-[var(--color-off-white)] text-sm font-semibold tracking-[0.05em] uppercase transition-colors group/btn"
                     >
                       Enquire About {service.title}
                       <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -332,12 +351,12 @@ export default function HomePage() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-[#666666] mb-4">
+            <p className="text-[var(--color-text-light)] mb-6">
               Not sure which service is right for your project?
             </p>
             <a
               href="/contact/#contact-form"
-              className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-[var(--color-off-white)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               Get Free Expert Advice
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -347,13 +366,16 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-white">
+      <section id="projects" className="py-24 lg:py-32 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c2c2c] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
+              Recent Work
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-4">
               Recent Projects in Buckinghamshire
             </h2>
-            <p className="text-[#666666]">
+            <p className="text-[var(--color-text-light)]">
               Browse our portfolio of completed porcelain patios, composite decking, and glass balustrade installations.
             </p>
           </div>
@@ -367,7 +389,7 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <a
               href="/projects/"
-              className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               View All Projects
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -377,32 +399,32 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-[#f5f0e6]">
+      <section id="about" className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#2c2c2c] rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
                 About Us
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#2c2c2c] mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
                 Your Trusted Local Landscaping Experts in Amersham
               </h2>
-              <p className="text-[#666666] text-lg mb-6">
-                At <strong className="text-[#2c2c2c]">Oliver Charles Garden Design & Build</strong>, we take pride in being a family-run business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
+              <p className="text-[var(--color-text-light)] text-lg mb-6 leading-relaxed">
+                At <strong className="text-[var(--color-text)]">Oliver Charles Garden Design & Build</strong>, we take pride in being a family-run business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
               </p>
-              <p className="text-[#666666] text-lg mb-8">
+              <p className="text-[var(--color-text-light)] text-lg mb-8 leading-relaxed">
                 Specialising in <strong>porcelain patios</strong>, <strong>composite decking</strong>, and <strong>glass balustrades</strong>, we bring a personal touch to every project. With over 10 years of experience serving homeowners in the HP6 and HP7 postcode areas.
               </p>
               <a
                 href="/about/"
-                className="inline-flex items-center px-6 py-3 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-[var(--color-off-white)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
               >
                 Learn More About Us
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </div>
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative overflow-hidden shadow-xl">
                 <Image
                   src="/images/about-team.webp"
                   alt="Oliver Charles Garden Design team at work on a landscaping project in Buckinghamshire"
@@ -413,22 +435,24 @@ export default function HomePage() {
                   loading="lazy"
                 />
               </div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[var(--color-bronze)]/10 -z-10" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 border border-[var(--color-bronze)]/30 -z-10" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-[#2c2c2c] text-white">
+      <section className="py-24 lg:py-32 bg-[var(--color-forest)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#c9b896] rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
               Why Choose Us
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium mb-6">
               The Oliver Charles{" "}
-              <span className="text-[#c9b896]">Difference</span>
+              <span className="text-[var(--color-bronze)]">Difference</span>
             </h2>
             <p className="text-lg text-white/70">
               When you choose Oliver Charles Garden Design & Build, you&apos;re not just getting a landscaping service – 
@@ -441,31 +465,31 @@ export default function HomePage() {
             {whyChooseUs.map((reason, index) => (
               <div
                 key={index}
-                className="group p-8 bg-[#3d3d3d]/50 rounded-2xl border border-[#3d3d3d] hover:border-[#c9b896]/50 hover:bg-[#3d3d3d] transition-all duration-300"
+                className="group p-8 bg-[var(--color-forest-light)]/30 border border-white/10 hover:border-[var(--color-bronze)]/50 hover:bg-[var(--color-forest-light)]/50 transition-all duration-300"
               >
-                <h3 className="text-xl font-bold mb-3">{reason.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{reason.title}</h3>
                 <p className="text-white/60 leading-relaxed">{reason.description}</p>
               </div>
             ))}
           </div>
 
           {/* Trust Badges */}
-          <div className="mt-16 pt-16 border-t border-[#3d3d3d]">
+          <div className="mt-16 pt-16 border-t border-white/10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-[#c9b896] mb-2">Fully Insured</div>
+                <div className="text-2xl font-serif font-medium text-[var(--color-bronze)] mb-2">Fully Insured</div>
                 <p className="text-white/60 text-sm">Public liability coverage</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#c9b896] mb-2">Free Quotes</div>
+                <div className="text-2xl font-serif font-medium text-[var(--color-bronze)] mb-2">Free Quotes</div>
                 <p className="text-white/60 text-sm">No obligation estimates</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#c9b896] mb-2">Local Business</div>
+                <div className="text-2xl font-serif font-medium text-[var(--color-bronze)] mb-2">Local Business</div>
                 <p className="text-white/60 text-sm">Amersham based team</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#c9b896] mb-2">5★ Rated</div>
+                <div className="text-2xl font-serif font-medium text-[var(--color-bronze)] mb-2">5★ Rated</div>
                 <p className="text-white/60 text-sm">Customer satisfaction</p>
               </div>
             </div>
@@ -474,16 +498,16 @@ export default function HomePage() {
       </section>
 
       {/* Areas We Cover Section */}
-      <section id="areas" className="py-24 bg-[#f5f0e6]">
+      <section id="areas" className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#2c2c2c] rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
               Areas We Cover
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2c2c2c] mb-4">
-              Serving <span className="text-[#c9b896]">Buckinghamshire</span> & Beyond
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-4">
+              Serving <span className="text-[var(--color-bronze)]">Buckinghamshire</span> & Beyond
             </h2>
-            <p className="text-[#666666]">
+            <p className="text-[var(--color-text-light)]">
               Based in Amersham, we provide our premium landscaping services across Buckinghamshire and the surrounding Home Counties.
             </p>
           </div>
@@ -492,32 +516,32 @@ export default function HomePage() {
               <a
                 key={area.name}
                 href="/areas/"
-                className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-[#c9b896]/10 hover:border-[#c9b896]/30 block h-full"
+                className="group bg-[var(--color-off-white)] p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-[var(--color-border)] hover:border-[var(--color-bronze)]/30 block h-full"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-[#c9b896]/20 rounded-xl flex items-center justify-center group-hover:bg-[#c9b896] transition-colors">
-                    <MapPin className="w-6 h-6 text-[#c9b896] group-hover:text-[#2c2c2c] transition-colors" />
+                  <div className="w-12 h-12 bg-[var(--color-forest)]/10 flex items-center justify-center group-hover:bg-[var(--color-forest)] transition-colors">
+                    <MapPin className="w-6 h-6 text-[var(--color-forest)] group-hover:text-[var(--color-bronze)] transition-colors" />
                   </div>
-                  <span className="text-xs font-medium text-[#666666] bg-[#f5f0e6] px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium text-[var(--color-text-light)] bg-[var(--color-stone)] px-2 py-1">
                     {area.distance}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#2c2c2c] mb-1 group-hover:text-[#c9b896] transition-colors">
+                <h3 className="text-xl font-semibold text-[var(--color-text)] mb-1 group-hover:text-[var(--color-forest)] transition-colors">
                   {area.name}
                 </h3>
-                <p className="text-sm text-[#c9b896] font-medium mb-3">{area.postcode}</p>
-                <p className="text-[#666666] text-sm leading-relaxed mb-4">
+                <p className="text-sm text-[var(--color-bronze)] font-medium mb-3">{area.postcode}</p>
+                <p className="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
                   {area.description}
                 </p>
 
-                <div className="pt-4 border-t border-[#f5f0e6]">
-                  <p className="text-xs text-[#666666] mb-2">Local landmarks:</p>
+                <div className="pt-4 border-t border-[var(--color-border)]">
+                  <p className="text-xs text-[var(--color-text-light)] mb-2">Local landmarks:</p>
                   <div className="flex flex-wrap gap-1">
                     {area.landmarks.map((landmark, i) => (
                       <span
                         key={i}
-                        className="text-xs text-[#666666] bg-[#f5f0e6] px-2 py-1 rounded"
+                        className="text-xs text-[var(--color-text-light)] bg-[var(--color-stone)] px-2 py-1"
                       >
                         {landmark}
                       </span>
@@ -530,7 +554,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <a
               href="/areas/"
-              className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-[var(--color-off-white)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               View All Areas We Cover
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -540,25 +564,25 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2c2c2c] mb-6">
-            Ready to Start Your <span className="text-[#c9b896]">Garden Project</span>?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
+            Ready to Start Your <span className="text-[var(--color-bronze)]">Garden Project</span>?
           </h2>
-          <p className="text-lg text-[#666666] mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-[var(--color-text-light)] mb-8 max-w-2xl mx-auto">
             Contact us today for a free, no-obligation quote. We&apos;d love to discuss your landscaping project in Amersham or Buckinghamshire.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact/#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] text-lg font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               Get Your Free Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a
               href="tel:07837666766"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#2c2c2c] hover:bg-[#c9b896] text-lg font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[var(--color-forest)] text-[var(--color-forest)] hover:bg-[var(--color-forest)] hover:text-[var(--color-off-white)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               <Phone className="mr-2 w-5 h-5" />
               Call 07837666766

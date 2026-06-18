@@ -25,12 +25,26 @@
     --ring: 240 5.9% 10%;
     --radius: 0.625rem;
     
-    /* Custom brand colors */
+    /* Custom brand colors - legacy gold/cream palette */
     --brand-gold: #c9b896;
     --brand-gold-dark: #a8956e;
     --brand-dark: #2c2c2c;
     --brand-darker: #1a1a1a;
     --brand-cream: #f5f0e6;
+
+    /* New design system - forest & bronze palette */
+    --color-forest: #1F3A2E;
+    --color-forest-light: #2A4738;
+    --color-forest-dark: #16291F;
+    --color-bronze: #A67B46;
+    --color-bronze-light: #B98B56;
+    --color-bronze-dark: #8D6538;
+    --color-stone: #F6F4EF;
+    --color-off-white: #FCFBF8;
+    --color-charcoal: #2B2B2B;
+    --color-text: #1E1E1E;
+    --color-text-light: #6B6B6B;
+    --color-border: #DDD8CF;
   }
 }
 
@@ -55,20 +69,20 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f0e6;
+  background: var(--color-stone);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c9b896;
+  background: var(--color-bronze);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8956e;
+  background: var(--color-bronze-dark);
 }
 
 /* Selection color */
 ::selection {
-  background-color: #c9b896;
-  color: #2c2c2c;
+  background-color: var(--color-bronze);
+  color: var(--color-off-white);
 }
