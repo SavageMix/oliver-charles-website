@@ -23,7 +23,7 @@ app.set('trust proxy', 1);
 // Security: CORS - only allow requests from your domain in production
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL || 'https://olivercharlesgardendesign.com'] 
+    ? [process.env.FRONTEND_URL || 'https://www.olivercharlesgardendesign.co.uk'] 
     : ['http://localhost:3000', 'http://localhost:5173'],
   optionsSuccessStatus: 200
 };

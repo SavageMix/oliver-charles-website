@@ -130,9 +130,9 @@ export default function GardenLandscapingPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.com/services/' },
-              { '@type': 'ListItem', position: 3, name: 'Garden Landscaping', item: 'https://www.olivercharlesgardendesign.com/services/garden-landscaping/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.co.uk/services/' },
+              { '@type': 'ListItem', position: 3, name: 'Garden Landscaping', item: 'https://www.olivercharlesgardendesign.co.uk/services/garden-landscaping/' }
             ]
           })
         }}
@@ -150,7 +150,7 @@ export default function GardenLandscapingPage() {
             provider: {
               '@type': 'LocalBusiness',
               name: 'Oliver Charles Garden Design & Build',
-              url: 'https://www.olivercharlesgardendesign.com',
+              url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',
               email: 'info@ocgardendesign.co.uk',
               address: {
@@ -161,7 +161,7 @@ export default function GardenLandscapingPage() {
                 postalCode: 'HP6 6AA',
                 addressCountry: 'GB'
               },
-              image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+              image: 'https://www.olivercharlesgardendesign.co.uk/og-image.jpg'
             },
             areaServed: areas.map((area) => ({
               '@type': 'City',

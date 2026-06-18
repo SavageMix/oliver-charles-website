@@ -3,5 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Host: https://www.olivercharlesgardendesign.com
-Sitemap: https://www.olivercharlesgardendesign.com/sitemap.xml
+Host: https://www.olivercharlesgardendesign.co.uk
+Sitemap: https://www.olivercharlesgardendesign.co.uk/sitemap.xml

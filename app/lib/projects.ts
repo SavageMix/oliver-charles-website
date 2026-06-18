@@ -134,7 +134,7 @@ export const projects: Project[] = [
     features: ['Porcelain patio', 'Water drainage system', 'Sleeper retaining wall', 'Brickslot ACO drains'],
     images: ['/images/projects/project-8/porcelain-patio-bovingdon-main-view-1.jpg', '/images/projects/project-8/porcelain-patio-bovingdon-drainage-2.jpg', '/images/projects/project-8/porcelain-patio-bovingdon-sleeper-wall-3.jpg'],
     testimonial: {
-      quote: "The team at Oliver Charles construction have done a fantastic job on are patio. From start to Finnish they have been professional and hardworking. Couldn't recommend enough. We will definitely be using them again.",
+      quote: "The team at Oliver Charles Garden Design & Build have done a fantastic job on are patio. From start to Finnish they have been professional and hardworking. Couldn't recommend enough. We will definitely be using them again.",
       author: "David Quinton",
       location: "Bovingdon",
       googleReviewUrl: "https://maps.app.goo.gl/HzeAQYR1ESMJcy2Z7"

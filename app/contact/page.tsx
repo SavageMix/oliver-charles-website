@@ -18,8 +18,8 @@ export default function ContactPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.olivercharlesgardendesign.com/contact/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
+              { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.olivercharlesgardendesign.co.uk/contact/' }
             ]
           })
         }}
@@ -34,11 +34,11 @@ export default function ContactPage() {
             '@type': 'ContactPage',
             name: 'Contact Us | Free Quotes | Oliver Charles Garden Design',
             description: 'Get in touch for a free quote on your garden project. Call 07837 666 766 or fill out our contact form. Serving Amersham, Chesham & Buckinghamshire.',
-            url: 'https://www.olivercharlesgardendesign.com/contact/',
+            url: 'https://www.olivercharlesgardendesign.co.uk/contact/',
             mainEntity: {
               '@type': 'LocalBusiness',
               name: 'Oliver Charles Garden Design & Build',
-              url: 'https://www.olivercharlesgardendesign.com',
+              url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',
               email: 'info@ocgardendesign.co.uk',
               address: {
@@ -49,7 +49,7 @@ export default function ContactPage() {
                 postalCode: 'HP6 6AA',
                 addressCountry: 'GB'
               },
-              image: 'https://www.olivercharlesgardendesign.com/og-image.jpg',
+              image: 'https://www.olivercharlesgardendesign.co.uk/og-image.jpg',
               openingHours: 'Mo-Fr 08:00-18:00, Sa 09:00-14:00'
             }
           }),

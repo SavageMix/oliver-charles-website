@@ -69,8 +69,8 @@ export default function FAQPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
-              { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://www.olivercharlesgardendesign.com/faq/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
+              { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://www.olivercharlesgardendesign.co.uk/faq/' }
             ]
           })
         }}

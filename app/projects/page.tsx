@@ -19,8 +19,8 @@ export default function ProjectsPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Projects', item: 'https://www.olivercharlesgardendesign.com/projects/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
+              { '@type': 'ListItem', position: 2, name: 'Projects', item: 'https://www.olivercharlesgardendesign.co.uk/projects/' }
             ]
           })
         }}

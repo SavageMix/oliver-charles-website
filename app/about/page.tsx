@@ -18,8 +18,8 @@ export default function AboutPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
-              { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://www.olivercharlesgardendesign.com/about/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
+              { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://www.olivercharlesgardendesign.co.uk/about/' }
             ]
           })
         }}
@@ -35,11 +35,11 @@ export default function AboutPage() {
               '@type': 'AboutPage',
               name: 'About Us | Oliver Charles Garden Design | Family-Run Landscapers',
               description: 'Meet Oliver Charles Garden Design & Build - your trusted family-run landscaping specialists in Amersham. 10+ years experience, 5-year guarantee.',
-              url: 'https://www.olivercharlesgardendesign.com/about/',
+              url: 'https://www.olivercharlesgardendesign.co.uk/about/',
               mainEntity: {
                 '@type': 'Organization',
                 name: 'Oliver Charles Garden Design & Build',
-                url: 'https://www.olivercharlesgardendesign.com',
+                url: 'https://www.olivercharlesgardendesign.co.uk',
                 telephone: '+447837666766',
                 email: 'info@ocgardendesign.co.uk',
                 address: {
@@ -50,7 +50,7 @@ export default function AboutPage() {
                   postalCode: 'HP6 6AA',
                   addressCountry: 'GB'
                 },
-                image: 'https://www.olivercharlesgardendesign.com/og-image.jpg',
+                image: 'https://www.olivercharlesgardendesign.co.uk/og-image.jpg',
                 sameAs: [
                   'https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY'
                 ]

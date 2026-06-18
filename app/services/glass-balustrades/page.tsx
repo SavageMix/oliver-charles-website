@@ -97,9 +97,9 @@ export default function GlassBalustradesPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.com/services/' },
-              { '@type': 'ListItem', position: 3, name: 'Glass Balustrades', item: 'https://www.olivercharlesgardendesign.com/services/glass-balustrades/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.olivercharlesgardendesign.co.uk/services/' },
+              { '@type': 'ListItem', position: 3, name: 'Glass Balustrades', item: 'https://www.olivercharlesgardendesign.co.uk/services/glass-balustrades/' }
             ]
           })
         }}
@@ -117,7 +117,7 @@ export default function GlassBalustradesPage() {
             provider: {
               '@type': 'LocalBusiness',
               name: 'Oliver Charles Garden Design & Build',
-              url: 'https://www.olivercharlesgardendesign.com',
+              url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',
               email: 'info@ocgardendesign.co.uk',
               address: {
@@ -128,7 +128,7 @@ export default function GlassBalustradesPage() {
                 postalCode: 'HP6 6AA',
                 addressCountry: 'GB'
               },
-              image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
+              image: 'https://www.olivercharlesgardendesign.co.uk/og-image.jpg'
             },
             areaServed: areas.map((area) => ({
               '@type': 'City',
