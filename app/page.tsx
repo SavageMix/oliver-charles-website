@@ -173,7 +173,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--color-bronze)]/20 backdrop-blur-sm border border-[var(--color-bronze)]/30 text-sm font-medium text-[var(--color-bronze)]">
                   <Shield className="w-4 h-4" />
-                  5-Year Guarantee
+                  5-Year Workmanship Guarantee
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-white/90">
                   <Award className="w-4 h-4" />
@@ -214,20 +214,10 @@ export default function HomePage() {
 
               {/* Social Proof */}
               <div className="flex items-center gap-4 pt-4 border-t border-white/20 max-w-md">
-                <div className="flex -space-x-3">
-                  {['O', 'C', 'G', 'D'].map((letter, i) => (
-                    <div
-                      key={i}
-                      className="w-10 h-10 rounded-full bg-[var(--color-bronze)] border-2 border-white flex items-center justify-center text-[var(--color-forest)] text-xs font-bold"
-                    >
-                      {letter}
-                    </div>
-                  ))}
-                </div>
                 <div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1 mb-1">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-4 h-4 text-[var(--color-bronze)] fill-[var(--color-bronze)]" />
+                      <Star key={i} className="w-5 h-5 text-[var(--color-bronze)] fill-[var(--color-bronze)]" />
                     ))}
                   </div>
                   <p className="text-sm text-white/80">
