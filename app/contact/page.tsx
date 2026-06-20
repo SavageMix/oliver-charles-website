@@ -201,40 +201,45 @@ export default function ContactPage() {
       {/* Areas We Cover */}
       <section className="py-16 md:py-24 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
-              Proudly Serving
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-medium text-[var(--color-text)] mb-4">
-              Areas We Cover
-            </h2>
-            <div className="w-12 h-px bg-[var(--color-bronze)] mx-auto mb-4" />
-            <p className="text-[var(--color-text-light)]">
-              We provide landscaping services throughout Buckinghamshire and the Home Counties.
-            </p>
+          <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start">
+            {/* Left - Heading */}
+            <div>
+              <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
+                Proudly Serving
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-serif font-medium text-[var(--color-text)] mb-4">
+                Areas We Cover
+              </h2>
+              <div className="w-12 h-px bg-[var(--color-bronze)] mb-4" />
+              <p className="text-[var(--color-text-light)] leading-relaxed">
+                We provide landscaping services throughout Buckinghamshire and the Home Counties.
+              </p>
+            </div>
+
+            {/* Right - Area Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { name: "Amersham", detail: "HP6", icon: Building2 },
+                { name: "Chesham", detail: "HP5", icon: Home },
+                { name: "Beaconsfield", detail: "HP9", icon: TreePine },
+                { name: "High Wycombe", detail: "HP10, HP11", icon: MapPin },
+                { name: "Surrounding Areas", detail: "Buckinghamshire", icon: Map },
+              ].map((area) => (
+                <a
+                  key={area.name}
+                  href={area.name === "Surrounding Areas" ? "/areas/" : `/areas/${area.name.toLowerCase().replace(/ /g, '-')}/`}
+                  className="group flex flex-col items-center text-center py-6 px-3 bg-[var(--color-off-white)] hover:bg-[var(--color-stone)] transition-colors"
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)] mb-4 group-hover:bg-[var(--color-bronze)] group-hover:text-[var(--color-forest)] transition-colors">
+                    <area.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-medium text-[var(--color-text)] mb-1 text-sm">{area.name}</h3>
+                  <p className="text-xs text-[var(--color-text-light)]">{area.detail}</p>
+                </a>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-y md:divide-y-0 lg:divide-x divide-[var(--color-border)] border border-[var(--color-border)]">
-            {[
-              { name: "Amersham", detail: "HP6", icon: Building2 },
-              { name: "Chesham", detail: "HP5", icon: Home },
-              { name: "Beaconsfield", detail: "HP9", icon: TreePine },
-              { name: "High Wycombe", detail: "HP10, HP11", icon: MapPin },
-              { name: "Surrounding Areas", detail: "Buckinghamshire", icon: Map },
-            ].map((area) => (
-              <a
-                key={area.name}
-                href={area.name === "Surrounding Areas" ? "/areas/" : `/areas/${area.name.toLowerCase().replace(/ /g, '-')}/`}
-                className="group bg-[var(--color-off-white)] p-6 text-center hover:bg-[var(--color-stone)] transition-colors"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)] mb-4 group-hover:bg-[var(--color-bronze)] group-hover:text-[var(--color-forest)] transition-colors">
-                  <area.icon className="w-5 h-5" />
-                </div>
-                <h3 className="font-medium text-[var(--color-text)] mb-1">{area.name}</h3>
-                <p className="text-sm text-[var(--color-text-light)]">{area.detail}</p>
-              </a>
-            ))}
-          </div>
-          <p className="text-center text-sm text-[var(--color-text-light)] mt-8">
+          <p className="text-center text-sm text-[var(--color-text-light)] mt-10">
             If you&apos;re unsure if we cover your area, just get in touch — we&apos;re always happy to help.
           </p>
         </div>
