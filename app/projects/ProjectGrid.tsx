@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { MapPin, Calendar, Ruler, ArrowRight, X } from "lucide-react";
+import { MapPin, Calendar, Ruler, ArrowRight, ArrowLeft, X, ChevronLeft, ChevronRight, Check } from "lucide-react";
 
 interface Project {
   id: number;
@@ -32,67 +32,82 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [modalImageIndex, setModalImageIndex] = useState<number>(0);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number>(0);
-  const modalImagesRef = useRef<HTMLDivElement>(null);
-  const targetImageIndexRef = useRef<number>(0);
 
   // Clear project modal and reset showAll when category changes
   useEffect(() => {
     setSelectedProject(null);
+    setModalImageIndex(0);
     setLightboxImage(null);
     setLightboxIndex(0);
     setShowAll(false);
   }, [selectedCategory]);
 
-  // Clear lightbox when project modal closes
+  // Reset modal image index when project changes
   useEffect(() => {
-    if (!selectedProject) {
-      setLightboxImage(null);
-      setLightboxIndex(0);
+    if (selectedProject) {
+      setModalImageIndex(0);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [selectedProject]);
 
   // Keyboard navigation in lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxImage || !selectedProject) return;
-      
+
       if (e.key === 'Escape') {
         setLightboxImage(null);
       } else if (e.key === 'ArrowLeft') {
         const newIndex = lightboxIndex === 0 ? selectedProject.images.length - 1 : lightboxIndex - 1;
         setLightboxIndex(newIndex);
         setLightboxImage(selectedProject.images[newIndex]);
-        targetImageIndexRef.current = newIndex;
       } else if (e.key === 'ArrowRight') {
         const newIndex = lightboxIndex === selectedProject.images.length - 1 ? 0 : lightboxIndex + 1;
         setLightboxIndex(newIndex);
         setLightboxImage(selectedProject.images[newIndex]);
-        targetImageIndexRef.current = newIndex;
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxImage, lightboxIndex, selectedProject]);
 
-  // Scroll to target image when lightbox closes
-  useEffect(() => {
-    if (!lightboxImage && selectedProject) {
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          const targetEl = modalImagesRef.current?.querySelector(`[data-image-index="${targetImageIndexRef.current}"]`);
-          if (targetEl) {
-            targetEl.scrollIntoView({ behavior: 'instant', block: 'center' });
-          }
-        }, 100);
-      });
-    }
-  }, [lightboxImage, selectedProject]);
-
-  const filteredProjects = selectedCategory === 'All' 
+  const filteredProjects = selectedCategory === 'All'
     ? (showAll ? projects : projects.slice(0, 6))
     : projects.filter(p => p.category === selectedCategory);
+
+  const openModal = (project: Project) => {
+    setSelectedProject(project);
+    setModalImageIndex(0);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setModalImageIndex(0);
+  };
+
+  const nextModalImage = () => {
+    if (!selectedProject) return;
+    setModalImageIndex((prev) => (prev + 1) % selectedProject.images.length);
+  };
+
+  const prevModalImage = () => {
+    if (!selectedProject) return;
+    setModalImageIndex((prev) => (prev - 1 + selectedProject.images.length) % selectedProject.images.length);
+  };
+
+  const openLightbox = (index: number) => {
+    if (!selectedProject) return;
+    setLightboxIndex(index);
+    setLightboxImage(selectedProject.images[index]);
+  };
 
   return (
     <>
@@ -102,10 +117,10 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            className={`px-4 py-2 text-sm font-medium transition-all tracking-[0.05em] uppercase ${
               selectedCategory === category
-                ? 'bg-[#c9b896] text-[#2c2c2c]'
-                : 'bg-white text-[#666666] hover:bg-[#c9b896]/20 border border-[#c9b896]/30'
+                ? 'bg-[var(--color-forest)] text-white'
+                : 'bg-white text-[var(--color-text-light)] hover:bg-[var(--color-bronze)]/10 border border-[var(--color-border)]'
             }`}
           >
             {category}
@@ -114,13 +129,13 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
       </div>
 
       {/* Projects Grid */}
-      <div key={selectedCategory} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+      <div key={selectedCategory} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {filteredProjects.map((project, index) => (
           <div
             key={project.id}
-            className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+            className="group bg-[var(--color-off-white)] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border border-[var(--color-border)]"
             style={{ animationDelay: `${index * 100}ms` }}
-            onClick={() => setSelectedProject(project)}
+            onClick={() => openModal(project)}
           >
             {/* Image - 4:3 aspect ratio */}
             <div className="relative w-full overflow-hidden" style={{ paddingBottom: '75%' }}>
@@ -133,14 +148,14 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2c2c2c]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-forest)]/70 via-transparent to-transparent" />
               <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-[#c9b896] text-[#2c2c2c] text-xs font-semibold rounded-full">
+                <span className="px-3 py-1 bg-[var(--color-bronze)] text-[var(--color-forest)] text-xs font-semibold tracking-[0.05em] uppercase">
                   {project.category}
                 </span>
               </div>
               <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-white font-bold text-lg mb-1">{project.title}</h3>
+                <h3 className="text-white font-semibold text-lg mb-1">{project.title}</h3>
                 <div className="flex items-center text-white/80 text-sm">
                   <MapPin className="w-4 h-4 mr-1" />
                   {project.location}
@@ -150,7 +165,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
 
             {/* Content */}
             <div className="p-6">
-              <div className="flex items-center gap-4 text-sm text-[#666666] mb-4">
+              <div className="flex items-center gap-4 text-sm text-[var(--color-text-light)] mb-4">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
                   {project.date}
@@ -160,11 +175,11 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
                   {project.size}
                 </span>
               </div>
-              <p className="text-[#666666] text-sm line-clamp-2 mb-4">
+              <p className="text-[var(--color-text-light)] text-sm line-clamp-2 mb-4">
                 {project.description}
               </p>
-              <button className="inline-flex items-center text-[#c9b896] font-semibold text-sm group-hover:text-[#a8956e]">
-                View {project.title} details
+              <button className="inline-flex items-center text-[var(--color-bronze)] font-semibold text-sm group-hover:text-[var(--color-bronze-dark)]">
+                View {project.title.split(' - ')[0]} details
                 <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -178,7 +193,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
           {!showAll ? (
             <button
               onClick={() => setShowAll(true)}
-              className="inline-flex items-center px-5 py-2.5 border border-[#c9b896] text-[#2c2c2c] hover:bg-[#c9b896] font-medium rounded-full transition-colors text-sm"
+              className="inline-flex items-center px-5 py-2.5 border border-[var(--color-bronze)] text-[var(--color-forest)] hover:bg-[var(--color-bronze)] hover:text-white font-medium transition-colors text-sm tracking-[0.05em] uppercase"
             >
               See More Projects
               <ArrowRight className="ml-1.5 w-4 h-4" />
@@ -189,7 +204,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
                 setShowAll(false);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-800 font-medium rounded-full transition-colors text-sm"
+              className="inline-flex items-center px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-text-light)] hover:border-[var(--color-text-light)] hover:text-[var(--color-text)] font-medium transition-colors text-sm tracking-[0.05em] uppercase"
             >
               <X className="mr-1.5 w-4 h-4" />
               Show Less
@@ -198,185 +213,169 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
         </div>
       )}
 
-      {/* Project Detail Modal */}
+      {/* Project Detail Modal - Template Style */}
       {selectedProject && !lightboxImage && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setSelectedProject(null)} />
-          <div className="relative bg-white rounded-2xl max-w-5xl w-full max-h-[95vh] overflow-y-auto">
-            {/* Modal Header */}
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
-              <div>
-                <h2 className="text-2xl font-bold text-[#2c2c2c]">{selectedProject.title}</h2>
-                <div className="flex items-center gap-4 text-[#666666] text-sm mt-1">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-4 h-4" />
-                    {selectedProject.location}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    {selectedProject.date}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Ruler className="w-4 h-4" />
-                    {selectedProject.size}
-                  </span>
-                </div>
-              </div>
-              <button 
-                onClick={() => setSelectedProject(null)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
+        <div className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-3 sm:p-4">
+          <div className="relative bg-[var(--color-off-white)] max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center text-[var(--color-text-light)] hover:text-[var(--color-text)] transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Image Gallery */}
+            <div className="relative w-full lg:w-1/2 h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[580px] bg-[var(--color-forest-dark)]">
+              <Image
+                src={selectedProject.images[modalImageIndex]}
+                alt={`${selectedProject.title} - view ${modalImageIndex + 1}`}
+                fill
+                className="object-cover cursor-pointer"
+                onClick={() => openLightbox(modalImageIndex)}
+                priority
+              />
+              {selectedProject.images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); prevModalImage(); }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 flex items-center justify-center hover:bg-white transition-colors"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); nextModalImage(); }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 flex items-center justify-center hover:bg-white transition-colors"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                  <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1.5">
+                    {modalImageIndex + 1} / {selectedProject.images.length}
+                  </div>
+                </>
+              )}
             </div>
 
-            <div className="p-6 grid md:grid-cols-2 gap-6">
-              {/* Images */}
-              <div ref={modalImagesRef} className="space-y-4">
-                {selectedProject.images.map((image, idx) => (
-                  <div 
-                    key={idx} 
-                    data-image-index={idx} 
-                    className="relative w-full group cursor-pointer rounded-xl overflow-hidden" 
-                    style={{ paddingBottom: '75%' }}
-                    onClick={() => { 
-                      targetImageIndexRef.current = idx; 
-                      setLightboxImage(image); 
-                      setLightboxIndex(idx); 
-                    }}
-                  >
-                    <Image
-                      src={image}
-                      alt={`${selectedProject.title} - view ${idx + 1}`}
-                      fill
-                      className="absolute inset-0 w-full h-full object-cover"
-                      style={{ backfaceVisibility: 'hidden' }}
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-xl flex items-center justify-center">
-                      <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium bg-black/50 px-3 py-1 rounded-full">
-                        Click to enlarge
-                      </span>
-                    </div>
-                  </div>
-                ))}
+            {/* Content Panel */}
+            <div className="w-full lg:w-1/2 p-8 lg:p-14 flex flex-col justify-center overflow-y-auto max-h-[50vh] lg:max-h-[90vh]">
+              {/* Meta */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] text-[var(--color-text-light)] tracking-[0.12em] uppercase mb-8">
+                <span>{selectedProject.location}</span>
+                <span className="text-[var(--color-bronze)]">•</span>
+                <span>{selectedProject.date}</span>
+                <span className="text-[var(--color-bronze)]">•</span>
+                <span>{selectedProject.size}</span>
               </div>
 
-              {/* Details */}
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-[#2c2c2c] mb-2">Project Overview</h4>
-                  <p className="text-[#666666]">{selectedProject.description}</p>
-                </div>
+              {/* Title */}
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-serif font-medium text-[var(--color-text)] mb-2 leading-[1.05]">
+                {selectedProject.title.split(' - ')[0]}
+              </h2>
+              <p className="text-2xl sm:text-3xl text-[var(--color-bronze)] italic font-serif mb-8">
+                {selectedProject.location.split(',')[0]}
+              </p>
 
-                <div>
-                  <h4 className="font-semibold text-[#2c2c2c] mb-2">Key Features</h4>
-                  <ul className="space-y-2">
-                    {selectedProject.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-[#666666]">
-                        <div className="w-1.5 h-1.5 bg-[#c9b896] rounded-full" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {/* Description */}
+              <p className="text-[var(--color-text-light)] leading-[1.7] mb-8 text-[15px]">
+                {selectedProject.description}
+              </p>
 
-                {/* Testimonial */}
-                <div className="bg-[#f5f0e6] p-4 rounded-xl">
-                  <p className="text-[#666666] italic mb-3">&ldquo;{selectedProject.testimonial.quote}&rdquo;</p>
-                  <div className="text-sm mb-2">
-                    <span className="font-semibold text-[#2c2c2c]">{selectedProject.testimonial.author}</span>
-                    <span className="text-[#666666]"> — {selectedProject.testimonial.location}</span>
-                  </div>
-                  {selectedProject.testimonial.googleReviewUrl && (
-                    <a 
-                      href={selectedProject.testimonial.googleReviewUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm text-[#4285F4] hover:underline"
-                    >
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                      </svg>
-                      Verified Google Review
-                    </a>
-                  )}
-                </div>
+              {/* Features */}
+              <ul className="space-y-3 mb-10">
+                {selectedProject.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-[var(--color-text-light)]">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)] mt-0.5 flex-shrink-0">
+                      <Check className="w-3 h-3" strokeWidth={2.5} />
+                    </span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
 
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 mt-auto">
                 <a
                   href={`/projects/${selectedProject.slug}/`}
-                  className="block w-full text-center bg-white border-2 border-[#c9b896] hover:bg-[#c9b896] text-[#2c2c2c] font-semibold px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-white text-sm font-semibold rounded-none transition-colors"
                 >
-                  View full project page
+                  VIEW FULL PROJECT
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
-                <a
-                  href="/contact/#contact-form"
-                  onClick={() => setSelectedProject(null)}
-                  className="block w-full text-center bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-6 py-3 rounded-lg transition-colors"
+                <button
+                  onClick={closeModal}
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] text-sm font-semibold rounded-none hover:bg-[var(--color-stone)] transition-colors"
                 >
-                  Enquire about a {selectedProject.title} style project
-                </a>
+                  CLOSE
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Lightbox */}
+      {/* Full-screen Lightbox */}
       {lightboxImage && selectedProject && (
         <div className="fixed inset-0 z-[200] animate-in fade-in duration-200">
           <div className="absolute inset-0 bg-black/95" onClick={() => setLightboxImage(null)} />
-          
+
           <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-8">
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setLightboxImage(null)}
-              className="absolute top-4 right-6 text-white text-5xl hover:text-gray-300 z-10"
+              className="absolute top-4 right-6 text-white hover:text-gray-300 z-10"
+              aria-label="Close lightbox"
             >
-              ×
+              <X className="w-10 h-10" />
             </button>
 
             {/* Left Arrow */}
-            <button 
-              onClick={() => {
-                const newIndex = lightboxIndex === 0 ? selectedProject.images.length - 1 : lightboxIndex - 1;
-                setLightboxIndex(newIndex);
-                setLightboxImage(selectedProject.images[newIndex]);
-                targetImageIndexRef.current = newIndex;
-              }}
-              className="absolute left-4 text-white text-6xl hover:text-gray-300 p-4"
-            >
-              ‹
-            </button>
+            {selectedProject.images.length > 1 && (
+              <button
+                onClick={() => {
+                  const newIndex = lightboxIndex === 0 ? selectedProject.images.length - 1 : lightboxIndex - 1;
+                  setLightboxIndex(newIndex);
+                  setLightboxImage(selectedProject.images[newIndex]);
+                }}
+                className="absolute left-4 text-white hover:text-gray-300 p-4 z-10"
+                aria-label="Previous image"
+              >
+                <ArrowLeft className="w-10 h-10" />
+              </button>
+            )}
 
             {/* Image */}
             <Image
               src={lightboxImage}
-              alt="Project photo"
+              alt={`${selectedProject.title} - view ${lightboxIndex + 1}`}
               width={1200}
               height={900}
               className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
             />
 
             {/* Right Arrow */}
-            <button 
-              onClick={() => {
-                const newIndex = lightboxIndex === selectedProject.images.length - 1 ? 0 : lightboxIndex + 1;
-                setLightboxIndex(newIndex);
-                setLightboxImage(selectedProject.images[newIndex]);
-                targetImageIndexRef.current = newIndex;
-              }}
-              className="absolute right-4 text-white text-6xl hover:text-gray-300 p-4"
-            >
-              ›
-            </button>
+            {selectedProject.images.length > 1 && (
+              <button
+                onClick={() => {
+                  const newIndex = lightboxIndex === selectedProject.images.length - 1 ? 0 : lightboxIndex + 1;
+                  setLightboxIndex(newIndex);
+                  setLightboxImage(selectedProject.images[newIndex]);
+                }}
+                className="absolute right-4 text-white hover:text-gray-300 p-4 z-10"
+                aria-label="Next image"
+              >
+                <ArrowRight className="w-10 h-10" />
+              </button>
+            )}
 
             {/* Counter */}
-            <div className="absolute bottom-8 text-white bg-black/50 px-4 py-2 rounded-full">
-              {lightboxIndex + 1} / {selectedProject.images.length}
-            </div>
+            {selectedProject.images.length > 1 && (
+              <div className="absolute bottom-8 text-white bg-black/50 px-4 py-2 rounded-full">
+                {lightboxIndex + 1} / {selectedProject.images.length}
+              </div>
+            )}
           </div>
         </div>
       )}

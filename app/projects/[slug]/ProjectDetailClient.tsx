@@ -2,18 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   MapPin,
   Calendar,
   Ruler,
   ArrowRight,
   ArrowLeft,
-  Home,
-  FolderOpen,
-  Star,
-  Check,
   X,
+  Check,
+  Star,
 } from "lucide-react";
 import type { Project } from "../../lib/projects";
 
@@ -28,6 +25,7 @@ export default function ProjectDetailClient({
 }: ProjectDetailClientProps) {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number>(0);
+  const [mainImageIndex, setMainImageIndex] = useState<number>(0);
 
   // Keyboard navigation in lightbox
   useEffect(() => {
@@ -75,50 +73,17 @@ export default function ProjectDetailClient({
 
   const locationShort = project.location.split(",")[0];
 
-  const categoryServiceUrl: Record<string, string> = {
-    'Porcelain Patio': '/services/porcelain-patios/',
-    'Composite Decking': '/services/composite-decking/',
-    'Glass Balustrade': '/services/glass-balustrades/',
-    'Full Landscaping': '/services/garden-landscaping/',
-  };
-  const serviceUrl = categoryServiceUrl[project.category];
+  const hasValidTestimonial =
+    project.testimonial.quote &&
+    project.testimonial.quote.toLowerCase() !== "tldr";
+
+  const thumbnailImages = project.images.slice(0, 4);
 
   return (
     <main className="min-h-screen">
-      {/* Breadcrumb */}
-      <nav className="bg-[#f5f0e6] border-b border-[#c9b896]/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <ol className="flex items-center gap-2 text-sm text-[#666666]">
-            <li>
-              <Link
-                href="/"
-                className="hover:text-[#c9b896] transition-colors flex items-center gap-1"
-              >
-                <Home className="w-4 h-4" />
-                Home
-              </Link>
-            </li>
-            <li className="text-[#c9b896]">/</li>
-            <li>
-              <Link
-                href="/projects/"
-                className="hover:text-[#c9b896] transition-colors flex items-center gap-1"
-              >
-                <FolderOpen className="w-4 h-4" />
-                Projects
-              </Link>
-            </li>
-            <li className="text-[#c9b896]">/</li>
-            <li className="text-[#2c2c2c] font-medium truncate max-w-[200px] sm:max-w-xs">
-              {project.title}
-            </li>
-          </ol>
-        </div>
-      </nav>
-
       {/* Hero */}
-      <section className="relative bg-[#2c2c2c] text-white">
-        <div className="absolute inset-0 opacity-30">
+      <section className="relative bg-[var(--color-forest)] text-white overflow-hidden">
+        <div className="absolute inset-0 lg:left-1/3">
           <Image
             src={project.images[0]}
             alt={`${project.title} - ${project.category} in ${project.location}`}
@@ -126,27 +91,30 @@ export default function ProjectDetailClient({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2c2c2c] via-[#2c2c2c]/70 to-[#2c2c2c]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-forest)] via-[var(--color-forest)]/90 to-[var(--color-forest)]/40 lg:via-[var(--color-forest)]/80 lg:to-transparent" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#c9b896] rounded-full text-sm font-semibold mb-4">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+          <div className="max-w-2xl">
+            <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
               {project.category}
             </span>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              {project.title}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-white mb-3 leading-[1.05]">
+              {project.title.split(' - ')[0]}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-gray-300 text-sm md:text-base">
+            <p className="text-2xl md:text-3xl text-[var(--color-bronze)] italic font-serif mb-8">
+              {locationShort}
+            </p>
+            <div className="flex flex-wrap items-center gap-5 text-white/80 text-sm">
               <span className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-[#c9b896]" />
+                <MapPin className="w-4 h-4 text-[var(--color-bronze)]" />
                 {project.location}
               </span>
               <span className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4 text-[#c9b896]" />
+                <Calendar className="w-4 h-4 text-[var(--color-bronze)]" />
                 {project.date}
               </span>
               <span className="flex items-center gap-1.5">
-                <Ruler className="w-4 h-4 text-[#c9b896]" />
+                <Ruler className="w-4 h-4 text-[var(--color-bronze)]" />
                 {project.size}
               </span>
             </div>
@@ -155,97 +123,78 @@ export default function ProjectDetailClient({
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-12 items-start">
             {/* Left Column - Images */}
-            <div className="lg:col-span-3 space-y-6">
+            <div className="lg:col-span-3 space-y-4">
               {/* Main Image */}
               <div
-                className="relative w-full rounded-2xl overflow-hidden cursor-pointer group shadow-lg"
-                style={{ paddingBottom: "75%" }}
-                onClick={() => openLightbox(0)}
+                className="relative w-full rounded-lg overflow-hidden cursor-pointer group shadow-md"
+                style={{ paddingBottom: "66%" }}
+                onClick={() => openLightbox(mainImageIndex)}
               >
                 <Image
-                  src={project.images[0]}
+                  src={project.images[mainImageIndex]}
                   alt={`${project.title} - main view`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                    Click to enlarge
-                  </span>
-                </div>
               </div>
 
               {/* Thumbnail Grid */}
-              {project.images.length > 1 && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {project.images.slice(1).map((image, idx) => (
-                    <div
-                      key={idx + 1}
-                      className="relative w-full rounded-xl overflow-hidden cursor-pointer group shadow-md aspect-[4/3]"
-                      onClick={() => openLightbox(idx + 1)}
+              {thumbnailImages.length > 1 && (
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                  {thumbnailImages.map((image, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setMainImageIndex(idx)}
+                      className={`relative w-full rounded-lg overflow-hidden aspect-[4/3] ${
+                        idx === mainImageIndex
+                          ? "ring-2 ring-[var(--color-bronze)]"
+                          : "opacity-80 hover:opacity-100"
+                      }`}
                     >
                       <Image
                         src={image}
-                        alt={`${project.title} - view ${idx + 2}`}
+                        alt={`${project.title} - view ${idx + 1}`}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                        <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium bg-black/50 px-3 py-1 rounded-full">
-                          Enlarge
-                        </span>
-                      </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
               )}
             </div>
 
             {/* Right Column - Details */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-6">
               {/* Description */}
               <div>
-                <h2 className="text-2xl font-bold text-[#2c2c2c] mb-4">
+                <h2 className="text-2xl font-serif font-medium text-[var(--color-text)] mb-4">
                   Project Overview
                 </h2>
-                <p className="text-[#666666] leading-relaxed">
+                <p className="text-[var(--color-text-light)] leading-relaxed">
                   {project.description}
                 </p>
               </div>
 
-              {/* Service Link */}
-              {serviceUrl && (
-                <div className="bg-[#f5f0e6] rounded-2xl p-5">
-                  <Link
-                    href={serviceUrl}
-                    className="inline-flex items-center text-[#c9b896] font-semibold hover:underline"
-                  >
-                    View more {project.category} projects
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                </div>
-              )}
-
               {/* Features */}
-              <div className="bg-[#f5f0e6] rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-[#2c2c2c] mb-4">
+              <div className="bg-[var(--color-stone)] border border-[var(--color-border)] rounded-lg p-6">
+                <h3 className="text-lg font-serif font-medium text-[var(--color-text)] mb-4">
                   Key Features
                 </h3>
                 <ul className="space-y-3">
                   {project.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-3 text-[#666666]"
+                      className="flex items-start gap-3 text-sm text-[var(--color-text-light)]"
                     >
-                      <div className="mt-0.5 w-5 h-5 bg-[#c9b896] rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-[#2c2c2c]" />
-                      </div>
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--color-bronze)]/10 text-[var(--color-bronze)] mt-0.5 flex-shrink-0">
+                        <Check className="w-3 h-3" strokeWidth={2.5} />
+                      </span>
                       {feature}
                     </li>
                   ))}
@@ -253,67 +202,37 @@ export default function ProjectDetailClient({
               </div>
 
               {/* Testimonial */}
-              {project.testimonial.quote &&
-                project.testimonial.quote.toLowerCase() !== "tldr" && (
-                  <div className="bg-[#2c2c2c] rounded-2xl p-6 text-white">
-                    <div className="flex gap-1 mb-3">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star
-                          key={i}
-                          className="w-4 h-4 text-[#c9b896] fill-[#c9b896]"
-                        />
-                      ))}
-                    </div>
-                    <p className="italic mb-4 text-gray-300 leading-relaxed">
-                      &ldquo;{project.testimonial.quote}&rdquo;
-                    </p>
-                    <div className="text-sm">
-                      <span className="font-semibold text-white">
-                        {project.testimonial.author}
-                      </span>
-                      <span className="text-gray-400">
-                        {" "}
-                        &mdash; {project.testimonial.location}
-                      </span>
-                    </div>
-                    {project.testimonial.googleReviewUrl && (
-                      <a
-                        href={project.testimonial.googleReviewUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sm text-[#4285F4] hover:underline mt-3"
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                          <path
-                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                            fill="#34A853"
-                          />
-                          <path
-                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                            fill="#FBBC05"
-                          />
-                          <path
-                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                            fill="#EA4335"
-                          />
-                        </svg>
-                        Verified Google Review
-                      </a>
-                    )}
+              {hasValidTestimonial && (
+                <div className="bg-[var(--color-forest)] rounded-lg p-6 text-white">
+                  <div className="flex gap-1 mb-3">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 text-[var(--color-bronze)] fill-[var(--color-bronze)]"
+                      />
+                    ))}
                   </div>
-                )}
+                  <p className="italic mb-4 text-white/80 leading-relaxed text-sm">
+                    &ldquo;{project.testimonial.quote}&rdquo;
+                  </p>
+                  <div className="text-sm">
+                    <span className="font-medium text-white">
+                      {project.testimonial.author}
+                    </span>
+                    <span className="text-white/60">
+                      {" "}&mdash; {project.testimonial.location}
+                    </span>
+                  </div>
+                </div>
+              )}
 
               {/* CTA */}
               <a
                 href="/contact/#contact-form"
-                className="block w-full text-center bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold px-6 py-4 rounded-xl transition-colors"
+                className="inline-flex items-center justify-center w-full px-6 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white text-sm font-medium rounded-none transition-colors"
               >
-                Enquire about a similar {project.category.toLowerCase()} project
+                ENQUIRE ABOUT A SIMILAR PROJECT
+                <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </div>
           </div>
@@ -322,27 +241,26 @@ export default function ProjectDetailClient({
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-16 md:py-24 bg-[#f5f0e6]">
+        <section className="py-16 md:py-24 bg-[var(--color-stone)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#2c2c2c] mb-3">
+              <h2 className="text-3xl font-serif font-medium text-[var(--color-text)] mb-3">
                 More {project.category} Projects
               </h2>
-              <p className="text-[#666666]">
-                Explore similar projects in Buckinghamshire and surrounding
-                areas.
+              <p className="text-[var(--color-text-light)]">
+                Explore similar projects in Buckinghamshire and surrounding areas.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedProjects.map((related) => (
-                <Link
+                <a
                   key={related.id}
                   href={`/projects/${related.slug}/`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group bg-[var(--color-off-white)] rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
                 >
                   <div
                     className="relative w-full overflow-hidden"
-                    style={{ paddingBottom: "75%" }}
+                    style={{ paddingBottom: "66%" }}
                   >
                     <Image
                       src={related.images[0]}
@@ -351,75 +269,44 @@ export default function ProjectDetailClient({
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c2c2c]/70 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-forest)]/70 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-[#c9b896] text-[#2c2c2c] text-xs font-semibold rounded-full">
+                      <span className="px-3 py-1 bg-[var(--color-bronze)] text-white text-[10px] font-medium tracking-[0.08em] uppercase">
                         {related.category}
                       </span>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-white font-bold text-lg mb-1">
-                        {related.title}
-                      </h3>
-                      <div className="flex items-center text-white/80 text-sm">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {related.location}
-                      </div>
-                    </div>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-4 text-sm text-[#666666] mb-3">
+                    <h3 className="text-[var(--color-text)] font-medium text-lg mb-2">
+                      {related.title}
+                    </h3>
+                    <div className="flex items-center gap-4 text-sm text-[var(--color-text-light)] mb-4">
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
+                        <MapPin className="w-3.5 h-3.5" />
+                        {related.location}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3.5 h-3.5" />
                         {related.date}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Ruler className="w-4 h-4" />
+                        <Ruler className="w-3.5 h-3.5" />
                         {related.size}
                       </span>
                     </div>
-                    <p className="text-[#c9b896] font-semibold text-sm flex items-center">
-                      View project
-                      <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </p>
+                    <span className="inline-flex items-center text-[var(--color-bronze)] text-xs font-medium tracking-[0.08em] uppercase">
+                      VIEW PROJECT
+                      <ArrowRight className="ml-1.5 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* Bottom CTA */}
-      <section className="py-16 bg-[#2c2c2c]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Outdoor Space?
-          </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            Get a free, no-obligation quote for your {project.category.toLowerCase()} project in{" "}
-            {locationShort} and surrounding areas.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact/#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
-            >
-              Get a Free Quote
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <a
-              href="/projects/"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[#c9b896] text-[#c9b896] hover:bg-[#c9b896] hover:text-[#2c2c2c] font-semibold rounded-lg transition-colors"
-            >
-              <ArrowLeft className="mr-2 w-5 h-5" />
-              Back to All Projects
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Lightbox */}
+      {/* Full-screen Lightbox */}
       {lightboxImage && (
         <div className="fixed inset-0 z-[200] animate-in fade-in duration-200">
           <div
@@ -431,7 +318,8 @@ export default function ProjectDetailClient({
             {/* Close Button */}
             <button
               onClick={() => setLightboxImage(null)}
-              className="absolute top-4 right-6 text-white text-5xl hover:text-gray-300 z-10"
+              className="absolute top-4 right-6 text-white hover:text-gray-300 z-10"
+              aria-label="Close lightbox"
             >
               <X className="w-10 h-10" />
             </button>
@@ -448,6 +336,7 @@ export default function ProjectDetailClient({
                   setLightboxImage(project.images[newIndex]);
                 }}
                 className="absolute left-4 text-white hover:text-gray-300 p-4 z-10"
+                aria-label="Previous image"
               >
                 <ArrowLeft className="w-10 h-10" />
               </button>
@@ -474,6 +363,7 @@ export default function ProjectDetailClient({
                   setLightboxImage(project.images[newIndex]);
                 }}
                 className="absolute right-4 text-white hover:text-gray-300 p-4 z-10"
+                aria-label="Next image"
               >
                 <ArrowRight className="w-10 h-10" />
               </button>

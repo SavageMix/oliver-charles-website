@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Users, Gem, Leaf, Shield, Award, Clock, CheckCircle, Phone } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/about", {
-  title: "About Us | Oliver Charles Garden Design | Family-Run Landscapers",
-  description: "Meet Oliver Charles Garden Design & Build - your trusted family-run landscaping specialists in Amersham. 10+ years experience, 5-year guarantee."
+  title: "About Us | Oliver Charles Garden Design | Family-Owned Landscapers",
+  description: "Meet Oliver Charles Garden Design & Build - your trusted family-owned landscaping specialists in Amersham. 10+ years experience, 5-year guarantee."
 });
 
 export default function AboutPage() {
@@ -33,8 +33,8 @@ export default function AboutPage() {
             {
               '@context': 'https://schema.org',
               '@type': 'AboutPage',
-              name: 'About Us | Oliver Charles Garden Design | Family-Run Landscapers',
-              description: 'Meet Oliver Charles Garden Design & Build - your trusted family-run landscaping specialists in Amersham. 10+ years experience, 5-year guarantee.',
+              name: 'About Us | Oliver Charles Garden Design | Family-Owned Landscapers',
+              description: 'Meet Oliver Charles Garden Design & Build - your trusted family-owned landscaping specialists in Amersham. 10+ years experience, 5-year guarantee.',
               url: 'https://www.olivercharlesgardendesign.co.uk/about/',
               mainEntity: {
                 '@type': 'Organization',
@@ -60,140 +60,191 @@ export default function AboutPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <div className="bg-[#f5f0e6] py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[#666666]">
-            <a href="/" className="hover:text-[#c9b896]">Home</a>
-            <span className="mx-2">/</span>
-            <span className="text-[#2c2c2c]">About Us</span>
-          </nav>
-        </div>
-      </div>
-
       {/* Hero */}
-      <section className="py-16 bg-[#2c2c2c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Oliver Charles</h1>
-            <p className="text-xl text-gray-300">
-              Your trusted local landscaping experts in Amersham, Buckinghamshire.
+      <section className="relative bg-[var(--color-forest)] text-white overflow-hidden">
+        <div className="absolute inset-0 lg:left-[45%]">
+          <Image
+            src="/images/new-website-design/hero for about page.jpg"
+            alt="Oliver Charles Garden Design landscaped garden"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-forest)] via-[var(--color-forest)]/90 to-[var(--color-forest)]/30 lg:via-[var(--color-forest)]/80 lg:to-transparent" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
+          <div className="max-w-2xl">
+            <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
+              ABOUT OLIVER CHARLES
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-white mb-6 leading-[1.05]">
+              Designed with Purpose.<br />
+              Built Without Compromise.
+            </h1>
+            <div className="w-16 h-0.5 bg-[var(--color-bronze)] mb-6" />
+            <p className="text-lg text-white/80 leading-relaxed max-w-xl">
+              Oliver Charles was founded with one simple goal — to create exceptional outdoor spaces through considered design, meticulous craftsmanship and a commitment to doing things properly.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-24 bg-white">
+      {/* A Different Approach */}
+      <section className="py-20 md:py-28 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left Content */}
             <div>
-              <h2 className="text-3xl font-bold text-[#2c2c2c] mb-6">
-                Your Trusted Local Landscaping Experts
+              <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
+                A DIFFERENT APPROACH
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-medium text-[var(--color-text)] mb-6 leading-[1.1]">
+                More Than Landscaping,<br />It&apos;s a Partnership.
               </h2>
-              <p className="text-[#666666] text-lg mb-6">
-                At <strong className="text-[#2c2c2c]">Oliver Charles Garden Design & Build</strong>, we take pride in being a family-run business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
-              </p>
-              <p className="text-[#666666] text-lg mb-6">
-                Specialising in <strong>porcelain patios</strong>, <strong>composite decking</strong>, and <strong>glass balustrades</strong>, we bring a personal touch to every project. With over 10 years of experience serving homeowners in the HP6 and HP7 postcode areas, we understand the unique character of local properties.
-              </p>
-              <p className="text-[#666666] text-lg mb-8">
-                Our commitment to excellence means we never cut corners. From the initial consultation to the final installation, we work closely with you to ensure your vision becomes reality.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  "Family-run local business",
-                  "Fully insured & qualified",
-                  "Premium UK-sourced materials",
-                  "5-year guarantee on all work",
-                  "Free, no-obligation quotes",
-                  "10+ years experience",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#c9b896]" />
-                    <span className="text-[#2c2c2c] font-medium">{item}</span>
-                  </div>
-                ))}
+              <div className="space-y-5 text-[var(--color-text-light)] leading-relaxed">
+                <p>
+                  Most landscaping companies begin with paving. We begin with understanding how you want to live outdoors.
+                </p>
+                <p>
+                  Every Oliver Charles project is individually considered, carefully planned and meticulously built using premium materials and proven construction methods.
+                </p>
+                <p>
+                  We don&apos;t believe in rushed installations or cutting corners. We believe great gardens should still look exceptional years after completion.
+                </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/about-team.webp"
-                  alt="Oliver Charles Garden Design team at work on a landscaping project in Buckinghamshire"
-                  width={600}
-                  height={500}
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  loading="lazy"
-                />
-              </div>
+
+            {/* Right Feature Cards */}
+            <div className="grid sm:grid-cols-2 gap-px bg-[var(--color-border)] border border-[var(--color-border)] rounded-lg overflow-hidden">
+              {[
+                { icon: Users, title: "Family-Owned", desc: "Every project is personally managed from consultation through to completion." },
+                { icon: Gem, title: "Exceptional Craftsmanship", desc: "Attention to detail at every stage, from the foundations to the final finishing touches." },
+                { icon: Leaf, title: "Premium Materials", desc: "We carefully select products that combine longevity, performance and timeless design." },
+                { icon: Shield, title: "Built to Last", desc: "Every installation is completed using proven construction methods and backed by our workmanship guarantee." },
+                { icon: CheckCircle, title: "Fully Insured & Qualified", desc: "Complete peace of mind knowing your project is in safe hands." },
+                { icon: Award, title: "10+ Years Experience", desc: "Over a decade of hands-on experience delivering exceptional outdoor spaces." },
+              ].map((item) => (
+                <div key={item.title} className="bg-[var(--color-off-white)] p-8 text-center">
+                  <item.icon className="w-8 h-8 text-[var(--color-bronze)] mx-auto mb-4" strokeWidth={1.5} />
+                  <h3 className="text-[var(--color-text)] font-medium mb-2">{item.title}</h3>
+                  <p className="text-sm text-[var(--color-text-light)] leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-[#f5f0e6]">
+      {/* Meet the Founder */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] mb-4">
-              The Oliver Charles Difference
-            </h2>
-            <p className="text-[#666666]">
-              When you choose us, you're partnering with a dedicated team that truly cares.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Founder Image Placeholder */}
+            <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-[var(--color-forest-dark)]">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white/60">
+                <span className="text-2xl font-serif italic mb-2">Photo of me</span>
+                <span className="text-xl font-serif italic">coming soon!</span>
+              </div>
+            </div>
+
+            {/* Founder Content */}
+            <div>
+              <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
+                MEET THE FOUNDER
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif font-medium text-[var(--color-text)] mb-2">
+                Oliver Charles
+              </h2>
+              <p className="text-xl text-[var(--color-bronze)] italic font-serif mb-8">
+                Founder & Director
+              </p>
+              <div className="space-y-5 text-[var(--color-text-light)] leading-relaxed mb-8">
+                <p>
+                  I started Oliver Charles because I believed homeowners deserved a better experience.
+                </p>
+                <p>
+                  Not just beautiful gardens. But thoughtful communication, honest advice and craftsmanship that stands the test of time.
+                </p>
+              </div>
+              <p className="text-3xl font-serif italic text-[var(--color-text)]">
+                Oliver Charles
+              </p>
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="py-20 md:py-28 bg-[var(--color-off-white)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-[var(--color-text)] mb-12">
+            Our Process
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { title: "5-Year Guarantee", desc: "Every installation comes with our comprehensive workmanship guarantee" },
-              { title: "On-Time Completion", desc: "We respect your time and complete projects efficiently" },
-              { title: "Eco-Friendly Materials", desc: "We prioritise sustainable, environmentally responsible materials" },
-              { title: "Premium Quality", desc: "Only the finest materials from trusted UK suppliers" },
-              { title: "Expert Craftsmanship", desc: "Our skilled team brings years of experience to every project" },
-              { title: "Local Knowledge", desc: "We understand local properties, weather, and planning requirements" },
-            ].map((item) => (
-              <div key={item.title} className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-bold text-[#2c2c2c] mb-2">{item.title}</h3>
-                <p className="text-[#666666]">{item.desc}</p>
+              { num: "01", title: "Consultation", desc: "We start by listening. Understanding your ideas, lifestyle and how you want to use your outdoor space." },
+              { num: "02", title: "Design", desc: "We create a tailored design that brings your vision to life with function, flow and beauty." },
+              { num: "03", title: "Detailed Proposal", desc: "You'll receive a clear, transparent proposal with every detail outlined." },
+              { num: "04", title: "Construction", desc: "Our skilled team brings the design to life with precision, care and attention to detail." },
+              { num: "05", title: "Handover", desc: "We complete every project to the highest standard and ensure you are 100% happy." },
+            ].map((item, idx) => (
+              <div key={item.num} className="relative">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)] text-sm font-medium mb-4">
+                  {item.num}
+                </span>
+                <h3 className="text-[var(--color-text)] font-medium text-lg mb-2">{item.title}</h3>
+                <p className="text-sm text-[var(--color-text-light)] leading-relaxed">{item.desc}</p>
+                {idx < 4 && (
+                  <div className="hidden lg:block absolute top-5 left-14 right-0 h-px bg-[var(--color-border)]" />
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="py-24 bg-white">
+      {/* Stats Bar */}
+      <section className="py-16 bg-[var(--color-forest)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold text-[#2c2c2c] mb-4">Get In Touch</h2>
-            <p className="text-[#666666]">Ready to start your project? We'd love to hear from you.</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+            {[
+              { icon: Award, value: "10+", label: "Years Experience" },
+              { icon: Leaf, value: "50+", label: "Projects Completed" },
+              { icon: Shield, value: "5 Years", label: "Workmanship Guarantee" },
+              { icon: Users, value: "100%", label: "Personally Managed" },
+            ].map((stat, idx) => (
+              <div key={stat.label} className={`text-center ${idx < 3 ? 'lg:border-r lg:border-white/20' : ''}`}>
+                <stat.icon className="w-7 h-7 text-[var(--color-bronze)] mx-auto mb-3" strokeWidth={1.5} />
+                <div className="text-3xl md:text-4xl font-serif text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-white/70">{stat.label}</div>
+              </div>
+            ))}
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 bg-[#f5f0e6] rounded-xl">
-              <Phone className="w-8 h-8 text-[#c9b896] mx-auto mb-4" />
-              <h3 className="font-bold text-[#2c2c2c] mb-2">Phone</h3>
-              <a href="tel:07837666766" className="text-[#666666] hover:text-[#c9b896]">07837 666 766</a>
+        </div>
+      </section>
+
+      {/* Quote / CTA */}
+      <section className="py-20 md:py-28 bg-[var(--color-stone)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-7xl font-serif text-[var(--color-bronze)] leading-none">&ldquo;</span>
+              <p className="text-2xl md:text-3xl font-serif font-medium text-[var(--color-text)] -mt-4 mb-6">
+                We treat every project as if it were our own home.
+              </p>
             </div>
-            <div className="text-center p-6 bg-[#f5f0e6] rounded-xl">
-              <Mail className="w-8 h-8 text-[#c9b896] mx-auto mb-4" />
-              <h3 className="font-bold text-[#2c2c2c] mb-2">Email</h3>
-              <a href="mailto:info@ocgardendesign.co.uk" className="text-[#666666] hover:text-[#c9b896]">info@ocgardendesign.co.uk</a>
+            <div className="space-y-6">
+              <p className="text-[var(--color-text-light)] leading-relaxed">
+                From small patios to complete garden transformations, our commitment to quality and service is the same.
+              </p>
+              <a
+                href="/contact/#contact-form"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white text-sm font-medium rounded-none transition-colors"
+              >
+                BOOK A CONSULTATION
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
             </div>
-            <div className="text-center p-6 bg-[#f5f0e6] rounded-xl">
-              <MapPin className="w-8 h-8 text-[#c9b896] mx-auto mb-4" />
-              <h3 className="font-bold text-[#2c2c2c] mb-2">Location</h3>
-              <span className="text-[#666666]">Amersham, Buckinghamshire</span>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <a
-              href="/contact/#contact-form"
-              className="inline-flex items-center px-8 py-4 bg-[#c9b896] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#a8956e] transition-colors"
-            >
-              Contact Us
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
           </div>
         </div>
       </section>

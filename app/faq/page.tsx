@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: "How long have you been in business?",
-    answer: "Oliver Charles Garden Design & Build has been serving homeowners across Buckinghamshire for over 10 years. As a family-run business, we take pride in our reputation for quality workmanship, reliability, and excellent customer service. Many of our new customers come through recommendations from satisfied clients."
+    answer: "Oliver Charles Garden Design & Build has been serving homeowners across Buckinghamshire for over 10 years. As a family-owned business, we take pride in our reputation for quality workmanship, reliability, and excellent customer service. Many of our new customers come through recommendations from satisfied clients."
   },
   {
     question: "Are you fully insured?",
@@ -77,16 +77,15 @@ export default function FAQPage() {
       />
 
       {/* Hero */}
-      <section className="py-24 bg-[#2c2c2c] text-white">
+      <section className="py-24 bg-[var(--color-forest)] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#c9b896] rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
             FAQ
           </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Frequently Asked{" "}
-            <span className="text-[#c9b896]">Questions</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-white mb-6">
+            Frequently Asked Questions
           </h1>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-white/70">
             Got questions about our landscaping services in Amersham and Buckinghamshire? 
             We&apos;ve got answers. If you can&apos;t find what you&apos;re looking for, feel free to contact us.
           </p>
@@ -94,7 +93,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Accordion - Client Component for interactivity */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[var(--color-off-white)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FAQAccordion faqs={faqs} />
         </div>

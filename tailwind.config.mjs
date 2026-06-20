@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-body)", "Neue Haas Grotesk", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        serif: ["var(--font-heading)", "Cormorant Garamond", "Georgia", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -21,27 +21,27 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border border-[#c9b896]/20 rounded-xl overflow-hidden hover:border-[#c9b896]/40 transition-colors"
+            className="border border-[var(--color-border)] overflow-hidden hover:border-[var(--color-bronze)]/40 transition-colors bg-[var(--color-off-white)]"
             itemScope
             itemProp="mainEntity"
             itemType="https://schema.org/Question"
           >
             <button
-              className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-[#f5f0e6] transition-colors"
+              className="w-full flex items-center justify-between p-6 text-left bg-[var(--color-off-white)] hover:bg-[var(--color-stone)] transition-colors"
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               aria-expanded={openIndex === index}
             >
               <div className="flex items-center gap-4">
-                <HelpCircle className="w-5 h-5 text-[#c9b896] flex-shrink-0" />
+                <HelpCircle className="w-5 h-5 text-[var(--color-bronze)] flex-shrink-0" />
                 <span 
-                  className="font-semibold text-[#2c2c2c] pr-4"
+                  className="font-medium text-[var(--color-text)] pr-4"
                   itemProp="name"
                 >
                   {faq.question}
                 </span>
               </div>
               <ChevronDown
-                className={`w-5 h-5 text-[#666666] flex-shrink-0 transition-transform ${
+                className={`w-5 h-5 text-[var(--color-text-light)] flex-shrink-0 transition-transform ${
                   openIndex === index ? 'rotate-180' : ''
                 }`}
               />
@@ -54,10 +54,10 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
               itemProp="acceptedAnswer"
               itemType="https://schema.org/Answer"
             >
-              <div className="p-6 pt-0 bg-[#f5f0e6]">
+              <div className="p-6 pt-0 bg-[var(--color-stone)]">
                 <div className="pl-9">
                   <p 
-                    className="text-[#666666] leading-relaxed"
+                    className="text-[var(--color-text-light)] leading-relaxed"
                     itemProp="text"
                   >
                     {faq.answer}
@@ -70,28 +70,28 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
       </div>
 
       {/* Still Have Questions */}
-      <div className="mt-12 text-center p-8 bg-[#f5f0e6] rounded-2xl">
-        <h3 className="text-xl font-bold text-[#2c2c2c] mb-2">
+      <div className="mt-12 text-center p-8 bg-[var(--color-stone)] border border-[var(--color-border)]">
+        <h3 className="text-xl font-serif font-medium text-[var(--color-text)] mb-2">
           Still Have Questions?
         </h3>
-        <p className="text-[#666666] mb-6">
+        <p className="text-[var(--color-text-light)] mb-6">
           Can&apos;t find the answer you&apos;re looking for? We&apos;re here to help with any questions 
           about your landscaping project in Amersham or Buckinghamshire.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="/contact/#contact-form"
-            className="inline-flex items-center justify-center px-6 py-3 bg-[#c9b896] text-[#2c2c2c] rounded-lg font-semibold hover:bg-[#a8956e] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-white font-medium rounded-none transition-colors"
           >
             Contact Us
             <ArrowRight className="ml-2 w-4 h-4" />
           </a>
           <a
-            href="tel:07837666766"
-            className="inline-flex items-center justify-center px-6 py-3 border border-[#c9b896] text-[#2c2c2c] rounded-lg font-semibold hover:bg-[#c9b896]/10 transition-colors"
+            href="tel:+447837666766"
+            className="inline-flex items-center justify-center px-6 py-3 border border-[var(--color-border)] text-[var(--color-text)] hover:bg-[var(--color-off-white)] font-medium rounded-none transition-colors"
           >
             <Phone className="mr-2 w-4 h-4" />
-            07837 666 766
+            +44 7837 666766
           </a>
         </div>
       </div>

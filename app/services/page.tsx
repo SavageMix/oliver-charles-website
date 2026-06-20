@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Phone, Check } from "lucide-react";
+import { ArrowRight, Phone, Layers, LayoutGrid, Square, Leaf } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/services", {
@@ -10,31 +10,31 @@ export const metadata = generateCanonicalMetadata("/services", {
 const services = [
   {
     id: "porcelain-patios",
-    title: "Porcelain Patios",
-    description: "Premium porcelain patio installations featuring frost-resistant, slip-proof paving with stunning designs that last decades.",
+    title: "Porcelain Terraces",
+    description: "Elegant, hard-wearing porcelain terraces that combine timeless beauty with outstanding performance.",
     image: "/images/porcelain-patio.webp",
-    features: ["Frost & slip-resistant", "Stain-proof surface", "10+ year lifespan", "Low maintenance"],
+    icon: Layers,
   },
   {
     id: "composite-decking",
     title: "Composite Decking",
-    description: "Beautiful composite decking that combines the natural warmth of timber with zero maintenance requirements.",
+    description: "Low-maintenance composite decking that brings warmth, style and lasting quality to your garden.",
     image: "/images/composite-decking.webp",
-    features: ["Won't rot or warp", "No staining required", "25+ year lifespan", "Eco-friendly"],
+    icon: LayoutGrid,
   },
   {
     id: "glass-balustrades",
     title: "Glass Balustrades",
-    description: "Elegant glass balustrade installations that provide safety without compromising your stunning views.",
+    description: "Sleek, frameless glass balustrades that maximise views and create a seamless, contemporary finish.",
     image: "/images/glass-balustrade.webp",
-    features: ["Frameless options", "BS compliant", "Easy-clean coating", "Indoor & outdoor"],
+    icon: Square,
   },
   {
     id: "garden-landscaping",
     title: "Garden Landscaping",
-    description: "Complete garden transformations from design to completion. Hard and soft landscaping tailored to your vision.",
+    description: "Complete garden transformations, from planting schemes to structural features and finishing touches.",
     image: "/images/landscaping.webp",
-    features: ["Complete redesign", "Hard & soft landscaping", "Water features", "5-year guarantee"],
+    icon: Leaf,
   },
 ];
 
@@ -94,31 +94,44 @@ export default function ServicesPage() {
       />
 
       {/* Hero */}
-      <section className="relative py-24 bg-[#2c2c2c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Our Services
-              <span className="block text-[#c9b896] text-2xl md:text-3xl mt-2">Garden Design & Build</span>
+      <section className="relative min-h-[700px] lg:min-h-[750px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/new-website-design/hero for services page.png"
+            alt="Beautiful porcelain patio installation by Oliver Charles Garden Design"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 hero-overlay-services" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 font-serif">
+              Complete Garden<br />
+              Design & Build
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Professional garden landscaping services in Amersham, Chesham, Beaconsfield 
-              and throughout Buckinghamshire. From porcelain patios to complete garden transformations.
+            <div className="w-12 h-0.5 bg-[var(--color-bronze)] mb-6" />
+            <p className="text-xl sm:text-2xl text-[var(--color-bronze)] font-medium mb-6">
+              Beautiful outdoor spaces, crafted to endure.
+            </p>
+            <p className="text-base sm:text-lg text-white/75 max-w-lg mb-10 leading-relaxed">
+              From design to completion, we create exceptional gardens through thoughtful design, expert craftsmanship and meticulous attention to detail.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/contact/#contact-form"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium transition-colors"
               >
-                Get Free Quote
+                GET A FREE QUOTE
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
               <a
-                href="tel:07837666766"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#c9b896] font-semibold rounded-lg hover:bg-[#c9b896] hover:text-[#2c2c2c] transition-colors"
+                href="tel:+447837666766"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[#173026]/60 border border-[var(--color-bronze)]/40 text-white font-medium hover:bg-[#173026]/80 transition-colors"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                07837 666 766
+                +44 7837 666766
               </a>
             </div>
           </div>
@@ -126,113 +139,100 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow border border-gray-100"
-              >
-                <div className="grid md:grid-cols-2 h-full">
-                  <div className="relative h-64 md:h-full overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} - Professional installation by Oliver Charles Garden Design`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading={service.id === 'porcelain-patios' ? 'eager' : 'lazy'}
-                      priority={service.id === 'porcelain-patios'}
-                    />
-                  </div>
-                  <div className="p-8 flex flex-col justify-center">
-                    <h2 className="text-2xl font-bold text-[#2c2c2c] mb-4">
-                      {service.title}
-                    </h2>
-                    <p className="text-[#666666] mb-6">{service.description}</p>
-                    <ul className="space-y-2 mb-6">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm text-[#666666]">
-                          <Check className="w-4 h-4 text-[#c9b896]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <a
-                      href={`/services/${service.id}/`}
-                      className="inline-flex items-center text-[#c9b896] font-semibold hover:underline mt-auto"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-24 bg-[#f5f0e6]">
+      <section className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] mb-4">
-              Why Choose Oliver Charles?
+            <span className="inline-block text-xs font-medium tracking-[0.2em] text-[var(--color-bronze)] uppercase mb-4">
+              OUR SERVICES
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[var(--color-forest)] mb-6 font-serif">
+              Expert design. Exceptional build. Enduring results.
             </h2>
-            <p className="text-[#666666]">
-              We bring expertise, craftsmanship and dedication to every project.
+            <div className="w-12 h-0.5 bg-[var(--color-bronze)] mx-auto mb-6" />
+            <p className="text-[var(--color-text-light)] text-lg leading-relaxed">
+              We offer a complete range of garden design and construction services, delivering beautiful, functional spaces tailored to you.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "10+ Years Experience",
-                description: "Over a decade creating beautiful outdoor spaces across Buckinghamshire."
-              },
-              {
-                title: "5-Year Guarantee",
-                description: "All our work comes with a comprehensive 5-year workmanship guarantee."
-              },
-              {
-                title: "Local Expertise",
-                description: "Based in Amersham, serving Chesham, Beaconsfield and surrounding areas."
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm">
-                <h3 className="text-xl font-bold text-[#2c2c2c] mb-3">{item.title}</h3>
-                <p className="text-[#666666]">{item.description}</p>
-              </div>
-            ))}
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.id}
+                  className="group bg-[var(--color-off-white)] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="grid md:grid-cols-2 h-full">
+                    <div className="relative h-64 md:h-full min-h-[280px] overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={`${service.title} - Professional installation by Oliver Charles Garden Design`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading={service.id === 'porcelain-patios' ? 'eager' : 'lazy'}
+                        priority={service.id === 'porcelain-patios'}
+                      />
+                    </div>
+                    <div className="p-8 lg:p-10 flex flex-col justify-center">
+                      <Icon className="w-10 h-10 text-[var(--color-bronze)] mb-5" strokeWidth={1.25} />
+                      <h3 className="text-2xl font-medium text-[var(--color-forest)] mb-4 font-serif">
+                        {service.title}
+                      </h3>
+                      <p className="text-[var(--color-text-light)] mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+                      <a
+                        href={`/services/${service.id}/`}
+                        className="inline-flex items-center text-sm font-medium tracking-[0.1em] text-[var(--color-bronze)] hover:text-[var(--color-bronze-dark)] transition-colors mt-auto uppercase"
+                      >
+                        FIND OUT MORE
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#2c2c2c]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            Get a free, no-obligation quote. We serve Amersham, Chesham, Beaconsfield and all surrounding areas.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact/#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
-            >
-              Request Free Quote
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <a
-              href="tel:07837666766"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#c9b896] font-semibold rounded-lg hover:bg-[#c9b896] hover:text-[#2c2c2c] transition-colors"
-            >
-              <Phone className="mr-2 w-5 h-5" />
-              07837 666 766
-            </a>
+      <section className="relative py-20 lg:py-24 bg-[var(--color-forest)] overflow-hidden">
+        {/* Faint OC watermark */}
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.06] pointer-events-none">
+          <Image
+            src="/images/new-website-design/logo 2.jpg"
+            alt=""
+            width={320}
+            height={350}
+            className="object-contain"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-0">
+            <div className="lg:w-1/2 lg:pr-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-[1.15] font-serif">
+                Ready to create your<br />
+                perfect outdoor space?
+              </h2>
+            </div>
+            <div className="hidden lg:block w-px h-24 bg-[var(--color-bronze)]/40 self-center" />
+            <div className="lg:w-1/2 lg:pl-12">
+              <p className="text-white/80 mb-8 leading-relaxed">
+                Let&apos;s bring your ideas to life.<br />
+                Contact us today for a no-obligation consultation.
+              </p>
+              <a
+                href="/contact/#contact-form"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium transition-colors"
+              >
+                GET A FREE QUOTE
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>

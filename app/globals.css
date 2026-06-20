@@ -24,15 +24,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.625rem;
-    
-    /* Custom brand colors - legacy gold/cream palette */
-    --brand-gold: #c9b896;
-    --brand-gold-dark: #a8956e;
-    --brand-dark: #2c2c2c;
-    --brand-darker: #1a1a1a;
-    --brand-cream: #f5f0e6;
 
-    /* New design system - forest & bronze palette */
+    /* Design system - forest & bronze palette */
     --color-forest: #173026;
     --color-forest-light: #1e3d31;
     --color-forest-dark: #0f1c16;
@@ -54,7 +47,29 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--font-body), "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2 {
+    font-family: var(--font-heading), "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+
+  nav a, .nav-link {
+    font-family: var(--font-body), "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+
+  button, .btn,
+  a[class*="inline-flex"][class*="items-center"][class*="justify-center"][class*="px-"][class*="py-"] {
+    font-family: var(--font-body), "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.04em;
   }
 }
 
@@ -85,4 +100,9 @@ html {
 ::selection {
   background-color: var(--color-bronze);
   color: var(--color-off-white);
+}
+
+/* Services page hero overlay */
+.hero-overlay-services {
+  background: linear-gradient(to right, rgba(23, 48, 38, 0.95) 0%, rgba(23, 48, 38, 0.85) 45%, rgba(23, 48, 38, 0.4) 65%, transparent 100%);
 }

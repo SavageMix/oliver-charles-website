@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Star } from "lucide-react";
 
 const services = [
   "Porcelain Patio",
@@ -75,11 +75,11 @@ export default function ContactForm() {
   if (isSubmitted) {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-[#c9b896]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8 text-[#c9b896]" />
+        <div className="w-16 h-16 bg-[var(--color-bronze)]/10 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-[var(--color-bronze)]" />
         </div>
-        <h4 className="text-xl font-bold text-[#2c2c2c] mb-2">Thank You!</h4>
-        <p className="text-[#666666]">
+        <h4 className="text-xl font-serif font-medium text-[var(--color-text)] mb-2">Thank You!</h4>
+        <p className="text-[var(--color-text-light)]">
           Your enquiry has been sent. We&apos;ll be in touch within 24 hours.
         </p>
       </div>
@@ -87,10 +87,28 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid sm:grid-cols-2 gap-4">
+    <>
+      {/* Header */}
+      <div className="text-center mb-8">
+        <div className="flex justify-center gap-1 mb-3">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-4 h-4 fill-[var(--color-bronze)] text-[var(--color-bronze)]" />
+          ))}
+        </div>
+        <p className="text-sm text-[var(--color-text-light)] mb-3">
+          Trusted by homeowners across Buckinghamshire
+        </p>
+        <div className="w-12 h-px bg-[var(--color-bronze)] mx-auto mb-5" />
+        <h3 className="text-2xl font-serif font-medium text-[var(--color-text)] mb-2">Request a Free Quote</h3>
+        <p className="text-[var(--color-text-light)] text-sm">
+          Fill in the form below and we&apos;ll get back to you within 24 hours.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-[#666666] mb-1">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             First Name *
           </label>
           <input
@@ -99,12 +117,12 @@ export default function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
             placeholder="John"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-[#666666] mb-1">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             Last Name *
           </label>
           <input
@@ -113,7 +131,7 @@ export default function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
             placeholder="Smith"
           />
         </div>
@@ -121,7 +139,7 @@ export default function ContactForm() {
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-[#666666] mb-1">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             Email Address *
           </label>
           <input
@@ -130,12 +148,12 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
             placeholder="john@example.com"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-[#666666] mb-1">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             Phone Number *
           </label>
           <input
@@ -144,22 +162,22 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent"
-            placeholder="07837 666 766"
+            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+            placeholder="+44 7837 666766"
           />
         </div>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-[#666666] mb-1">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             Service Interested In
           </label>
           <select
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
           >
             <option value="">Select a service</option>
             {services.map((service) => (
@@ -170,7 +188,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-[#666666] mb-1">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             Postcode
           </label>
           <input
@@ -178,14 +196,14 @@ export default function ContactForm() {
             name="postcode"
             value={formData.postcode}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
             placeholder="HP6 5EQ"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[#666666] mb-1">
+        <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
           Tell us about your project
         </label>
         <textarea
@@ -193,13 +211,13 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="w-full px-4 py-3 rounded-lg border border-[#c9b896]/30 focus:outline-none focus:ring-2 focus:ring-[#c9b896] focus:border-transparent resize-none"
+          className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors resize-none"
           placeholder="Please describe your project, including any specific requirements or ideas you have in mind..."
         />
       </div>
 
       {submitError && (
-        <div className="p-4 bg-red-50 text-red-600 rounded-lg">
+        <div className="p-4 bg-red-50 text-red-600">
           {submitError}
         </div>
       )}
@@ -207,7 +225,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+        className="w-full py-4 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-white font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-none"
       >
         {isSubmitting ? (
           "Sending..."
@@ -219,9 +237,22 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="text-sm text-[#666666] text-center">
-        By submitting this form, you agree to our privacy policy.
-      </p>
+      {/* Trust Badges */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 border-t border-[var(--color-border)]">
+        <div className="flex items-center gap-2 text-sm text-[var(--color-text-light)]">
+          <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)]">
+            <CheckCircle className="w-3 h-3" />
+          </span>
+          <span>We&apos;ll reply within 24 hours</span>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-[var(--color-text-light)]">
+          <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)]">
+            <CheckCircle className="w-3 h-3" />
+          </span>
+          <span>Your details are never shared</span>
+        </div>
+      </div>
     </form>
+    </>
   );
 }

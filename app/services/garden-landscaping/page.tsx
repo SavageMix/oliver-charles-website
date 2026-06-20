@@ -12,6 +12,7 @@ const projects = [
   {
     id: 2,
     title: "Egyptian Limestone Patio",
+    slug: "egyptian-limestone-patio-herringbone-beaconsfield",
     location: "Beaconsfield, HP9",
     date: "December 2025",
     size: "120m²",
@@ -36,12 +37,13 @@ const projects = [
       quote:
         "Absolutely love our new garden! The Egyptian limestone with the herringbone pattern is stunning. The team worked tirelessly.",
       author: "Kaylee",
-      location: "Beaconsfield",
+      location: "Beaconsfield"
     },
   },
   {
     id: 3,
     title: "Garden Transformation",
+    slug: "garden-transformation-bourne-end",
     location: "Bourne End, SL8",
     date: "February 2024",
     size: "75m²",
@@ -66,12 +68,13 @@ const projects = [
       quote:
         "We couldn't be happier with our new garden. The team was professional, hardworking and the attention to detail was outstanding.",
       author: "Hannah",
-      location: "Bourne End",
+      location: "Bourne End"
     },
   },
   {
     id: 14,
     title: "Small garden Rebuild",
+    slug: "small-garden-rebuild-high-wycombe",
     location: "High Wycombe",
     date: "Sept 2023",
     size: "40m²",
@@ -94,7 +97,7 @@ const projects = [
     testimonial: {
       quote: "tldr",
       author: "Neil",
-      location: "High Wycombe",
+      location: "High Wycombe"
     },
   },
 ];
@@ -179,34 +182,44 @@ export default function GardenLandscapingPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-[#2c2c2c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Garden Landscaping
-              <span className="block text-[#c9b896] text-2xl md:text-3xl mt-2">
-                Amersham & Buckinghamshire
-              </span>
+      <section className="relative min-h-[600px] lg:min-h-[650px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/landscaping.webp"
+            alt="Complete garden landscaping transformation in Buckinghamshire featuring patio installation and professional planting schemes"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 hero-overlay-services" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6">
+              Garden<br />
+              Landscaping
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Complete garden transformations from design to completion. We bring
-              your outdoor vision to life across Amersham, Chesham, Beaconsfield
-              and beyond.
+            <div className="w-12 h-0.5 bg-[var(--color-bronze)] mb-6" />
+            <p className="text-xl sm:text-2xl text-[var(--color-bronze)] font-medium mb-6">
+              Amersham & Buckinghamshire
+            </p>
+            <p className="text-base sm:text-lg text-white/80 max-w-xl mb-10 leading-relaxed">
+              Complete garden transformations from design to completion. We bring your outdoor vision to life across Amersham, Chesham, Beaconsfield and beyond.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/contact/#contact-form"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium transition-colors"
               >
-                Get Free Quote
+                GET A FREE QUOTE
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
               <a
-                href="tel:07837666766"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#c9b896] font-semibold rounded-lg hover:bg-[#c9b896] hover:text-[#2c2c2c] transition-colors"
+                href="tel:+447837666766"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[#173026]/60 border border-[var(--color-bronze)]/40 text-white font-medium hover:bg-[#173026]/80 transition-colors"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                07837 666 766
+                +44 7837 666766
               </a>
             </div>
           </div>
@@ -214,10 +227,10 @@ export default function GardenLandscapingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+            <div className="order-2 lg:order-1 relative aspect-[4/3] overflow-hidden shadow-xl">
               <Image
                 src="/images/landscaping.webp"
                 alt="Complete garden landscaping transformation in Buckinghamshire featuring patio installation and professional planting schemes"
@@ -229,20 +242,17 @@ export default function GardenLandscapingPage() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] mb-6">
+              <h2 className="text-3xl sm:text-4xl font-serif font-medium text-[var(--color-text)] mb-6">
                 Complete Garden Transformations
               </h2>
-              <p className="text-[#666666] text-lg mb-8">
-                From initial concept to final planting, we handle every aspect of
-                your garden transformation. Our team combines creative design with
-                expert craftsmanship to create outdoor spaces that exceed
-                expectations.
+              <p className="text-[var(--color-text-light)] text-lg mb-8">
+                From initial concept to final planting, we handle every aspect of your garden transformation. Our team combines creative design with expert craftsmanship to create outdoor spaces that exceed expectations.
               </p>
               <ul className="space-y-4">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <Check className="w-6 h-6 text-[#c9b896]" />
-                    <span className="text-[#2c2c2c] font-medium">{feature}</span>
+                    <Check className="w-6 h-6 text-[var(--color-bronze)]" />
+                    <span className="text-[var(--color-text)] font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -252,13 +262,16 @@ export default function GardenLandscapingPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 bg-[#f5f0e6]">
+      <section className="py-24 lg:py-32 bg-[var(--color-stone)] border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] text-[var(--color-bronze)] uppercase mb-4">
+              Our Portfolio
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-forest)] mb-4">
               Our Landscaping Projects
             </h2>
-            <p className="text-[#666666]">
+            <p className="text-[var(--color-text-light)]">
               Browse our recent garden transformations across Buckinghamshire.
             </p>
           </div>
@@ -268,22 +281,21 @@ export default function GardenLandscapingPage() {
       </section>
 
       {/* Areas Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 lg:py-20 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="text-3xl font-bold text-[#2c2c2c] mb-4">
+            <h2 className="text-3xl font-serif font-medium text-[var(--color-text)] mb-4">
               Garden Landscaping Areas
             </h2>
-            <p className="text-[#666666]">
-              We provide complete garden landscaping throughout Buckinghamshire and
-              surrounding areas.
+            <p className="text-[var(--color-text-light)]">
+              We provide complete garden landscaping throughout Buckinghamshire and surrounding areas.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {areas.map((area) => (
               <span
                 key={area}
-                className="px-4 py-2 bg-[#f5f0e6] text-[#2c2c2c] rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-[var(--color-stone)] text-[var(--color-text)] text-sm font-medium"
               >
                 {area}
               </span>
@@ -293,29 +305,28 @@ export default function GardenLandscapingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#2c2c2c]">
+      <section className="py-20 lg:py-24 bg-[var(--color-forest)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-white mb-4">
             Ready to Transform Your Garden?
           </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            Get a free, no-obligation quote. We serve Amersham, Chesham,
-            Beaconsfield and all surrounding areas.
+          <p className="text-white/80 mb-10 text-lg">
+            Get a free, no-obligation quote. We serve Amersham, Chesham, Beaconsfield and all surrounding areas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact/#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium transition-colors"
             >
               Request Free Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a
-              href="tel:07837666766"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#c9b896] font-semibold rounded-lg hover:bg-[#c9b896] hover:text-[#2c2c2c] transition-colors"
+              href="tel:+447837666766"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-none border border-white/40 text-white hover:bg-white/10 font-medium transition-colors"
             >
               <Phone className="mr-2 w-5 h-5" />
-              07837 666 766
+              +44 7837 666766
             </a>
           </div>
         </div>

@@ -49,17 +49,17 @@ export default function ProjectsPage() {
       />
 
       {/* Hero */}
-      <section className="py-24 bg-[#2c2c2c] text-white">
+      <section className="py-24 lg:py-32 bg-[var(--color-forest)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-1.5 bg-[#c9b896]/20 text-[#c9b896] rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] text-[var(--color-bronze)] uppercase mb-4">
               Our Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Recent Projects in <span className="text-[#c9b896]">Buckinghamshire</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-6">
+              Recent Projects in <span className="text-[var(--color-bronze)]">Buckinghamshire</span>
             </h1>
-            <p className="text-xl text-gray-300">
-              Browse our portfolio of completed porcelain patios, composite decking, and glass balustrade 
+            <p className="text-xl text-white/80 leading-relaxed">
+              Browse our portfolio of completed porcelain patios, composite decking, and glass balustrade
               installations across Amersham, Chesham, and surrounding areas.
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 bg-[#f5f0e6]">
+      <section className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ProjectGrid projects={projects} categories={categories} />
 
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
           <div className="mt-12 text-center">
             <a
               href="/contact/#contact-form"
-              className="inline-flex items-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-semibold transition-colors"
             >
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5" />

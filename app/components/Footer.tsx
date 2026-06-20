@@ -44,17 +44,17 @@ const Footer = () => {
               <span className="block text-xl font-bold text-white tracking-wide">GARDEN DESIGN & BUILD</span>
             </div>
             <p className="text-white/60 mb-6 leading-relaxed">
-              Family-run garden design and build specialists in Amersham, Buckinghamshire. 
+              Family-Owned garden design and build specialists in Amersham, Buckinghamshire. 
               Transforming outdoor spaces with porcelain patios, composite decking, 
               and glass balustrades since 2015.
             </p>
             <div className="space-y-3">
               <a 
-                href="tel:07837666766" 
+                href="tel:+447837666766" 
                 className="flex items-center gap-3 text-white/60 hover:text-[var(--color-bronze)] transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                07837666766
+                +44 7837 666766
               </a>
               <a 
                 href="mailto:info@ocgardendesign.co.uk" 
@@ -167,7 +167,7 @@ const Footer = () => {
             <div className="text-white/50 text-sm text-center md:text-left">
               <p>&copy; {new Date().getFullYear()} Oliver Charles Garden Design & Build. All rights reserved.</p>
               <p className="mt-1">
-                Family-run garden design and build specialists in Amersham, Buckinghamshire.
+                Family-Owned garden design and build specialists in Amersham, Buckinghamshire.
               </p>
             </div>
             <div className="flex items-center gap-6 text-sm text-white/50">

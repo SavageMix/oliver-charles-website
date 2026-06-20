@@ -95,8 +95,8 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
   if (loading) {
     return (
       <div className="text-center py-12">
-        <div className="w-8 h-8 border-2 border-[#c9b896] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-        <p className="text-[#666666] text-sm">Loading Google Reviews...</p>
+        <div className="w-8 h-8 border-2 border-[var(--color-bronze)] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+        <p className="text-[var(--color-text-light)] text-sm">Loading Google Reviews...</p>
       </div>
     );
   }
@@ -105,16 +105,16 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
     <>
       {hasGoogleReviews && (
         <div className="text-center mb-8">
-          <p className="text-[#c9b896] font-semibold mb-2">✓ Verified Google Reviews</p>
-          <p className="text-[#666666] text-sm">
+          <p className="text-[var(--color-bronze)] font-medium mb-2">✓ Verified Google Reviews</p>
+          <p className="text-[var(--color-text-light)] text-sm">
             Latest reviews from our Google Business Profile
           </p>
         </div>
       )}
 
       {loadError && loadError !== 'HTTP 502' && (
-        <div className="text-center mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
-          <p className="text-yellow-800 text-sm">
+        <div className="text-center mb-8 p-4 bg-[var(--color-bronze)]/10 border border-[var(--color-bronze)]/20 rounded-lg">
+          <p className="text-[var(--color-bronze-dark)] text-sm">
             ⚠️ Could not load live Google reviews. Showing our featured testimonials instead.
           </p>
         </div>
@@ -124,44 +124,44 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
         {testimonials.map((testimonial, index) => (
           <div 
             key={index} 
-            className="bg-[#f5f0e6] p-8 rounded-2xl relative"
+            className="bg-[var(--color-stone)] p-8 relative border border-[var(--color-border)]"
           >
-            <Quote className="w-8 h-8 text-[#c9b896] absolute top-6 right-6 opacity-50" />
+            <Quote className="w-8 h-8 text-[var(--color-bronze)] absolute top-6 right-6 opacity-50" />
             
             {/* Stars */}
             <div className="flex gap-1 mb-4">
               {[...Array(testimonial.rating)].map((_, i) => (
                 <Star
                   key={i}
-                  className="w-5 h-5 text-[#c9b896] fill-[#c9b896]"
+                  className="w-5 h-5 text-[var(--color-bronze)] fill-[var(--color-bronze)]"
                 />
               ))}
             </div>
             
             {/* Project badge */}
             {testimonial.project && (
-              <span className="inline-block bg-[#c9b896] text-white text-xs px-3 py-1 rounded-full mb-3">
+              <span className="inline-block bg-[var(--color-forest)] text-white text-[10px] tracking-[0.08em] uppercase px-3 py-1 mb-3">
                 {testimonial.project}
               </span>
             )}
             
             {/* Quote */}
-            <p className="text-lg mb-6 italic">
+            <p className="text-lg mb-6 italic text-[var(--color-text)]">
               &ldquo;{testimonial.quote}&rdquo;
             </p>
             
             {/* Author */}
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-bold">{testimonial.author}</p>
-                <p className="text-sm text-[#666666]">{testimonial.location}</p>
+                <p className="font-medium text-[var(--color-text)]">{testimonial.author}</p>
+                <p className="text-sm text-[var(--color-text-light)]">{testimonial.location}</p>
               </div>
               {testimonial.googleReviewUrl && (
                 <a 
                   href={testimonial.googleReviewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#4285F4] text-sm hover:underline"
+                  className="text-[var(--color-bronze)] text-sm hover:underline"
                 >
                   Verified Google Review
                 </a>
@@ -176,7 +176,7 @@ export default function GoogleReviews({ fallbackTestimonials }: GoogleReviewsPro
           href="https://www.google.com/maps/search/?api=1&query=Oliver+Charles+Garden+Design%26Build+LTD"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-[#666666] hover:text-[#c9b896] transition-colors"
+          className="text-sm text-[var(--color-text-light)] hover:text-[var(--color-bronze)] transition-colors"
         >
           View all our reviews on Google →
         </a>

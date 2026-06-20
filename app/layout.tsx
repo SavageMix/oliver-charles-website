@@ -3,10 +3,25 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Script from "next/script";
+import { Cormorant_Garamond, Inter } from "next/font/google";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Oliver Charles Garden Design & Build | Landscaping Amersham",
-  description: "Family-run garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades. Free quotes, 5-year guarantee.",
+  description: "Family-Owned garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades. Free quotes, 5-year guarantee.",
   keywords: "garden design, landscaping, porcelain patio, composite decking, glass balustrade, Amersham, Buckinghamshire, HP6, HP7",
   alternates: {
     canonical: "https://www.olivercharlesgardendesign.co.uk",
@@ -51,7 +66,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Oliver Charles Garden Design & Build LTD",
-  "description": "Family-run garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades.",
+  "description": "Family-Owned garden design and build specialists in Amersham, Buckinghamshire. Expert installation of porcelain patios, composite decking & glass balustrades.",
   "url": "https://www.olivercharlesgardendesign.co.uk",
   "telephone": "+447837666766",
   "email": "info@ocgardendesign.co.uk",
@@ -159,7 +174,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <Script
@@ -195,28 +210,28 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased font-body">
         <Navigation />
         {children}
         <Footer />
         
         {/* Cookie Consent Banner */}
-        <div id="cookie-consent" className="fixed bottom-0 left-0 right-0 bg-[#2c2c2c] text-white p-4 z-50 shadow-lg transform translate-y-full transition-transform duration-300">
+        <div id="cookie-consent" className="fixed bottom-0 left-0 right-0 bg-[var(--color-forest)] text-white p-4 z-50 shadow-lg transform translate-y-full transition-transform duration-300">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-white/80">
               We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
-              <a href="/privacy-policy/" className="text-[#c9b896] hover:underline ml-1">View our Privacy Policy</a>
+              <a href="/privacy-policy/" className="text-[var(--color-bronze)] hover:underline ml-1">View our Privacy Policy</a>
             </p>
             <div className="flex gap-3">
               <button 
                 id="cookie-decline"
-                className="px-4 py-2 text-sm text-white/60 hover:text-white transition-colors"
+                className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 transition-colors"
               >
                 Decline
               </button>
               <button 
                 id="cookie-accept"
-                className="px-6 py-2 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] text-sm font-semibold rounded-lg transition-colors"
+                className="px-6 py-2 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold rounded-none transition-colors"
               >
                 Accept
               </button>

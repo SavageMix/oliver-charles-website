@@ -36,21 +36,21 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="/" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
+              <div className="relative w-11 h-12 overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/new-website-design/logo.jpg"
+                  src="/images/new-website-design/logo 2.jpg"
                   alt="Oliver Charles Garden Design & Build"
                   fill
-                  className="object-cover"
-                  sizes="40px"
+                  className="object-contain"
+                  sizes="48px"
                   priority
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-[11px] sm:text-xs font-medium tracking-[0.2em] text-[var(--color-bronze)] uppercase">
+                <span className="text-[11px] sm:text-xs font-medium tracking-[0.08em] text-[var(--color-bronze)] uppercase">
                   Oliver Charles
                 </span>
-                <span className="text-[10px] sm:text-[11px] tracking-[0.15em] text-white/70 uppercase">
+                <span className="text-[10px] sm:text-[11px] tracking-[0.08em] text-white/70 uppercase">
                   Garden Design & Build
                 </span>
               </div>
@@ -62,7 +62,7 @@ const Navigation = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-xs font-medium tracking-[0.15em] uppercase transition-colors ${
+                  className={`relative px-4 py-2 text-xs font-medium tracking-[0.08em] uppercase transition-colors ${
                     isActive(link.href)
                       ? "text-[var(--color-bronze)]"
                       : "text-white/80 hover:text-[var(--color-bronze)]"
@@ -77,17 +77,17 @@ const Navigation = () => {
             </div>
 
             {/* CTA & Phone */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-4">
               <a
-                href="tel:07837666766"
-                className="flex items-center gap-2 text-sm font-medium text-white/80 hover:text-[var(--color-bronze)] transition-colors"
+                href="tel:+447837666766"
+                className="inline-flex items-center justify-center w-10 h-10 bg-[var(--color-bronze)] text-[var(--color-forest)] hover:bg-[var(--color-bronze-light)] transition-colors"
+                aria-label="Call us"
               >
-                <Phone className="w-4 h-4" />
-                07837 666766
+                <Phone className="w-5 h-5" />
               </a>
               <a
                 href="/contact/#contact-form"
-                className="px-5 py-2.5 border border-[var(--color-bronze)] text-[var(--color-bronze)] text-xs font-semibold tracking-[0.1em] uppercase hover:bg-[var(--color-bronze)] hover:text-[var(--color-forest)] transition-colors"
+                className="px-5 py-2.5 border border-[var(--color-bronze)] text-[var(--color-bronze)] text-xs font-semibold tracking-[0.08em] uppercase hover:bg-[var(--color-bronze)] hover:text-[var(--color-forest)] transition-colors"
               >
                 Book Consultation
               </a>
@@ -131,15 +131,16 @@ const Navigation = () => {
             ))}
             <div className="pt-4 mt-4 border-t border-white/10 space-y-3">
               <a
-                href="tel:07837666766"
-                className="flex items-center gap-2 px-4 py-3 text-white/80 font-medium"
+                href="tel:+447837666766"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] font-semibold tracking-[0.1em] uppercase transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Phone className="w-5 h-5" />
-                07837 666766
+                +44 7837 666766
               </a>
               <a
                 href="/contact/#contact-form"
-                className="block w-full text-center px-4 py-3 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] font-semibold tracking-[0.1em] uppercase transition-colors"
+                className="block w-full text-center px-4 py-3 border border-[var(--color-bronze)] text-[var(--color-bronze)] font-semibold tracking-[0.1em] uppercase hover:bg-[var(--color-bronze)] hover:text-[var(--color-forest)] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book Consultation

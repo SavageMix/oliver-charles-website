@@ -8,34 +8,34 @@ export const metadata = {
 
 export default function NotFoundPage() {
   return (
-    <main className="min-h-screen bg-[#f5f0e6] flex items-center justify-center py-24">
+    <main className="min-h-screen bg-[var(--color-stone)] flex items-center justify-center py-24">
       <div className="max-w-2xl mx-auto px-4 text-center">
-        <div className="text-9xl font-bold text-[#c9b896] mb-4">404</div>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#2c2c2c] mb-4">
+        <div className="text-9xl font-bold text-[var(--color-bronze)] mb-4">404</div>
+        <h1 className="text-4xl md:text-5xl font-medium text-[var(--color-text)] mb-4">
           Page Not Found
         </h1>
-        <p className="text-xl text-[#666666] mb-8">
+        <p className="text-xl text-[var(--color-text-light)] mb-8">
           Sorry, we couldn't find the page you're looking for. 
           It might have been moved or doesn't exist.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <a
             href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#a8956e] transition-colors"
+            className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] text-[var(--color-forest)] font-semibold rounded-none hover:bg-[var(--color-bronze-light)] transition-colors"
           >
             <Home className="mr-2 w-5 h-5" />
             Back to Home
           </a>
           <a
-            href="tel:07837666766"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#2c2c2c] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#2c2c2c] hover:text-white transition-colors"
+            href="tel:+447837666766"
+            className="inline-flex items-center justify-center px-8 py-4 border-2 border-[var(--color-forest)] text-[var(--color-forest)] font-semibold rounded-none hover:bg-[var(--color-forest)] hover:text-[var(--color-off-white)] transition-colors"
           >
             <Phone className="mr-2 w-5 h-5" />
             Call Us
           </a>
         </div>
-        <div className="bg-white p-6 rounded-xl">
-          <h2 className="text-lg font-bold text-[#2c2c2c] mb-4">Popular Pages</h2>
+        <div className="bg-[var(--color-off-white)] p-6 rounded-xl">
+          <h2 className="text-lg font-medium text-[var(--color-text)] mb-4">Popular Pages</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {[
               { href: "/services/", label: "Our Services" },
@@ -48,7 +48,7 @@ export default function NotFoundPage() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 bg-[#f5f0e6] text-[#2c2c2c] rounded-lg hover:bg-[#c9b896] transition-colors"
+                className="px-4 py-2 bg-[var(--color-stone)] text-[var(--color-text)] rounded-lg hover:bg-[var(--color-bronze)] hover:text-[var(--color-forest)] transition-colors"
               >
                 {link.label}
               </a>

@@ -12,6 +12,7 @@ const projects = [
   {
     id: 4,
     title: "Glass Balustrade Balcony",
+    slug: "glass-balustrade-balcony-beaconsfield",
     location: "Beaconsfield, HP9",
     date: "September 2025",
     size: "18m",
@@ -31,12 +32,13 @@ const projects = [
       quote:
         "Professional installation from start to finish. The glass balustrade looks fantastic and we can finally enjoy our view.",
       author: "Michael & Linda Foster",
-      location: "Beaconsfield",
+      location: "Beaconsfield"
     },
   },
   {
     id: 3,
     title: "Garden Transformation",
+    slug: "garden-transformation-bourne-end",
     location: "Bourne End, SL8",
     date: "February 2024",
     size: "75m²",
@@ -61,7 +63,7 @@ const projects = [
       quote:
         "The glass balustrade on the retaining wall looks amazing! It provides safety while keeping the garden feeling open.",
       author: "Hannah",
-      location: "Bourne End",
+      location: "Bourne End"
     },
   },
 ];
@@ -146,34 +148,44 @@ export default function GlassBalustradesPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-[#2c2c2c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Glass Balustrade Installation
-              <span className="block text-[#c9b896] text-2xl md:text-3xl mt-2">
-                Amersham & Buckinghamshire
-              </span>
+      <section className="relative min-h-[600px] lg:min-h-[650px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/glass-balustrade.webp"
+            alt="Frameless glass balustrade installation on balcony in Beaconsfield"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 hero-overlay-services" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-white leading-[1.1] mb-6">
+              Glass Balustrade<br />
+              Installation
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Elegant glass balustrades that provide safety without sacrificing
-              views. Perfect for balconies, terraces, and garden levels in
-              Amersham, Chesham & Beaconsfield.
+            <div className="w-12 h-0.5 bg-[var(--color-bronze)] mb-6" />
+            <p className="text-xl sm:text-2xl text-[var(--color-bronze)] font-medium mb-6">
+              Amersham & Buckinghamshire
+            </p>
+            <p className="text-base sm:text-lg text-white/80 max-w-xl mb-10 leading-relaxed">
+              Elegant glass balustrades that provide safety without sacrificing views. Perfect for balconies, terraces, and garden levels in Amersham, Chesham & Beaconsfield.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/contact/#contact-form"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium transition-colors"
               >
-                Get Free Quote
+                GET A FREE QUOTE
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
               <a
-                href="tel:07837666766"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#c9b896] font-semibold rounded-lg hover:bg-[#c9b896] hover:text-[#2c2c2c] transition-colors"
+                href="tel:+447837666766"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[#173026]/60 border border-[var(--color-bronze)]/40 text-white font-medium hover:bg-[#173026]/80 transition-colors"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                07837 666 766
+                +44 7837 666766
               </a>
             </div>
           </div>
@@ -181,29 +193,26 @@ export default function GlassBalustradesPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] mb-6">
+              <h2 className="text-3xl sm:text-4xl font-serif font-medium text-[var(--color-text)] mb-6">
                 Why Choose Glass Balustrades?
               </h2>
-              <p className="text-[#666666] text-lg mb-8">
-                Create stunning visual impact with our premium glass balustrade
-                systems. Whether for a balcony, terrace, or garden retaining wall,
-                glass provides unobstructed views while meeting all safety
-                requirements.
+              <p className="text-[var(--color-text-light)] text-lg mb-8">
+                Create stunning visual impact with our premium glass balustrade systems. Whether for a balcony, terrace, or garden retaining wall, glass provides unobstructed views while meeting all safety requirements.
               </p>
               <ul className="space-y-4">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <Check className="w-6 h-6 text-[#c9b896]" />
-                    <span className="text-[#2c2c2c] font-medium">{feature}</span>
+                    <Check className="w-6 h-6 text-[var(--color-bronze)]" />
+                    <span className="text-[var(--color-text)] font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[4/3] overflow-hidden shadow-xl">
               <Image
                 src="/images/glass-balustrade.webp"
                 alt="Frameless glass balustrade installation on balcony in Beaconsfield"
@@ -219,15 +228,17 @@ export default function GlassBalustradesPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 bg-[#f5f0e6]">
+      <section className="py-24 lg:py-32 bg-[var(--color-stone)] border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] text-[var(--color-bronze)] uppercase mb-4">
+              Our Portfolio
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-forest)] mb-4">
               Our Glass Balustrade Projects
             </h2>
-            <p className="text-[#666666]">
-              Browse our recent glass balustrade installations across
-              Buckinghamshire.
+            <p className="text-[var(--color-text-light)]">
+              Browse our recent glass balustrade installations across Buckinghamshire.
             </p>
           </div>
 
@@ -236,22 +247,21 @@ export default function GlassBalustradesPage() {
       </section>
 
       {/* Areas Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 lg:py-20 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="text-3xl font-bold text-[#2c2c2c] mb-4">
+            <h2 className="text-3xl font-serif font-medium text-[var(--color-text)] mb-4">
               Glass Balustrade Installation Areas
             </h2>
-            <p className="text-[#666666]">
-              We install glass balustrades throughout Buckinghamshire and
-              surrounding areas.
+            <p className="text-[var(--color-text-light)]">
+              We install glass balustrades throughout Buckinghamshire and surrounding areas.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {areas.map((area) => (
               <span
                 key={area}
-                className="px-4 py-2 bg-[#f5f0e6] text-[#2c2c2c] rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-[var(--color-stone)] text-[var(--color-text)] text-sm font-medium"
               >
                 {area}
               </span>
@@ -261,29 +271,28 @@ export default function GlassBalustradesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#2c2c2c]">
+      <section className="py-20 lg:py-24 bg-[var(--color-forest)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-white mb-4">
             Ready for Your Glass Balustrade?
           </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            Get a free, no-obligation quote. We serve Amersham, Chesham,
-            Beaconsfield and all surrounding areas.
+          <p className="text-white/80 mb-10 text-lg">
+            Get a free, no-obligation quote. We serve Amersham, Chesham, Beaconsfield and all surrounding areas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact/#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#c9b896] hover:bg-[#a8956e] text-[#2c2c2c] font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium transition-colors"
             >
               Request Free Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a
-              href="tel:07837666766"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9b896] text-[#c9b896] font-semibold rounded-lg hover:bg-[#c9b896] hover:text-[#2c2c2c] transition-colors"
+              href="tel:+447837666766"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-none border border-white/40 text-white hover:bg-white/10 font-medium transition-colors"
             >
               <Phone className="mr-2 w-5 h-5" />
-              07837 666 766
+              +44 7837 666766
             </a>
           </div>
         </div>

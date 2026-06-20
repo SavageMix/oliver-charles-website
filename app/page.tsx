@@ -103,7 +103,7 @@ const projects = [
 ];
 
 const whyChooseUs = [
-  { title: '5-Year Guarantee', description: 'Every installation comes with our comprehensive 5-year workmanship guarantee, giving you complete peace of mind.' },
+  { title: 'Workmanship Guarantee', description: 'Every installation comes with our comprehensive 5-year workmanship guarantee, giving you complete peace of mind.' },
   { title: 'On-Time Completion', description: 'We respect your time. Our projects are completed efficiently without compromising on quality.' },
   { title: 'Eco-Friendly Materials', description: 'We prioritise sustainable, environmentally responsible materials wherever possible.' },
   { title: 'Premium Quality', description: 'Only the finest materials from trusted UK suppliers make it into our projects.' },
@@ -177,7 +177,7 @@ export default function HomePage() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-white/90">
                   <Award className="w-4 h-4" />
-                  Family Run
+                  Family-Owned
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-white/90">
                   <MapPin className="w-4 h-4" />
@@ -200,13 +200,13 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <a
                   href="/projects/"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors group"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors group"
                 >
                   View Our Work
                 </a>
                 <a
                   href="/contact/#contact-form"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-[var(--color-bronze)] text-white hover:text-[var(--color-bronze)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-none border border-white/30 hover:border-[var(--color-bronze)] text-white hover:text-[var(--color-bronze)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
                 >
                   Book a Consultation
                 </a>
@@ -238,16 +238,23 @@ export default function HomePage() {
       </section>
 
       {/* Hero Features Bar */}
-      <section className="bg-[var(--color-forest)] border-t border-white/10 py-12">
+      <section className="bg-[var(--color-forest)] border-t border-white/10 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {heroFeatures.map((feature, index) => (
-              <div key={index} className="text-center md:text-left">
-                <feature.icon className="w-8 h-8 text-[var(--color-bronze)] mx-auto md:mx-0 mb-4" strokeWidth={1.5} />
-                <h3 className="text-white font-semibold tracking-[0.05em] uppercase text-sm mb-2">
+              <div
+                key={index}
+                className={`relative text-center px-6 py-4 ${
+                  index < heroFeatures.length - 1
+                    ? 'after:hidden md:after:block after:absolute after:top-1/2 after:right-0 after:-translate-y-1/2 after:h-16 after:w-px after:bg-white/15'
+                    : ''
+                }`}
+              >
+                <feature.icon className="w-10 h-10 text-[var(--color-bronze)] mx-auto mb-5" strokeWidth={1.25} />
+                <h3 className="text-white font-semibold tracking-[0.12em] uppercase text-sm mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-white/60 text-sm">
+                <p className="text-[var(--color-bronze)] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -400,7 +407,7 @@ export default function HomePage() {
                 Your Trusted Local Landscaping Experts in Amersham
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6 leading-relaxed">
-                At <strong className="text-[var(--color-text)]">Oliver Charles Garden Design & Build</strong>, we take pride in being a family-run business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
+                At <strong className="text-[var(--color-text)]">Oliver Charles Garden Design & Build</strong>, we take pride in being a Family-Owned business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
               </p>
               <p className="text-[var(--color-text-light)] text-lg mb-8 leading-relaxed">
                 Specialising in <strong>porcelain patios</strong>, <strong>composite decking</strong>, and <strong>glass balustrades</strong>, we bring a personal touch to every project. With over 10 years of experience serving homeowners in the HP6 and HP7 postcode areas.
@@ -416,8 +423,8 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative overflow-hidden shadow-xl">
                 <Image
-                  src="/images/about-team.webp"
-                  alt="Oliver Charles Garden Design team at work on a landscaping project in Buckinghamshire"
+                  src="/images/new-website-design/hero for contact page 2.png"
+                  alt="Beautiful porcelain patio and garden landscaping by Oliver Charles Garden Design"
                   width={600}
                   height={500}
                   className="object-cover"
@@ -565,17 +572,17 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact/#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               Get Your Free Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a
-              href="tel:07837666766"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[var(--color-forest)] text-[var(--color-forest)] hover:bg-[var(--color-forest)] hover:text-[var(--color-off-white)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
+              href="tel:+447837666766"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-none border border-[var(--color-forest)] text-[var(--color-forest)] hover:bg-[var(--color-forest)] hover:text-[var(--color-off-white)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
             >
               <Phone className="mr-2 w-5 h-5" />
-              Call 07837666766
+              Call +44 7837 666766
             </a>
           </div>
         </div>

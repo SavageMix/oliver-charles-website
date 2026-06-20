@@ -1,4 +1,4 @@
-import { Star, ArrowRight, Quote } from "lucide-react";
+import { Star, ArrowRight, Phone } from "lucide-react";
 import { generateCanonicalMetadata } from "../lib/metadata";
 import GoogleReviews from "./GoogleReviews";
 
@@ -131,31 +131,18 @@ export default function TestimonialsPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <div className="bg-[#f5f0e6] py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[#666666]">
-            <a href="/" className="hover:text-[#c9b896]">
-              Home
-            </a>
-            <span className="mx-2">/</span>
-            <span className="text-[#2c2c2c]">Testimonials</span>
-          </nav>
-        </div>
-      </div>
-
       {/* Hero */}
-      <section className="py-16 bg-[#2c2c2c] text-white">
+      <section className="py-24 bg-[var(--color-forest)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-8 h-8 text-[#c9b896] fill-[#c9b896]" />
-              ))}
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Customer Reviews</h1>
-            <p className="text-xl text-gray-300">
-              Don&apos;t just take our word for it - see what our customers have to say
+            <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
+              Testimonials
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-white mb-6">
+              Customer Reviews
+            </h1>
+            <p className="text-lg text-white/70">
+              Don&apos;t just take our word for it — see what our customers have to say
               about their garden transformations.
             </p>
           </div>
@@ -163,18 +150,18 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-[#f5f0e6]">
+      <section className="py-12 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white p-6 rounded-2xl text-center shadow-sm"
+                className="bg-[var(--color-off-white)] p-6 text-center border border-[var(--color-border)]"
               >
-                <div className="text-3xl md:text-4xl font-bold text-[#c9b896] mb-2">
+                <div className="text-3xl md:text-4xl font-serif text-[var(--color-bronze)] mb-2">
                   {stat.value}
                 </div>
-                <div className="text-[#666666] text-sm">{stat.label}</div>
+                <div className="text-[var(--color-text-light)] text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -182,13 +169,13 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials - Client Component with fallback data */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#2c2c2c] mb-4">
+            <h2 className="text-3xl font-serif font-medium text-[var(--color-text)] mb-4">
               Featured Testimonials
             </h2>
-            <p className="text-[#666666]">
+            <p className="text-[var(--color-text-light)]">
               Real feedback from our satisfied customers across Buckinghamshire
             </p>
           </div>
@@ -198,21 +185,30 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#2c2c2c]">
+      <section className="py-16 bg-[var(--color-forest)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-serif font-medium text-white mb-4">
             Join Our Happy Customers
           </h2>
-          <p className="text-gray-300 mb-8">
+          <p className="text-white/70 mb-8">
             Ready to transform your outdoor space? Get your free quote today.
           </p>
-          <a
-            href="/contact/#contact-form"
-            className="inline-flex items-center px-8 py-4 bg-[#c9b896] text-[#2c2c2c] font-semibold rounded-lg hover:bg-[#a8956e] transition-colors"
-          >
-            Get Your Free Quote
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact/#contact-form"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-dark)] text-white font-medium rounded-none transition-colors"
+            >
+              Get Your Free Quote
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+            <a
+              href="tel:+447837666766"
+              className="inline-flex items-center justify-center px-8 py-4 border border-white/40 text-white hover:bg-white/10 font-medium rounded-none transition-colors"
+            >
+              <Phone className="mr-2 w-5 h-5" />
+              +44 7837 666766
+            </a>
+          </div>
         </div>
       </section>
     </main>
