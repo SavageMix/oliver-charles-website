@@ -1,5 +1,48 @@
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, CheckCircle, Star, Building2, Home, TreePine, Map } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle, Star } from "lucide-react";
+
+// Custom line-art icons matching the Areas We Cover reference artwork
+const AreaIconTree = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M12 3c-3 0-5.5 2.5-5.5 5.5 0 2.5 2 4.5 5.5 7.5 3.5-3 5.5-5 5.5-7.5C17.5 5.5 15 3 12 3Z" />
+    <path d="M12 16v5" />
+  </svg>
+);
+
+const AreaIconHousePlant = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M4 20h16" />
+    <path d="M6 20v-8a3 3 0 0 1 3-3h1" />
+    <path d="M14 20v-5a3 3 0 0 1 3-3h1" />
+    <path d="M10 9c0-2.5 2-4.5 4-4.5s4 2 4 4.5" />
+    <path d="M14 4.5c-1-1-3-1-4 0" />
+  </svg>
+);
+
+const AreaIconGardenFork = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M6 3l12 18" />
+    <path d="M5 17l2 1 2-2" />
+    <path d="M8 21l2 1 2-2" />
+  </svg>
+);
+
+const AreaIconHousePin = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M12 4L5 10h14L12 4z" />
+    <path d="M6 10v9h12v-9" />
+    <path d="M17 4.5a3.5 3.5 0 0 1 0 7 3.5 3.5 0 0 1 0-7z" />
+    <path d="M17 11.5l-1.5 2h3l-1.5-2z" />
+  </svg>
+);
+
+const AreaIconLightBulb = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M9 17h6" />
+    <path d="M10 20h4" />
+    <path d="M12 3a6 6 0 0 0-6 6c0 2.5 2 4.5 4 6v2h4v-2c2-1.5 4-3.5 4-6a6 6 0 0 0-6-6z" />
+  </svg>
+);
 import { generateCanonicalMetadata } from "../lib/metadata";
 import ContactForm from "./ContactForm";
 
@@ -219,11 +262,11 @@ export default function ContactPage() {
             {/* Right - Area Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {[
-                { name: "Amersham", detail: "HP6", icon: Building2 },
-                { name: "Chesham", detail: "HP5", icon: Home },
-                { name: "Beaconsfield", detail: "HP9", icon: TreePine },
-                { name: "High Wycombe", detail: "HP10, HP11", icon: MapPin },
-                { name: "Surrounding Areas", detail: "Buckinghamshire", icon: Map },
+                { name: "Amersham", detail: "HP6", Icon: AreaIconTree },
+                { name: "Chesham", detail: "HP5", Icon: AreaIconHousePlant },
+                { name: "Beaconsfield", detail: "HP9", Icon: AreaIconGardenFork },
+                { name: "High Wycombe", detail: "HP10, HP11", Icon: AreaIconHousePin },
+                { name: "Surrounding Areas", detail: "Buckinghamshire", Icon: AreaIconLightBulb },
               ].map((area) => (
                 <a
                   key={area.name}
@@ -231,7 +274,7 @@ export default function ContactPage() {
                   className="group flex flex-col items-center text-center py-6 px-3 bg-[var(--color-off-white)] hover:bg-[var(--color-stone)] transition-colors"
                 >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)] mb-4 group-hover:bg-[var(--color-bronze)] group-hover:text-[var(--color-forest)] transition-colors">
-                    <area.icon className="w-5 h-5" />
+                    <area.Icon />
                   </div>
                   <h3 className="font-medium text-[var(--color-text)] mb-1 text-sm">{area.name}</h3>
                   <p className="text-xs text-[var(--color-text-light)]">{area.detail}</p>
