@@ -61,7 +61,7 @@ export default function ContactPage() {
       <section className="contact-hero relative overflow-hidden">
         {/* Background Image */}
         <Image
-          src="/images/new-website-design/hero for contact page 2.png"
+          src="/images/new-website-design/hero for contact page 2.webp"
           alt="Composite decking and pergola garden design by Oliver Charles"
           fill
           className="object-cover object-center"

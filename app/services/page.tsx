@@ -97,7 +97,7 @@ export default function ServicesPage() {
       <section className="relative min-h-[700px] lg:min-h-[750px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/new-website-design/hero for services page.png"
+            src="/images/new-website-design/hero for services page.webp"
             alt="Beautiful porcelain patio installation by Oliver Charles Garden Design"
             fill
             className="object-cover"

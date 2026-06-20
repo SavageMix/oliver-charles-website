@@ -64,7 +64,7 @@ export default function AboutPage() {
       <section className="relative bg-[var(--color-forest)] text-white overflow-hidden">
         <div className="absolute inset-0 lg:left-[45%]">
           <Image
-            src="/images/new-website-design/hero for about page.jpg"
+            src="/images/new-website-design/hero for about page.webp"
             alt="Oliver Charles Garden Design landscaped garden"
             fill
             className="object-cover"

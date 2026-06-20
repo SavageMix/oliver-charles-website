@@ -151,7 +151,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/new-website-design/hero-page.png"
+            src="/images/new-website-design/hero-page.webp"
             alt="Beautifully lit porcelain patio and garden design at night"
             fill
             className="object-cover"
@@ -423,7 +423,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative overflow-hidden shadow-xl">
                 <Image
-                  src="/images/new-website-design/hero for contact page 2.png"
+                  src="/images/new-website-design/hero for contact page 2.webp"
                   alt="Beautiful porcelain patio and garden landscaping by Oliver Charles Garden Design"
                   width={600}
                   height={500}
