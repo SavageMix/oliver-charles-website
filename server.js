@@ -36,12 +36,12 @@ app.use(helmet({
     directives: {
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
-      imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com", "https://www.googletagmanager.com"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
+      imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
       connectSrc: isDev
-        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com"]
-        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com"],
-      frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk"],
+        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"]
+        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
+      frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk", "https://googleads.g.doubleclick.net"],
     },
   },
   crossOriginEmbedderPolicy: false,
