@@ -101,7 +101,7 @@ export default function TestimonialsPage() {
               bestRating: '5',
               worstRating: '1',
               itemReviewed: {
-                '@type': 'LocalBusiness',
+                '@type': 'HomeAndConstructionBusiness',
                 name: 'Oliver Charles Garden Design & Build',
                 url: 'https://www.olivercharlesgardendesign.co.uk',
                 telephone: '+447837666766',
@@ -131,7 +131,7 @@ export default function TestimonialsPage() {
                 name: t.author
               },
               itemReviewed: {
-                '@type': 'LocalBusiness',
+                '@type': 'HomeAndConstructionBusiness',
                 name: 'Oliver Charles Garden Design & Build',
                 url: 'https://www.olivercharlesgardendesign.co.uk'
               }

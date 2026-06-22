@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/chorleywood", {
   title: "Porcelain Patios, Composite Decking & Landscaping Chorleywood WD3 | Oliver Charles",
-  description: "Professional landscaping services in Chorleywood. Porcelain patios, decking & glass balustrades. Serving WD3 postcode area. Free quotes."
+  description: "Bespoke garden design & build services in Chorleywood. Porcelain patios, decking & glass balustrades. Serving WD3 postcode area. Free quotes."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function ChorleywoodPage() {
               <span className="text-[var(--color-bronze)]">5 miles from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Chorleywood</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Chorleywood</span>
             </h1>
             <p className="text-xl text-white/70">
               Serving Chorleywood with the same Family-Owned service and attention to detail. 
@@ -67,7 +67,7 @@ export default function ChorleywoodPage() {
                 Porcelain Patios, Composite Decking & Landscaping in Chorleywood
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                We provide expert landscaping services in Chorleywood, serving properties near 
+                We provide bespoke garden design & build services in Chorleywood, serving properties near 
                 the Common, around the station, and throughout the village. Our team understands 
                 the mix of period homes and modern developments in the area.
               </p>

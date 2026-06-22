@@ -72,7 +72,7 @@ export default function ServicesPage() {
                 description: service.description,
                 url: `https://www.olivercharlesgardendesign.co.uk/services/${service.id}/`,
                 provider: {
-                  '@type': 'LocalBusiness',
+                  '@type': 'HomeAndConstructionBusiness',
                   name: 'Oliver Charles Garden Design & Build',
                   url: 'https://www.olivercharlesgardendesign.co.uk',
                   telephone: '+447837666766',

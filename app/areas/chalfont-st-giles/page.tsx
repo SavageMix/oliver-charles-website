@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/chalfont-st-giles", {
   title: "Porcelain Patios, Composite Decking & Landscaping Chalfont St Giles HP8 | Oliver Charles",
-  description: "Expert landscaping services in Chalfont St Giles. Garden design, porcelain patios & decking. Free quotes for HP8 postcode area."
+  description: "Bespoke garden design & build services in Chalfont St Giles. Porcelain patios & decking. Free quotes for HP8 postcode area."
 });
 
 const services = [
@@ -48,10 +48,10 @@ export default function ChalfontStGilesPage() {
               <span className="text-[var(--color-bronze)]">4 miles from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Chalfont St Giles</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Chalfont St Giles</span>
             </h1>
             <p className="text-xl text-white/70">
-              Proud to serve this charming Buckinghamshire village with premium landscaping services. 
+              Proud to serve this charming Buckinghamshire village with premium garden design & build services. 
               Enhancing gardens near Milton's Cottage and throughout the village.
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function ChalfontStGilesPage() {
                 Porcelain Patios, Composite Decking & Landscaping in Chalfont St Giles
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                We provide expert landscaping services in Chalfont St Giles and the surrounding 
+                We provide bespoke garden design & build services in Chalfont St Giles and the surrounding 
                 area. Whether your property is a historic cottage or a modern family home, 
                 we create beautiful outdoor spaces that respect the village's character.
               </p>

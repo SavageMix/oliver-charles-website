@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/great-missenden", {
   title: "Porcelain Patios, Composite Decking & Landscaping Great Missenden HP16 | Oliver Charles",
-  description: "Garden landscaping services in Great Missenden & surrounding villages. Multi-level decking, patios & garden design. HP16 postcode."
+  description: "Bespoke garden design & build services in Great Missenden & surrounding villages. Multi-level decking, patios & garden design. HP16 postcode."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function GreatMissendenPage() {
               <span className="text-[var(--color-bronze)]">8 miles from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Great Missenden</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Great Missenden</span>
             </h1>
             <p className="text-xl text-white/70">
               Bringing our expertise to Great Missenden and the surrounding Chiltern villages. 
@@ -67,7 +67,7 @@ export default function GreatMissendenPage() {
                 Porcelain Patios, Composite Decking & Landscaping in Great Missenden
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                We provide expert landscaping services throughout Great Missenden and the 
+                We provide bespoke garden design & build services throughout Great Missenden and the 
                 surrounding Chiltern villages. Whether you have a sloping garden with views 
                 over the Chiltern Hills or a more traditional plot, we have the expertise to help.
               </p>

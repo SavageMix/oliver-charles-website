@@ -104,7 +104,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     description: project.description,
     image: `${BASE_URL}${project.images[0]}`,
     brand: {
-      '@type': 'LocalBusiness',
+      '@type': 'HomeAndConstructionBusiness',
       name: 'Oliver Charles Garden Design & Build LTD',
       url: 'https://www.olivercharlesgardendesign.co.uk',
       telephone: '+447837666766',

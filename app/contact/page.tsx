@@ -37,7 +37,7 @@ export default function ContactPage() {
             description: 'Get in touch for a free quote on your garden project. Call +44 7837 666766 or fill out our contact form. Serving Amersham, Chesham & Buckinghamshire.',
             url: 'https://www.olivercharlesgardendesign.co.uk/contact/',
             mainEntity: {
-              '@type': 'LocalBusiness',
+              '@type': 'HomeAndConstructionBusiness',
               name: 'Oliver Charles Garden Design & Build',
               url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',

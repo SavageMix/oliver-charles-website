@@ -106,7 +106,7 @@ const whyChooseUs = [
   { title: 'Workmanship Guarantee', description: 'Every installation comes with our comprehensive 5-year workmanship guarantee, giving you complete peace of mind.' },
   { title: 'On-Time Completion', description: 'We respect your time. Our projects are completed efficiently without compromising on quality.' },
   { title: 'Eco-Friendly Materials', description: 'We prioritise sustainable, environmentally responsible materials wherever possible.' },
-  { title: 'Premium Quality', description: 'Only the finest materials from trusted UK suppliers make it into our projects.' },
+  { title: 'Premium Craftsmanship', description: 'Bespoke design and meticulous construction by our in-house garden design & build studio.' },
   { title: 'Expert Craftsmanship', description: 'Our skilled team brings years of experience and attention to detail to every project.' },
   { title: 'Local Knowledge', description: 'Based in Amersham, we understand local properties, weather conditions, and planning requirements.' },
 ];
@@ -128,8 +128,8 @@ const heroFeatures = [
   },
   {
     icon: Leaf,
-    title: 'Quality Materials',
-    description: 'Carefully selected for lasting beauty'
+    title: 'Curated Materials',
+    description: 'Hand-selected surfaces chosen for longevity and aesthetic refinement'
   },
   {
     icon: Hammer,
@@ -279,7 +279,7 @@ export default function HomePage() {
               Our Services
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
-              Our Landscaping Services
+              Our Design & Build Services
             </h2>
             <p className="text-lg text-[var(--color-text-light)]">
               Specialising in porcelain patios, composite decking, and glass balustrades, 
@@ -404,7 +404,7 @@ export default function HomePage() {
                 About Us
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
-                Your Trusted Local Landscaping Experts in Amersham
+                Your Bespoke Garden Design & Build Studio in Amersham
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6 leading-relaxed">
                 At <strong className="text-[var(--color-text)]">Oliver Charles Garden Design & Build</strong>, we take pride in being a Family-Owned business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
@@ -505,7 +505,7 @@ export default function HomePage() {
               Serving <span className="text-[var(--color-bronze)]">Buckinghamshire</span> & Beyond
             </h2>
             <p className="text-[var(--color-text-light)]">
-              Based in Amersham, we provide our premium landscaping services across Buckinghamshire and the surrounding Home Counties.
+              Based in Amersham, we provide our premium garden design & build services across Buckinghamshire and the surrounding Home Counties.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

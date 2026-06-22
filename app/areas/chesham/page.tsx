@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/chesham", {
   title: "Porcelain Patios, Composite Decking & Landscaping Chesham HP5 | Oliver Charles",
-  description: "Expert landscaping services in Chesham. Porcelain patios, composite decking & garden design. Free quotes for HP5 postcode area."
+  description: "Bespoke garden design & build services in Chesham. Porcelain patios, composite decking. Free quotes for HP5 postcode area."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function CheshamPage() {
               <span className="text-[var(--color-bronze)]">15 minutes from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Chesham</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Chesham</span>
             </h1>
             <p className="text-xl text-white/70">
               Serving Chesham and surrounding villages with quality craftsmanship. 
@@ -67,7 +67,7 @@ export default function CheshamPage() {
                 Porcelain Patios, Composite Decking & Landscaping in Chesham
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                We provide expert landscaping services throughout Chesham and the surrounding villages. 
+                We provide bespoke garden design & build services throughout Chesham and the surrounding villages. 
                 Whether you have a modern property near Lowndes Park or a traditional home in the 
                 old town, we have the expertise to transform your outdoor space.
               </p>

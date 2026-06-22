@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/little-chalfont", {
   title: "Porcelain Patios, Composite Decking & Landscaping Little Chalfont HP7 | Oliver Charles",
-  description: "Professional garden landscaping in Little Chalfont. Porcelain patios, composite decking & glass balustrades. Free quotes for HP7 postcode."
+  description: "Bespoke garden design & build in Little Chalfont. Porcelain patios, composite decking & glass balustrades. Free quotes for HP7 postcode."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function LittleChalfontPage() {
               <span className="text-[var(--color-bronze)]">2 miles from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Little Chalfont</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Little Chalfont</span>
             </h1>
             <p className="text-xl text-white/70">
               Transforming gardens in Little Chalfont with porcelain patios, decking, and glass balustrades. 
@@ -130,7 +130,7 @@ export default function LittleChalfontPage() {
             Get Your Free Little Chalfont Quote
           </h2>
           <p className="text-white/70 mb-8">
-            Contact your local Little Chalfont landscapers today. Free site survey and quote.
+            Contact your local Little Chalfont design & build team today. Free site survey and quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

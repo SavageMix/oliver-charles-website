@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas", {
   title: "Areas We Cover | Landscaping Services Buckinghamshire",
-  description: "Garden design & landscaping services across Buckinghamshire including Amersham, Chesham, Beaconsfield, Chalfont St Giles & surrounding areas."
+  description: "Bespoke garden design & build studio serving Buckinghamshire including Amersham, Chesham, Beaconsfield, Chalfont St Giles & surrounding areas. Luxury outdoor transformations."
 });
 
 const areas = [
@@ -116,7 +116,7 @@ export default function AreasPage() {
               name: 'Garden Landscaping Services',
               description: 'Garden design & landscaping services across Buckinghamshire including Amersham, Chesham, Beaconsfield, Chalfont St Giles & surrounding areas.',
               provider: {
-                '@type': 'LocalBusiness',
+                '@type': 'HomeAndConstructionBusiness',
                 name: 'Oliver Charles Garden Design & Build',
                 url: 'https://www.olivercharlesgardendesign.co.uk',
                 telephone: '+447837666766',
@@ -151,7 +151,7 @@ export default function AreasPage() {
               Serving Buckinghamshire & Beyond
             </h1>
             <p className="text-lg text-white/70">
-              Based in Amersham, we provide our premium landscaping services across Buckinghamshire 
+              Based in Amersham, we provide our premium garden design & build services across Buckinghamshire 
               and the surrounding Home Counties. We&apos;re local, so we&apos;re never far away.
             </p>
           </div>

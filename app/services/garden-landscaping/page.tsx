@@ -151,7 +151,7 @@ export default function GardenLandscapingPage() {
             name: 'Garden Landscaping',
             description: 'Complete garden transformations from design to completion. We bring your outdoor vision to life across Amersham, Chesham, Beaconsfield and beyond.',
             provider: {
-              '@type': 'LocalBusiness',
+              '@type': 'HomeAndConstructionBusiness',
               name: 'Oliver Charles Garden Design & Build',
               url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',

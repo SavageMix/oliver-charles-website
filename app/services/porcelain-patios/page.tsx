@@ -284,7 +284,7 @@ export default function PorcelainPatiosPage() {
             name: 'Porcelain Patio Installation',
             description: 'Premium porcelain patio specialists serving Amersham, Chesham, Beaconsfield and surrounding areas. Frost-resistant, slip-proof, and built to last with our 5-year guarantee.',
             provider: {
-              '@type': 'LocalBusiness',
+              '@type': 'HomeAndConstructionBusiness',
               name: 'Oliver Charles Garden Design & Build',
               url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',

@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/high-wycombe", {
   title: "Porcelain Patios, Composite Decking & Landscaping High Wycombe HP10-HP15 | Oliver Charles",
-  description: "Expert garden landscaping in High Wycombe & surrounding areas. Porcelain patios, decking & garden design. Serving HP10-HP15 postcodes."
+  description: "Bespoke garden design & build in High Wycombe & surrounding areas. Porcelain patios, decking & garden design. Serving HP10-HP15 postcodes."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function HighWycombePage() {
               <span className="text-[var(--color-bronze)]">10 miles from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">High Wycombe</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">High Wycombe</span>
             </h1>
             <p className="text-xl text-white/70">
               Extending our services to High Wycombe and the surrounding areas. 
@@ -67,7 +67,7 @@ export default function HighWycombePage() {
                 Porcelain Patios, Composite Decking & Landscaping in High Wycombe
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                We provide expert landscaping services throughout High Wycombe and the surrounding 
+                We provide bespoke garden design & build services throughout High Wycombe and the surrounding 
                 villages. From properties in the town centre to homes in the Chiltern Hills, 
                 we bring quality craftsmanship to every project.
               </p>

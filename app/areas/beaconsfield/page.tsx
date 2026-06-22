@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/beaconsfield", {
   title: "Porcelain Patios, Composite Decking & Landscaping Beaconsfield HP9 | Oliver Charles",
-  description: "Premium garden landscaping in Beaconsfield. Porcelain patios, glass balustrades & composite decking. Serving Old & New Town. Free quotes."
+  description: "Bespoke garden design & build in Beaconsfield. Porcelain patios, glass balustrades & composite decking. Serving Old & New Town. Free quotes."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function BeaconsfieldPage() {
               <span className="text-[var(--color-bronze)]">6 miles from our base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Beaconsfield</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Beaconsfield</span>
             </h1>
             <p className="text-xl text-white/70">
               Creating beautiful outdoor spaces for Beaconsfield homeowners. 
@@ -67,7 +67,7 @@ export default function BeaconsfieldPage() {
                 Porcelain Patios, Composite Decking & Landscaping in Beaconsfield
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                We provide expert landscaping services throughout Beaconsfield, serving both 
+                We provide bespoke garden design & build services throughout Beaconsfield, serving both 
                 the historic Old Town and the modern New Town. Whether you have a contemporary 
                 property or a traditional home, we create outdoor spaces that complement your property.
               </p>

@@ -117,7 +117,7 @@ export default function GlassBalustradesPage() {
             name: 'Glass Balustrade Installation',
             description: 'Elegant glass balustrades that provide safety without sacrificing views. Perfect for balconies, terraces, and garden levels in Amersham, Chesham & Beaconsfield.',
             provider: {
-              '@type': 'LocalBusiness',
+              '@type': 'HomeAndConstructionBusiness',
               name: 'Oliver Charles Garden Design & Build',
               url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',

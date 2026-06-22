@@ -3,7 +3,7 @@ import { generateCanonicalMetadata } from "../../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/areas/amersham", {
   title: "Porcelain Patios, Composite Decking & Landscaping Amersham HP6 HP7 | Oliver Charles",
-  description: "Professional garden landscaping services in Amersham. Porcelain patios, composite decking, glass balustrades. Free quotes for HP6 & HP7 postcodes."
+  description: "Bespoke garden design & build services in Amersham. Porcelain patios, composite decking, glass balustrades. Free quotes for HP6 & HP7 postcodes."
 });
 
 const services = [
@@ -48,7 +48,7 @@ export default function AmershamPage() {
               <span className="text-[var(--color-bronze)]">Our Home Base</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6">
-              Landscaping Services in <span className="text-[var(--color-bronze)]">Amersham</span>
+              Garden Design &amp; Build in <span className="text-[var(--color-bronze)]">Amersham</span>
             </h1>
             <p className="text-xl text-white/70">
               Your local garden design & build specialists in Amersham. We know Amersham properties 
@@ -67,7 +67,7 @@ export default function AmershamPage() {
                 Porcelain Patios, Composite Decking & Landscaping in Amersham
               </h2>
               <p className="text-[var(--color-text-light)] text-lg mb-6">
-                As Amersham-based landscapers, we're never far away. We understand the unique character 
+                As an Amersham-based design & build studio, we're never far away. We understand the unique character 
                 of Amersham properties and gardens, from the historic cottages in Old Amersham to 
                 contemporary homes in newer developments.
               </p>
@@ -153,7 +153,7 @@ export default function AmershamPage() {
             Get Your Free Amersham Quote
           </h2>
           <p className="text-white/70 mb-8">
-            Contact your local Amersham landscapers today. Free site survey and detailed quote.
+            Contact your local Amersham design & build team today. Free site survey and detailed quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

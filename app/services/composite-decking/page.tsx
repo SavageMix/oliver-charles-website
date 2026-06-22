@@ -227,7 +227,7 @@ export default function CompositeDeckingPage() {
             name: 'Composite Decking Installation',
             description: 'Premium composite decking solutions that combine the natural beauty of wood with zero maintenance requirements. Perfect for Amersham, Chesham & Beaconsfield gardens.',
             provider: {
-              '@type': 'LocalBusiness',
+              '@type': 'HomeAndConstructionBusiness',
               name: 'Oliver Charles Garden Design & Build',
               url: 'https://www.olivercharlesgardendesign.co.uk',
               telephone: '+447837666766',
