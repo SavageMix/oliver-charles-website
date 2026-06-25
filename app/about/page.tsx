@@ -184,7 +184,7 @@ export default function AboutPage() {
             {[
               { num: "01", title: "Site Survey & Brief", desc: "We visit your property to assess the ground conditions, check levels, analyze drainage requirements, and map out your structural layout goals." },
               { num: "02", title: "Master Planning & Spec", desc: "We engineer a comprehensive master plan, mapping out the precise materials, structural brickwork details, and structural sub-base depths required." },
-              { num: "03", title: "Fixed Itemized Estimate", desc: "You receive a fully transparent, breakdown cost estimate. No hidden fees, no guesswork—clear material pricing and timelines from the start." },
+              { num: "03", title: "Fixed Itemized Estimate", desc: "You receive a fully transparent, cost estimate. No hidden fees, no guesswork—clear pricing and timelines from the start." },
               { num: "04", title: "In-House Groundworks", desc: "Our team handles the entire build. We manage the deep excavation, drainage installations, heavy brickwork, and precision masonry entirely in-house." },
               { num: "05", title: "Final Sign-Off & Handover", desc: "We conduct a final structural walk-through with you to inspect levels, clean the site completely, and formally sign off on your new outdoor space." },
             ].map((item, idx) => (
