@@ -83,7 +83,7 @@ export default function AboutPage() {
             </h1>
             <div className="w-16 h-0.5 bg-[var(--color-bronze)] mb-6" />
             <p className="text-lg text-white/80 leading-relaxed max-w-xl">
-              Oliver Charles was founded with one simple goal â€” to create exceptional outdoor spaces through considered design, meticulous craftsmanship and a commitment to doing things properly.
+              Oliver Charles was founded with one simple goal to create exceptional outdoor spaces through considered design, meticulous craftsmanship and a commitment to doing things properly.
             </p>
           </div>
         </div>
