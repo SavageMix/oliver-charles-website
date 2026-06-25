@@ -83,7 +83,7 @@ export default function AboutPage() {
             </h1>
             <div className="w-16 h-0.5 bg-[var(--color-bronze)] mb-6" />
             <p className="text-lg text-white/80 leading-relaxed max-w-xl">
-              Oliver Charles was founded with one simple goal — to create exceptional outdoor spaces through considered design, meticulous craftsmanship and a commitment to doing things properly.
+              Oliver Charles was founded with one simple goal â€” to create exceptional outdoor spaces through considered design, meticulous craftsmanship and a commitment to doing things properly.
             </p>
           </div>
         </div>
@@ -96,20 +96,20 @@ export default function AboutPage() {
             {/* Left Content */}
             <div>
               <span className="inline-block text-[11px] tracking-[0.15em] uppercase text-[var(--color-bronze)] font-medium mb-4">
-                A DIFFERENT APPROACH
+                ENGINEERED TO LAST
               </span>
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-[var(--color-text)] mb-6 leading-[1.1]">
-                More Than Landscaping,<br />It&apos;s a Partnership.
+                Ground-Up Construction. Zero Compromise.
               </h2>
               <div className="space-y-5 text-[var(--color-text-light)] leading-relaxed">
                 <p>
-                  Most landscaping companies begin with paving. We begin with understanding how you want to live outdoors.
+                  A great garden relies entirely on what sits beneath the surface. We do not just roll out turf and lay slabs; we engineer the entire outdoor space. From substantial site clearance and deep excavation to correct drainage layouts and load-bearing sub-bases, our builds are physically structurally sound.
                 </p>
                 <p>
-                  Every Oliver Charles project is individually considered, carefully planned and meticulously built using premium materials and proven construction methods.
+                  Every project we undertake is built completely in-house by our own team. We manage the structural masonry, precision brickwork, custom timber framing, and porcelain paving from day one until handover.
                 </p>
                 <p>
-                  We don&apos;t believe in rushed installations or cutting corners. We believe great gardens should still look exceptional years after completion.
+                  We do not rush ground preparation, and we do not cut corners on material specifications. We build gardens designed to handle the British weather and remain perfectly level for decades.
                 </p>
               </div>
             </div>
@@ -182,11 +182,11 @@ export default function AboutPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { num: "01", title: "Consultation", desc: "We start by listening. Understanding your ideas, lifestyle and how you want to use your outdoor space." },
-              { num: "02", title: "Design", desc: "We create a tailored design that brings your vision to life with function, flow and beauty." },
-              { num: "03", title: "Detailed Proposal", desc: "You'll receive a clear, transparent proposal with every detail outlined." },
-              { num: "04", title: "Construction", desc: "Our skilled team brings the design to life with precision, care and attention to detail." },
-              { num: "05", title: "Handover", desc: "We complete every project to the highest standard and ensure you are 100% happy." },
+              { num: "01", title: "Site Survey & Brief", desc: "We visit your property to assess the ground conditions, check levels, analyze drainage requirements, and map out your structural layout goals." },
+              { num: "02", title: "Master Planning & Spec", desc: "We engineer a comprehensive master plan, mapping out the precise materials, structural brickwork details, and structural sub-base depths required." },
+              { num: "03", title: "Fixed Itemized Estimate", desc: "You receive a fully transparent, breakdown cost estimate. No hidden fees, no guesswork—clear material pricing and timelines from the start." },
+              { num: "04", title: "In-House Groundworks", desc: "Our team handles the entire build. We manage the deep excavation, drainage installations, heavy brickwork, and precision masonry entirely in-house." },
+              { num: "05", title: "Final Sign-Off & Handover", desc: "We conduct a final structural walk-through with you to inspect levels, clean the site completely, and formally sign off on your new outdoor space." },
             ].map((item, idx) => (
               <div key={item.num} className="relative">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--color-bronze)] text-[var(--color-bronze)] text-sm font-medium mb-4">

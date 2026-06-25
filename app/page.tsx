@@ -192,7 +192,7 @@ export default function HomePage() {
                 </h1>
                 <div className="w-16 h-[2px] bg-[var(--color-bronze)]" />
                 <p className="text-lg sm:text-xl text-white/80 max-w-xl leading-relaxed">
-                  We create considered gardens through thoughtful design, expert craftsmanship and meticulous construction.
+                  We are premier design and build contractors specializing in complete garden overhauls, high-end brickwork, precision ground leveling, and bespoke porcelain patio construction across Amersham and Buckinghamshire.
                 </p>
               </div>
 
@@ -202,13 +202,13 @@ export default function HomePage() {
                   href="/projects/"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-none bg-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] text-[var(--color-forest)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors group"
                 >
-                  View Our Work
+                  VIEW RECENT BUILDS
                 </a>
                 <a
                   href="/contact/#contact-form"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-none border border-white/30 hover:border-[var(--color-bronze)] text-white hover:text-[var(--color-bronze)] text-sm font-semibold tracking-[0.1em] uppercase transition-colors"
                 >
-                  Book a Consultation
+                  REQUEST A SITE ESTIMATE
                 </a>
               </div>
 

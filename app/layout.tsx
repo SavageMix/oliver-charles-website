@@ -20,9 +20,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Oliver Charles Garden Design & Build | Landscaping Amersham",
-  description: "Bespoke garden design & build studio in Amersham, Buckinghamshire. Luxury outdoor transformations including porcelain patios, composite decking & glass balustrades. Premium craftsmanship, free consultations, 5-year guarantee.",
-  keywords: "garden design, garden design amersham, landscape design, landscaping, porcelain patio, composite decking, glass balustrade, Amersham, Buckinghamshire, HP6, HP7",
+  title: "Oliver Charles Garden Design & Build | Landscape Construction & Builders Amersham",
+  description: "Bespoke hard landscaping and complete garden construction contractors in Amersham. Specializing in luxury porcelain paving, retaining brickwork, and turfing works.",
+  keywords: "landscape construction, garden construction, builders amersham, hard landscaping, porcelain paving, retaining brickwork, turfing works, garden design, landscaping, Amersham, Buckinghamshire, HP6, HP7",
   alternates: {
     canonical: "https://www.olivercharlesgardendesign.co.uk",
   },
@@ -67,7 +67,7 @@ const structuredData = {
   "@type": "HomeAndConstructionBusiness",
   "@id": "https://www.olivercharlesgardendesign.co.uk/#business",
   "name": "Oliver Charles Garden Design & Build LTD",
-  "description": "Bespoke garden design and build studio based in Amersham, Buckinghamshire. We create luxury outdoor living spaces through premium craftsmanship, including porcelain patios, composite decking and glass balustrades.",
+  "description": "Bespoke hard landscaping and complete garden construction contractors based in Amersham, Buckinghamshire. Specializing in luxury porcelain paving, retaining brickwork, turfing works, composite decking and glass balustrades.",
   "url": "https://www.olivercharlesgardendesign.co.uk",
   "telephone": "+447837666766",
   "email": "info@ocgardendesign.co.uk",

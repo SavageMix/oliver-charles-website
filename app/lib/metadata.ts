@@ -11,8 +11,8 @@ export function generateCanonicalMetadata(path: string = "", params?: MetadataPa
     ? BASE_URL 
     : `${BASE_URL}${path}`;
   
-  const defaultTitle = "Oliver Charles Garden Design & Build | Bespoke Garden Design Amersham";
-  const defaultDescription = "Bespoke garden design & build studio in Amersham, Buckinghamshire. Luxury outdoor transformations including porcelain patios, composite decking & glass balustrades. Premium craftsmanship, free consultations, 5-year guarantee.";
+  const defaultTitle = "Oliver Charles Garden Design & Build | Landscape Construction & Builders Amersham";
+  const defaultDescription = "Bespoke hard landscaping and complete garden construction contractors in Amersham. Specializing in luxury porcelain paving, retaining brickwork, and turfing works.";
   
   return {
     title: params?.title || defaultTitle,
