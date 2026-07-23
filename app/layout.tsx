@@ -201,19 +201,15 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Ads Conversion Tracking */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18189121818"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18189121818');
-          `}
-        </Script>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18189121818"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-18189121818');
+        `}} />
         
         {/* Schema.org Structured Data */}
         <script
