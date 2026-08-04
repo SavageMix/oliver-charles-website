@@ -20,12 +20,29 @@ const PORT = process.env.PORT || 3000;
 // Security: Trust proxy (required for rate limiting behind reverse proxy)
 app.set('trust proxy', 1);
 
-// Security: CORS - only allow requests from your domain in production
+// Security: CORS - only allow requests from your domains in production
+const allowedOrigins = [
+  'https://www.olivercharlesgardendesign.co.uk',
+  'https://olivercharlesgardendesign.co.uk',
+  'https://www.olivercharlesgardendesign.com',
+  'https://olivercharlesgardendesign.com',
+  'http://localhost:3000',
+  'http://localhost:5173',
+];
+
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL || 'https://www.olivercharlesgardendesign.co.uk'] 
-    : ['http://localhost:3000', 'http://localhost:5173'],
-  optionsSuccessStatus: 200
+  origin: (origin, callback) => {
+    // Allow requests with no origin (e.g., server-to-server, curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    console.error(`CORS blocked origin: ${origin}`);
+    callback(new Error('Not allowed by CORS'));
+  },
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
