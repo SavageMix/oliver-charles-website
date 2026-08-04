@@ -37,8 +37,14 @@ if (process.env.FRONTEND_URL) {
 const corsOptions = {
   origin: (origin, callback) => {
     // Allow requests with no origin (e.g., server-to-server, curl)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
+    if (!origin) {
+      console.log('CORS: request with no origin allowed');
+      return callback(null, true);
+    }
+    if (allowedOrigins.includes(origin)) {
+      console.log(`CORS: allowed origin ${origin}`);
+      return callback(null, true);
+    }
     console.error(`CORS blocked origin: ${origin}`);
     callback(new Error('Not allowed by CORS'));
   },
@@ -214,15 +220,18 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
 // Contact form endpoint with stricter rate limiting
 app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
   const { firstName, lastName, email, phone, service, postcode, message } = req.body;
+  console.log(`Contact form request from origin: ${req.headers.origin || 'no origin'}`, { firstName, lastName, email, phone, service, postcode, message: message?.substring(0, 50) });
   
   // Validation
   if (!firstName || !phone || !message) {
+    console.log('Contact form validation failed: missing required fields');
     return res.status(400).json({ error: 'Please fill in all required fields' });
   }
   
   // Phone number validation (UK format)
   const phoneRegex = /^[\d\s\-+()]{10,20}$/;
   if (!phoneRegex.test(phone)) {
+    console.log('Contact form validation failed: invalid phone number', phone);
     return res.status(400).json({ error: 'Please enter a valid phone number' });
   }
   

@@ -56,9 +56,10 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        setSubmitError(data.error || "Something went wrong. Please try again.");
+        setSubmitError(data.error || `Server error ${response.status}: please try again.`);
       }
     } catch (error) {
+      console.error('Contact form submission error:', error);
       setSubmitError("Failed to send enquiry. Please try again later.");
     } finally {
       setIsSubmitting(false);

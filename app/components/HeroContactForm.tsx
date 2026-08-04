@@ -42,7 +42,12 @@ export default function HeroContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      let data: { error?: string } = {};
+      try {
+        data = await response.json();
+      } catch {
+        // Response wasn't JSON
+      }
 
       if (response.ok) {
         setIsSubmitted(true);
@@ -56,9 +61,10 @@ export default function HeroContactForm() {
           message: "",
         });
       } else {
-        setSubmitError(data.error || "Something went wrong. Please try again.");
+        setSubmitError(data.error || `Server error ${response.status}: please try again.`);
       }
     } catch (error) {
+      console.error('Home form submission error:', error);
       setSubmitError("Failed to send enquiry. Please try again later.");
     } finally {
       setIsSubmitting(false);
