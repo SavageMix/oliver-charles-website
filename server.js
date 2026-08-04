@@ -196,10 +196,10 @@ app.get('/api/reviews', apiLimiter, async (req, res) => {
 
 // Contact form endpoint with stricter rate limiting
 app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
-  const { firstName, lastName, email, phone, service, message } = req.body;
+  const { firstName, lastName, email, phone, service, postcode, message } = req.body;
   
   // Validation
-  if (!firstName || !lastName || !phone || !message) {
+  if (!firstName || !phone || !message) {
     return res.status(400).json({ error: 'Please fill in all required fields' });
   }
   
@@ -209,7 +209,7 @@ app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
     return res.status(400).json({ error: 'Please enter a valid phone number' });
   }
   
-  const fullName = `${firstName} ${lastName}`;
+  const fullName = lastName ? `${firstName} ${lastName}` : firstName;
   
   // If Resend is configured, send email
   if (resend) {
@@ -218,8 +218,8 @@ app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
         from: BUSINESS_EMAIL,
         to: BUSINESS_EMAIL,
         subject: `New Enquiry from ${fullName}`,
-        text: `Name: ${fullName}\nPhone: ${phone}\nService: ${service || 'Not specified'}\n\nMessage:\n${message}`,
-        html: `<h2>New Website Enquiry</h2><p><strong>Name:</strong> ${fullName}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Service:</strong> ${service || 'Not specified'}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+        text: `Name: ${fullName}\nPhone: ${phone}\nService: ${service || 'Not specified'}\nLocation: ${postcode || 'Not specified'}\n\nMessage:\n${message}`,
+        html: `<h2>New Website Enquiry</h2><p><strong>Name:</strong> ${fullName}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Service:</strong> ${service || 'Not specified'}</p><p><strong>Location:</strong> ${postcode || 'Not specified'}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
       });
 
       if (error) {
