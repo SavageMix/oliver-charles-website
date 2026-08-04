@@ -33,7 +33,7 @@ export default function HeroContactForm() {
     try {
       const API_URL = window.location.hostname === 'localhost'
         ? 'http://localhost:3001/api/contact'
-        : 'https://www.olivercharlesgardendesign.co.uk/api/contact';
+        : '/api/contact';
       const response = await fetch(API_URL, {
         method: "POST",
         headers: {
