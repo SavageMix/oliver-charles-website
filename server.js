@@ -56,8 +56,8 @@ app.use(helmet({
       scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
       imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
       connectSrc: isDev
-        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"]
-        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
+        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com", "https://www.olivercharlesgardendesign.co.uk"]
+        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://www.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com", "https://www.olivercharlesgardendesign.co.uk"],
       frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk", "https://googleads.g.doubleclick.net"],
     },
   },

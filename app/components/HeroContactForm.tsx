@@ -1,48 +1,92 @@
 "use client";
 
 import { useState } from "react";
-import { Lock } from "lucide-react";
+import { Send, CheckCircle, Lock } from "lucide-react";
+
+const services = [
+  "Porcelain Patio",
+  "Composite Decking",
+  "Glass Balustrade",
+  "Full Landscaping",
+  "Other",
+];
 
 export default function HeroContactForm() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    message: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    postcode: "",
+    message: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus('submitting');
+    setIsSubmitting(true);
+    setSubmitError("");
 
     try {
-      const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api/contact' : '/api/contact';
+      const API_URL = window.location.hostname === 'localhost'
+        ? 'http://localhost:3001/api/contact'
+        : 'https://www.olivercharlesgardendesign.co.uk/api/contact';
       const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: formData.name,
-          lastName: '',
-          email: formData.email,
-          phone: formData.phone,
-          service: '',
-          postcode: formData.location,
-          message: formData.message
-        })
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        setFormStatus('success');
-        setFormData({ name: '', email: '', phone: '', location: '', message: '' });
+        setIsSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          service: "",
+          postcode: "",
+          message: "",
+        });
       } else {
-        setFormStatus('error');
+        setSubmitError(data.error || "Something went wrong. Please try again.");
       }
-    } catch {
-      setFormStatus('error');
+    } catch (error) {
+      setSubmitError("Failed to send enquiry. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="bg-[var(--color-off-white)] rounded-sm shadow-2xl p-6 sm:p-8 lg:p-10 text-center">
+        <div className="w-16 h-16 bg-[var(--color-bronze)]/10 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-[var(--color-bronze)]" />
+        </div>
+        <h4 className="text-xl font-serif font-medium text-[var(--color-text)] mb-2">Thank You!</h4>
+        <p className="text-[var(--color-text-light)]">
+          Your enquiry has been sent. We&apos;ll be in touch within 24 hours.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-[var(--color-off-white)] rounded-sm shadow-2xl p-6 sm:p-8 lg:p-10">
@@ -54,94 +98,137 @@ export default function HeroContactForm() {
         Every project begins with a conversation about your ideas, budget and timescale.
       </p>
 
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <div>
-          <label className="block text-xs font-semibold tracking-[0.1em] uppercase text-[var(--color-text)] mb-2">
-            Name
-          </label>
-          <input
-            type="text"
-            value={formData.name}
-            onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
-            placeholder="Your name"
-            required
-          />
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
+              First Name *
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+              placeholder="John"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
+              Last Name *
+            </label>
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+              placeholder="Smith"
+            />
+          </div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+              placeholder="john@example.com"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
+              Phone Number *
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+              placeholder="09999999"
+            />
+          </div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
+              Service Interested In
+            </label>
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+            >
+              <option value="">Select a service</option>
+              {services.map((service) => (
+                <option key={service} value={service}>
+                  {service}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
+              Postcode
+            </label>
+            <input
+              type="text"
+              name="postcode"
+              value={formData.postcode}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
+              placeholder="HP6 5EQ"
+            />
+          </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold tracking-[0.1em] uppercase text-[var(--color-text)] mb-2">
-            Email
-          </label>
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
-            placeholder="Your email address"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold tracking-[0.1em] uppercase text-[var(--color-text)] mb-2">
-            Phone
-          </label>
-          <input
-            type="tel"
-            value={formData.phone}
-            onChange={(e) => setFormData({...formData, phone: e.target.value})}
-            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
-            placeholder="Your phone number"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold tracking-[0.1em] uppercase text-[var(--color-text)] mb-2">
-            Project Location
-          </label>
-          <input
-            type="text"
-            value={formData.location}
-            onChange={(e) => setFormData({...formData, location: e.target.value})}
-            className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors"
-            placeholder="e.g. Amersham, Buckinghamshire"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold tracking-[0.1em] uppercase text-[var(--color-text)] mb-2">
+          <label className="block text-xs font-medium tracking-[0.08em] uppercase text-[var(--color-text)] mb-2">
             Tell us about your project
           </label>
           <textarea
-            rows={3}
+            name="message"
             value={formData.message}
-            onChange={(e) => setFormData({...formData, message: e.target.value})}
+            onChange={handleChange}
+            rows={3}
+            required
             className="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-text)] placeholder-[var(--color-text-light)]/50 focus:outline-none focus:border-[var(--color-bronze)] transition-colors resize-none"
             placeholder="Tell us about your project..."
-            required
           />
         </div>
 
-        {formStatus === 'success' && (
-          <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-center text-sm">
-            Thank you! We&apos;ll be in touch soon.
-          </div>
-        )}
-        {formStatus === 'error' && (
-          <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-center text-sm">
-            Something went wrong. Please try again.
+        {submitError && (
+          <div className="p-4 bg-red-50 text-red-600 text-sm">
+            {submitError}
           </div>
         )}
 
         <button
           type="submit"
-          disabled={formStatus === 'submitting'}
-          className="w-full bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-[var(--color-off-white)] py-4 text-sm font-semibold tracking-[0.1em] uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={isSubmitting}
+          className="w-full py-4 bg-[var(--color-forest)] hover:bg-[var(--color-forest-light)] text-white font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-none"
         >
-          {formStatus === 'submitting' ? 'Sending...' : 'Submit Enquiry'}
+          {isSubmitting ? (
+            "Sending..."
+          ) : (
+            <>
+              Submit Enquiry
+              <Send className="w-5 h-5" />
+            </>
+          )}
         </button>
 
         <p className="flex items-center justify-center gap-2 text-xs text-[var(--color-text-light)] text-center">
