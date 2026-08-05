@@ -55,6 +55,15 @@ export default function ContactForm() {
           postcode: "",
           message: "",
         });
+
+        // Google Ads conversion tracking for home page form submission
+        if (typeof window !== "undefined" && typeof gtag === "function") {
+          gtag("event", "conversion", {
+            send_to: "AW-18189121818/2N2nCKiSh9wcEJryn-FD",
+            value: 1.0,
+            currency: "GBP",
+          });
+        }
       } else {
         setSubmitError(data.error || `Server error ${response.status}: please try again.`);
       }
