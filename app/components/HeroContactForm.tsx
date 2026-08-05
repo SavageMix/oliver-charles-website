@@ -62,7 +62,8 @@ export default function HeroContactForm() {
         });
 
         // Google Ads conversion tracking for home page form submission
-        if (typeof window !== "undefined" && typeof gtag === "function") {
+        const gtag = (window as any).gtag;
+        if (typeof gtag === "function") {
           gtag("event", "conversion", {
             send_to: "AW-18189121818/2N2nCKiSh9wcEJryn-FD",
             value: 1.0,
