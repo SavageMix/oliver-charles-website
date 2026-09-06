@@ -244,8 +244,8 @@ app.post('/api/contact', contactLimiter, express.json(), async (req, res) => {
         from: BUSINESS_EMAIL,
         to: BUSINESS_EMAIL,
         subject: `New Enquiry from ${fullName}`,
-        text: `Name: ${fullName}\nPhone: ${phone}\nService: ${service || 'Not specified'}\nLocation: ${postcode || 'Not specified'}\n\nMessage:\n${message}`,
-        html: `<h2>New Website Enquiry</h2><p><strong>Name:</strong> ${fullName}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Service:</strong> ${service || 'Not specified'}</p><p><strong>Location:</strong> ${postcode || 'Not specified'}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+        text: `Name: ${fullName}\nEmail: ${email || 'Not provided'}\nPhone: ${phone}\nService: ${service || 'Not specified'}\nLocation: ${postcode || 'Not specified'}\n\nMessage:\n${message}`,
+        html: `<h2>New Website Enquiry</h2><p><strong>Name:</strong> ${fullName}</p><p><strong>Email:</strong> ${email ? `<a href="mailto:${email}">${email}</a>` : 'Not provided'}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Service:</strong> ${service || 'Not specified'}</p><p><strong>Location:</strong> ${postcode || 'Not specified'}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
       });
 
       if (error) {
