@@ -1,6 +1,5 @@
-"use client";
-
-import { Phone, Mail, MapPin, Facebook, Instagram, ArrowUp } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import ScrollTopButton from "./ScrollTopButton";
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -28,10 +27,6 @@ const areas = [
 ];
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="bg-[var(--color-forest-dark)] text-white/70">
       {/* Main Footer */}
@@ -180,13 +175,7 @@ const Footer = () => {
               <a href="/workmanship-guarantee/" className="hover:text-[var(--color-bronze)] transition-colors">
                 Workmanship Guarantee
               </a>
-              <button
-                onClick={scrollToTop}
-                className="w-10 h-10 bg-[var(--color-bronze)] rounded-lg flex items-center justify-center hover:bg-[var(--color-bronze-light)] transition-colors"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp className="w-5 h-5 text-[var(--color-forest)]" />
-              </button>
+              <ScrollTopButton />
             </div>
           </div>
         </div>
