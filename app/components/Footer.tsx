@@ -40,7 +40,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <span className="block text-sm text-[var(--color-bronze)] tracking-wider">OLIVER CHARLES</span>
+              <span className="block text-sm text-[var(--color-bronze-light)] tracking-wider">OLIVER CHARLES</span>
               <span className="block text-xl font-bold text-white tracking-wide">GARDEN DESIGN & BUILD</span>
             </div>
             <p className="text-white/60 mb-6 leading-relaxed">

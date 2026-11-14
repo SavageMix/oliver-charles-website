@@ -22,8 +22,6 @@ app.set('trust proxy', 1);
 
 // Security: CORS - only allow requests from your domains in production
 const allowedOrigins = [
-  'https://www.olivercharlesgardendesign.co.uk',
-  'https://olivercharlesgardendesign.co.uk',
   'https://www.olivercharlesgardendesign.com',
   'https://olivercharlesgardendesign.com',
   'http://localhost:3000',
@@ -62,8 +60,8 @@ app.use(helmet({
       scriptSrc: ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://*.googletagmanager.com", "https://www.google-analytics.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
       imgSrc: ["'self'", "data:", "https:", "https://www.google-analytics.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://www.googletagmanager.com", "https://*.googletagmanager.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com"],
       connectSrc: isDev
-        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://www.googletagmanager.com", "https://*.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com", "https://www.olivercharlesgardendesign.co.uk"]
-        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://www.googletagmanager.com", "https://*.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com", "https://www.olivercharlesgardendesign.co.uk"],
+        ? ["'self'", "http://localhost:3001", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://www.googletagmanager.com", "https://*.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com", "https://www.olivercharlesgardendesign.com", "https://stats.g.doubleclick.net", "https://*.doubleclick.net", "https://www.google.co.uk"]
+        : ["'self'", "https://maps.googleapis.com", "https://www.google-analytics.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://www.googletagmanager.com", "https://*.googletagmanager.com", "https://ad.doubleclick.net", "https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.googleadservices.com", "https://www.olivercharlesgardendesign.com", "https://stats.g.doubleclick.net", "https://*.doubleclick.net", "https://www.google.co.uk"],
       frameSrc: ["'self'", "https://www.google.com", "https://www.google.co.uk", "https://googleads.g.doubleclick.net"],
     },
   },

@@ -81,8 +81,8 @@ export default function TestimonialsPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.co.uk/' },
-              { '@type': 'ListItem', position: 2, name: 'Testimonials', item: 'https://www.olivercharlesgardendesign.co.uk/testimonials/' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.olivercharlesgardendesign.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Testimonials', item: 'https://www.olivercharlesgardendesign.com/testimonials/' }
             ]
           })
         }}
@@ -103,7 +103,7 @@ export default function TestimonialsPage() {
               itemReviewed: {
                 '@type': 'HomeAndConstructionBusiness',
                 name: 'Oliver Charles Garden Design & Build',
-                url: 'https://www.olivercharlesgardendesign.co.uk',
+                url: 'https://www.olivercharlesgardendesign.com',
                 telephone: '+447837666766',
                 email: 'info@ocgardendesign.co.uk',
                 address: {
@@ -114,7 +114,7 @@ export default function TestimonialsPage() {
                   postalCode: 'HP6 6AA',
                   addressCountry: 'GB'
                 },
-                image: 'https://www.olivercharlesgardendesign.co.uk/og-image.jpg'
+                image: 'https://www.olivercharlesgardendesign.com/og-image.jpg'
               }
             },
             ...staticTestimonials.map((t) => ({
@@ -133,7 +133,7 @@ export default function TestimonialsPage() {
               itemReviewed: {
                 '@type': 'HomeAndConstructionBusiness',
                 name: 'Oliver Charles Garden Design & Build',
-                url: 'https://www.olivercharlesgardendesign.co.uk'
+                url: 'https://www.olivercharlesgardendesign.com'
               }
             }))
           ]),

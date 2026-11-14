@@ -183,6 +183,7 @@ export default function HeroContactForm() {
               Service Interested In
             </label>
             <select
+              aria-label="Service Interested In"
               name="service"
               value={formData.service}
               onChange={handleChange}

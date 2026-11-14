@@ -171,7 +171,7 @@ export default function HomePage() {
             <div className="text-white space-y-8">
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--color-bronze)]/20 backdrop-blur-sm border border-[var(--color-bronze)]/30 text-sm font-medium text-[var(--color-bronze)]">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--color-bronze)]/20 backdrop-blur-sm border border-[var(--color-bronze)]/30 text-sm font-medium text-[var(--color-bronze-light)]">
                   <Shield className="w-4 h-4" />
                   5-Year Workmanship Guarantee
                 </span>
@@ -251,10 +251,10 @@ export default function HomePage() {
                 }`}
               >
                 <feature.icon className="w-10 h-10 text-[var(--color-bronze)] mx-auto mb-5" strokeWidth={1.25} />
-                <h3 className="text-white font-semibold tracking-[0.12em] uppercase text-sm mb-2">
+                <h2 className="text-white font-semibold tracking-[0.12em] uppercase text-sm mb-2">
                   {feature.title}
-                </h3>
-                <p className="text-[var(--color-bronze)] text-sm leading-relaxed">
+                </h2>
+                <p className="text-[var(--color-bronze-light)] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -275,7 +275,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze-dark)] mb-4">
               Our Services
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
@@ -313,7 +313,7 @@ export default function HomePage() {
                   {/* Content */}
                   <div className="p-6 lg:p-8 flex flex-col justify-between">
                     <div>
-                      <span className="text-[var(--color-bronze)] text-xs font-semibold tracking-[0.15em] uppercase">
+                      <span className="text-[var(--color-bronze-dark)] text-xs font-semibold tracking-[0.15em] uppercase">
                         {service.subtitle}
                       </span>
                       <h3 className="text-2xl font-serif font-medium text-[var(--color-text)] mt-2 mb-4">
@@ -366,7 +366,7 @@ export default function HomePage() {
       <section id="projects" className="py-24 lg:py-32 bg-[var(--color-off-white)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze-dark)] mb-4">
               Recent Work
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-4">
@@ -400,7 +400,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
+              <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze-dark)] mb-4">
                 About Us
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-6">
@@ -444,7 +444,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze-light)] mb-4">
               Why Choose Us
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium mb-6">
@@ -498,7 +498,7 @@ export default function HomePage() {
       <section id="areas" className="py-24 lg:py-32 bg-[var(--color-stone)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze)] mb-4">
+            <span className="inline-block text-xs font-semibold tracking-[0.15em] uppercase text-[var(--color-bronze-dark)] mb-4">
               Areas We Cover
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[var(--color-text)] mb-4">
@@ -527,7 +527,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold text-[var(--color-text)] mb-1 group-hover:text-[var(--color-forest)] transition-colors">
                   {area.name}
                 </h3>
-                <p className="text-sm text-[var(--color-bronze)] font-medium mb-3">{area.postcode}</p>
+                <p className="text-sm text-[var(--color-bronze-dark)] font-medium mb-3">{area.postcode}</p>
                 <p className="text-[var(--color-text-light)] text-sm leading-relaxed mb-4">
                   {area.description}
                 </p>

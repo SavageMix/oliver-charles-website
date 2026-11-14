@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   description: "Bespoke hard landscaping and complete garden construction contractors in Amersham. Specializing in luxury porcelain paving, retaining brickwork, and turfing works.",
   keywords: "landscape construction, garden construction, builders amersham, hard landscaping, porcelain paving, retaining brickwork, turfing works, garden design, landscaping, Amersham, Buckinghamshire, HP6, HP7",
   alternates: {
-    canonical: "https://www.olivercharlesgardendesign.co.uk",
+    canonical: "https://www.olivercharlesgardendesign.com",
   },
   openGraph: {
     title: "Oliver Charles Garden Design & Build",
     description: "Premium landscaping services in Amersham & Buckinghamshire",
-    url: "https://www.olivercharlesgardendesign.co.uk",
+    url: "https://www.olivercharlesgardendesign.com",
     siteName: "Oliver Charles Garden Design",
     images: [{
-      url: "https://www.olivercharlesgardendesign.co.uk/og-image.jpg",
+      url: "https://www.olivercharlesgardendesign.com/og-image.jpg",
       width: 1200,
       height: 630,
     }],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oliver Charles Garden Design & Build",
     description: "Premium landscaping services in Amersham & Buckinghamshire",
-    images: ["https://www.olivercharlesgardendesign.co.uk/og-image.jpg"],
+    images: ["https://www.olivercharlesgardendesign.com/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -65,10 +65,10 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "@id": "https://www.olivercharlesgardendesign.co.uk/#business",
+  "@id": "https://www.olivercharlesgardendesign.com/#business",
   "name": "Oliver Charles Garden Design & Build LTD",
   "description": "Bespoke hard landscaping and complete garden construction contractors based in Amersham, Buckinghamshire. Specializing in luxury porcelain paving, retaining brickwork, turfing works, composite decking and glass balustrades.",
-  "url": "https://www.olivercharlesgardendesign.co.uk",
+  "url": "https://www.olivercharlesgardendesign.com",
   "telephone": "+447837666766",
   "email": "info@ocgardendesign.co.uk",
   "address": {
@@ -171,7 +171,7 @@ const structuredData = {
   },
   "priceRange": "£££",
   "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
-  "image": "https://www.olivercharlesgardendesign.co.uk/og-image.jpg",
+  "image": "https://www.olivercharlesgardendesign.com/og-image.jpg",
   "sameAs": [
     "https://www.google.com/maps/place/?q=place_id:ChIJJ--wA6YE_CIRI_NAoevhoAY",
     "https://www.facebook.com/OlivercharlesGardenDesign",
@@ -187,38 +187,31 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
-        {/* Google Analytics 4 */}
+        {/* Google tag (gtag.js) — GA4 + Google Ads, single load, deferred until after page load */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HCE862XXWG"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-tags-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-HCE862XXWG');
+            gtag('config', 'AW-18189121818');
           `}
         </Script>
 
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18189121818"></script>
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-18189121818');
-        `}} />
-
         {/* Google Tag Manager */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-M5DBJN5T');
-        `}} />
+        <Script id="google-tag-manager" strategy="lazyOnload">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M5DBJN5T');
+          `}
+        </Script>
         
         {/* Schema.org Structured Data */}
         <script
@@ -245,7 +238,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-white/80">
               We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
-              <a href="/privacy-policy/" className="text-[var(--color-bronze)] hover:underline ml-1">View our Privacy Policy</a>
+              <a href="/privacy-policy/" className="text-[var(--color-bronze-light)] underline ml-1">View our Privacy Policy</a>
             </p>
             <div className="flex gap-3">
               <button 

@@ -187,6 +187,7 @@ export default function ContactForm() {
             Service Interested In
           </label>
           <select
+            aria-label="Service Interested In"
             name="service"
             value={formData.service}
             onChange={handleChange}
