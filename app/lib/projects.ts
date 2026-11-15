@@ -378,8 +378,8 @@ export const projects: Project[] = [
     metaDescription: 'Raised honey porcelain patio in Lane End built on Bexhill Ashdown brick retaining walls — a warm, modern entertaining space with steps to the garden.',
     description: 'The garden at this Lane End property sat well below the house, leaving the back door disconnected from the outdoor space. The answer was a raised patio built up to door level on Bexhill Ashdown brick retaining walls, so the house now flows straight out onto the terrace. The paving is a honey-toned porcelain — warm without being brash, and it sits beautifully against the soft reds of the Ashdown brickwork. Porcelain was the practical choice too: non-porous, frost-proof and it keeps its colour, so the patio will look the same in ten winters as it does today. Brick steps drop down to the garden on both sides, and the raised construction gives the whole space a sense of structure the sloping garden never had. A straightforward material palette, done properly.',
     features: ['Honey porcelain paving', 'Raised patio construction', 'Bexhill Ashdown brick retaining walls', 'Brick steps', 'Built to door level'],
-    images: ['/images/projects/project-22/porcelain-patio-lane-end-1.jpg', '/images/projects/project-22/porcelain-patio-lane-end-2.jpg', '/images/projects/project-22/porcelain-patio-lane-end-3.jpg'],
-    imageAlts: ['Honey porcelain patio surface detail, Lane End', 'Raised porcelain patio with Bexhill Ashdown brick retaining wall, Lane End', 'Porcelain patio on Ashdown brickwork with steps to garden, Lane End'],
+    images: ['/images/projects/project-22/porcelain-patio-lane-end-3.jpg', '/images/projects/project-22/porcelain-patio-lane-end-1.jpg', '/images/projects/project-22/porcelain-patio-lane-end-2.jpg'],
+    imageAlts: ['Porcelain patio on Ashdown brickwork with steps to garden, Lane End', 'Honey porcelain patio surface detail, Lane End', 'Raised porcelain patio with Bexhill Ashdown brick retaining wall, Lane End'],
     testimonial: {
       quote: "",
       author: "Rachel",
