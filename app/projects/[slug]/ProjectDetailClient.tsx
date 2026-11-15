@@ -136,7 +136,7 @@ export default function ProjectDetailClient({
               >
                 <Image
                   src={project.images[mainImageIndex]}
-                  alt={`${project.title} - main view`}
+                  alt={project.imageAlts?.[mainImageIndex] ?? `${project.title} - main view`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   priority
@@ -158,7 +158,7 @@ export default function ProjectDetailClient({
                     >
                       <Image
                         src={image}
-                        alt={`${project.title} - view ${idx + 1}`}
+                        alt={project.imageAlts?.[idx] ?? `${project.title} - view ${idx + 1}`}
                         fill
                         className="object-cover"
                         loading="lazy"
@@ -345,7 +345,7 @@ export default function ProjectDetailClient({
             {/* Image */}
             <Image
               src={lightboxImage}
-              alt={`${project.title} - view ${lightboxIndex + 1}`}
+              alt={project.imageAlts?.[lightboxIndex] ?? `${project.title} - view ${lightboxIndex + 1}`}
               width={1200}
               height={900}
               className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"

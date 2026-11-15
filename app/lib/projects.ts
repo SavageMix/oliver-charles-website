@@ -14,8 +14,10 @@ export interface Project {
   date: string;
   size: string;
   description: string;
+  metaDescription?: string;
   features: string[];
   images: string[];
+  imageAlts?: string[];
   testimonial: Testimonial;
 }
 
@@ -325,6 +327,25 @@ export const projects: Project[] = [
       quote: "",
       author: "Adam",
       location: "High Wycombe"
+    }
+  },
+  {
+    id: 21,
+    slug: 'basement-garden-transformation-princes-risborough',
+    title: 'Basement Garden Transformation - Princes Risborough',
+    location: 'Princes Risborough',
+    category: 'Full Landscaping',
+    date: 'July 2025',
+    size: '80m²',
+    metaDescription: 'A basement garden in Princes Risborough transformed with composite decking, porcelain paving, pergola and water feature — all craned in by spider crane.',
+    description: 'A basement-level garden with no direct access — every deck board, porcelain slab, pergola beam and bag of aggregate was lowered in by spider crane. The design is built around two composite decking structures that zone the space: a generous seating deck beneath a black aluminium pergola, and a second raised deck at the far end. Between them, inset beds of white decorative pebbles and a contemporary water feature give the enclosed garden rhythm and movement. Large-format soft grey porcelain paving ties the scheme together, bouncing light around a space that needs every bit of it. All materials supplied by Country Supplies, and every element supplied and installed by our team — a complex build in a space most firms would have walked away from.',
+    features: ['Two composite decking structures', 'Large-format porcelain patio', 'Black aluminium pergola', 'Contemporary water feature', 'White pebble inlay beds', 'Spider crane installation', 'Materials by Country Supplies'],
+    images: ['/images/projects/project-33/basement-garden-princes-risborough-1.jpg', '/images/projects/project-33/basement-garden-princes-risborough-2.jpg', '/images/projects/project-33/basement-garden-princes-risborough-3.jpg', '/images/projects/project-33/basement-garden-princes-risborough-4.jpg'],
+    imageAlts: ['Composite decking and black pergola with water feature in basement garden, Princes Risborough', 'Raised composite deck with grey porcelain patio, basement garden Princes Risborough', 'Two-tier composite decking with white pebble inlay beds, Princes Risborough', 'Garden seating area under black aluminium pergola, Princes Risborough basement garden'],
+    testimonial: {
+      quote: "",
+      author: "Max",
+      location: "Princes Risborough"
     }
   }
 ];

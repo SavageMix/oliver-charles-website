@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const title = `${project.title} | ${project.category} in ${project.location} | Oliver Charles`;
-  const description = `${project.description} View our ${project.category.toLowerCase()} portfolio for ${project.location}.`;
+  const description = project.metaDescription ?? `${project.description} View our ${project.category.toLowerCase()} portfolio for ${project.location}.`;
   const canonicalUrl = `${BASE_URL}/projects/${project.slug}/`;
   const ogImage = project.images[0];
 
