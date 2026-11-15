@@ -90,7 +90,7 @@ const projects = [
       "/images/projects/project-13/composite-decking-chesham-5.jpg",
     ],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Neil",
       location: "Chesham"
     },
@@ -116,7 +116,7 @@ const projects = [
       "/images/projects/project-16/composite-decking-stokenchurch-3.jpg",
     ],
     testimonial: {
-      quote: "tldr",
+      quote: "",
       author: "Ian",
       location: "Stokenchurch"
     },
@@ -171,7 +171,7 @@ const projects = [
       "/images/projects/project-18/composite-decking-stokenchurch-4.jpg",
     ],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Mark",
       location: "Stokenchurch"
     },

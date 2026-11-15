@@ -152,7 +152,7 @@ export const projects: Project[] = [
     features: ['Porcelain patio', 'Charcoal border detail', 'Sleeper retaining wall', 'Clean finish'],
     images: ['/images/projects/project-9/porcelain-patio-holmer-green-main-view-1.jpg', '/images/projects/project-9/porcelain-patio-holmer-green-charcoal-border-2.jpg', '/images/projects/project-9/porcelain-patio-holmer-green-sleeper-wall-3.jpg'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "David Robson",
       location: "Holmer Green"
     }
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     features: ['Porcelain patio', 'Kerb edgings', 'Composite fencing', 'Picket fence sections', 'Privacy screening'],
     images: ['/images/projects/project-10/porcelain-patio-woburn-green-1.jpg', '/images/projects/project-10/porcelain-patio-woburn-green-2.jpg', '/images/projects/project-10/porcelain-patio-woburn-green-3.jpg', '/images/projects/project-10/porcelain-patio-woburn-green-4.jpg'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Jonathon",
       location: "Woburn Green"
     }
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     features: ['Raised porcelain patio', 'Perimeter lighting', '110m\u00B2 installation', 'Evening entertaining space', 'Modern design'],
     images: ['/images/projects/project-12/porcelain-patio-high-wycombe-4.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-3.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-1.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-2.jpg'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Tom",
       location: "Amersham"
     }
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     features: ['Raised wooden decking', 'Fence renewal', 'Sleeper planters', 'Garden transformation', '80m\u00B2 installation'],
     images: ['/images/projects/project-13/composite-decking-chesham-1.jpg', '/images/projects/project-13/composite-decking-chesham-2.jpg', '/images/projects/project-13/composite-decking-chesham-3.jpg', '/images/projects/project-13/composite-decking-chesham-4.jpg', '/images/projects/project-13/composite-decking-chesham-5.jpg'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Neil",
       location: "Chesham"
     }
@@ -220,7 +220,7 @@ export const projects: Project[] = [
     features: ['Patio extension', 'Retaining garden wall', 'Tiered garden levels', 'New path installation', 'Planter border'],
     images: ['/images/projects/project-14/full-landscaping-high-wycombe-5.jpg', '/images/projects/project-14/full-landscaping-high-wycombe-1.jpg', '/images/projects/project-14/full-landscaping-high-wycombe-2.jpg', '/images/projects/project-14/full-landscaping-high-wycombe-3.jpg', '/images/projects/project-14/full-landscaping-high-wycombe-4.jpg'],
     testimonial: {
-      quote: "tldr",
+      quote: "",
       author: "Neil",
       location: "High Wycombe"
     }
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     features: ['Natural grey porcelain tiles', 'Recessed manholes', 'Pathway installation', 'Patio transformation', '30m\u00B2 installation'],
     images: ['/images/projects/project-15/porcelain-patio-watford-1.jpg', '/images/projects/project-15/porcelain-patio-watford-2.jpg', '/images/projects/project-15/porcelain-patio-watford-3.jpg', '/images/projects/project-15/porcelain-patio-watford-4.jpg'],
     testimonial: {
-      quote: "tldr",
+      quote: "",
       author: "Mary",
       location: "Watford"
     }
@@ -254,7 +254,7 @@ export const projects: Project[] = [
     features: ['Raised composite decking', 'Garden room integration', '45m\u00B2 installation', 'Modern decking solution'],
     images: ['/images/projects/project-16/composite-decking-stokenchurch-1.jpg', '/images/projects/project-16/composite-decking-stokenchurch-2.jpg', '/images/projects/project-16/composite-decking-stokenchurch-3.jpg'],
     testimonial: {
-      quote: "tldr",
+      quote: "",
       author: "Ian",
       location: "Stokenchurch"
     }
@@ -288,7 +288,7 @@ export const projects: Project[] = [
     features: ['Raised composite decking', 'Garden room with green roof', 'Bespoke tree cutout', 'Cedar cladding integration', '35m\u00B2 installation'],
     images: ['/images/projects/project-18/composite-decking-stokenchurch-1.jpg', '/images/projects/project-18/composite-decking-stokenchurch-2.jpg', '/images/projects/project-18/composite-decking-stokenchurch-3.jpg', '/images/projects/project-18/composite-decking-stokenchurch-4.jpg'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Mark",
       location: "Stokenchurch"
     }
@@ -305,8 +305,25 @@ export const projects: Project[] = [
     features: ['Kandla grey sandstone patio', 'Oak sleeper retaining walls', 'Integrated oak steps', 'Featheredge fencing with gate', '30m\u00B2 installation', 'Raised patio design'],
     images: ['/images/projects/project-19/porcelain-patio-high-wycombe-1.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-2.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-3.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-4.jpg', '/images/projects/project-19/porcelain-patio-high-wycombe-5.jpg'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "James",
+      location: "High Wycombe"
+    }
+  },
+  {
+    id: 20,
+    slug: 'glass-balustrade-installation-high-wycombe',
+    title: 'Glass Balustrade Installation - High Wycombe',
+    location: 'High Wycombe',
+    category: 'Glass Balustrade',
+    date: 'August 2024',
+    size: '14 linear meters',
+    description: 'A glass balustrade with stainless steel posts and a continuous handrail, fixed into the existing brickwork and paving to make a raised terrace safe without blocking the view across the front of the property. The glass keeps the terrace feeling completely open where spindles or rails would have boxed it in, and the brushed stainless fittings sit neatly against the brick and sandstone. A clean, one-day install that makes the space safe without touching its character.',
+    features: ['Glass balustrade panels', 'Stainless steel posts', 'Continuous handrail', 'Fixed to existing brickwork', 'One-day installation'],
+    images: ['/images/projects/project-20/glass-balustrade-high-wycombe-1.jpg', '/images/projects/project-20/glass-balustrade-high-wycombe-2.jpg'],
+    testimonial: {
+      quote: "",
+      author: "Adam",
       location: "High Wycombe"
     }
   }

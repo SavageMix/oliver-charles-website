@@ -95,7 +95,7 @@ const projects = [
       "/images/projects/project-14/full-landscaping-high-wycombe-4.jpg",
     ],
     testimonial: {
-      quote: "tldr",
+      quote: "",
       author: "Neil",
       location: "High Wycombe"
     },

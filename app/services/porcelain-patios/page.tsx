@@ -141,7 +141,7 @@ const projects = [
       "/images/projects/project-10/porcelain-patio-woburn-green-4.jpg",
     ],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Jonathon",
       location: "Woburn Green"
     },
@@ -169,7 +169,7 @@ const projects = [
       "/images/projects/project-12/porcelain-patio-high-wycombe-2.jpg",
     ],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Tom",
       location: "High Wycombe"
     },
@@ -197,7 +197,7 @@ const projects = [
       "/images/projects/project-15/porcelain-patio-watford-4.jpg",
     ],
     testimonial: {
-      quote: "tldr",
+      quote: "",
       author: "Mary",
       location: "Watford"
     },
@@ -227,7 +227,7 @@ const projects = [
       "/images/projects/project-19/porcelain-patio-high-wycombe-5.jpg",
     ],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "James",
       location: "High Wycombe"
     },

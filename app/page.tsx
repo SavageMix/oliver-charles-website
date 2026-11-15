@@ -95,7 +95,7 @@ const projects = [
     images: ['/images/projects/project-12/porcelain-patio-high-wycombe-4.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-3.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-1.jpg', '/images/projects/project-12/porcelain-patio-high-wycombe-2.jpg'],
     features: ['Raised porcelain patio', 'Perimeter lighting', '110m² installation', 'Evening entertaining space', 'Modern design'],
     testimonial: {
-      quote: "TLDR",
+      quote: "",
       author: "Tom",
       location: "Amersham"
     }
