@@ -106,3 +106,15 @@ html {
 .hero-overlay-services {
   background: linear-gradient(to right, rgba(23, 48, 38, 0.95) 0%, rgba(23, 48, 38, 0.85) 45%, rgba(23, 48, 38, 0.4) 65%, transparent 100%);
 }
+
+/* Vertically centres modal content, but scrolls from the top when content is taller
+   than the container (plain justify-center would clip the start of overflowing content) */
+.safe-scroll-center {
+  display: flex;
+  flex-direction: column;
+}
+.safe-scroll-center::before,
+.safe-scroll-center::after {
+  content: "";
+  flex: 1 0 auto;
+}

@@ -152,7 +152,7 @@ export function ProjectCard({ project }: { project: Project }) {
             </div>
 
             {/* Content */}
-            <div className="w-full lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center bg-[var(--color-off-white)] overflow-y-auto max-h-[50vh] lg:max-h-[90vh]">
+            <div className="w-full lg:w-2/5 p-8 lg:p-12 safe-scroll-center bg-[var(--color-off-white)] overflow-y-auto max-h-[50vh] lg:max-h-[90vh]">
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[var(--color-text-light)] tracking-[0.08em] uppercase mb-6">
                 <span className="flex items-center gap-1.5">

@@ -260,7 +260,7 @@ export default function ProjectGrid({ projects, categories }: ProjectGridProps) 
             </div>
 
             {/* Content Panel */}
-            <div className="w-full lg:w-1/2 p-8 lg:p-14 flex flex-col justify-center overflow-y-auto max-h-[50vh] lg:max-h-[90vh]">
+            <div className="w-full lg:w-1/2 p-8 lg:p-14 safe-scroll-center overflow-y-auto max-h-[50vh] lg:max-h-[90vh]">
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] text-[var(--color-text-light)] tracking-[0.12em] uppercase mb-8">
                 <span>{selectedProject.location}</span>
