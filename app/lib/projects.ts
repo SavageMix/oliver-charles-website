@@ -347,6 +347,25 @@ export const projects: Project[] = [
       author: "Max",
       location: "Princes Risborough"
     }
+  },
+  {
+    id: 22,
+    slug: 'glass-balustrade-installation-wooburn-green',
+    title: 'Glass Balustrade Installation - Wooburn Green',
+    location: 'Wooburn Green',
+    category: 'Glass Balustrade',
+    date: 'December 2023',
+    size: '11 linear meters',
+    metaDescription: 'Glass balustrade installation in Wooburn Green — stainless steel posts and handrail on an elevated terrace, keeping panoramic views completely open.',
+    description: 'An elevated terrace in Wooburn Green with one asset worth protecting above everything else — the view over the valley and surrounding woodland. Any barrier with spindles, rails or a heavy frame would have cheapened the whole space, so we installed a glass balustrade with stainless steel posts and a slotted stainless handrail, fixed along the top of the rendered parapet wall. The toughened glass panels keep the terrace safe at height while the sightlines stay completely open — from the seating area you would barely know the balustrade was there. The brushed stainless steelwork sits crisp against the white render and smart alongside the existing timber decking. A job where the best compliment is that you do not notice our work — you notice the view.',
+    features: ['Toughened glass panels', 'Stainless steel posts', 'Slotted stainless handrail', 'Fixed to rendered parapet wall', 'Uninterrupted panoramic views'],
+    images: ['/images/projects/project-37/glass-balustrade-wooburn-green-1.jpg', '/images/projects/project-37/glass-balustrade-wooburn-green-2.jpg', '/images/projects/project-37/glass-balustrade-wooburn-green-3.jpg', '/images/projects/project-37/glass-balustrade-wooburn-green-4.jpg', '/images/projects/project-37/glass-balustrade-wooburn-green-5.jpg'],
+    imageAlts: ['Glass balustrade with stainless steel handrail on elevated terrace, Wooburn Green', 'Glass balustrade with valley views from raised terrace, Wooburn Green', 'Stainless steel and glass balustrade overlooking woodland, Wooburn Green', 'Glass balustrade fixed to rendered parapet wall, Wooburn Green', 'Glass balustrade along terrace edge of period property, Wooburn Green'],
+    testimonial: {
+      quote: "",
+      author: "Anna",
+      location: "Wooburn Green"
+    }
   }
 ];
 
