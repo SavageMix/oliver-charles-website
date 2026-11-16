@@ -410,7 +410,7 @@ export default function HomePage() {
                 At <strong className="text-[var(--color-text)]">Oliver Charles Garden Design & Build</strong>, we take pride in being a Family-Owned business with a genuine passion for transforming outdoor spaces across Amersham, Chesham, and the wider Buckinghamshire area.
               </p>
               <p className="text-[var(--color-text-light)] text-lg mb-8 leading-relaxed">
-                Specialising in <strong>porcelain patios</strong>, <strong>composite decking</strong>, and <strong>glass balustrades</strong>, we bring a personal touch to every project. With over 10 years of experience serving homeowners in the HP6 and HP7 postcode areas.
+                Specialising in <strong>porcelain patios</strong>, <strong>composite decking</strong>, and <strong>glass balustrades</strong>, we bring a personal touch to every project. With over 12 years of experience serving homeowners in the HP6 and HP7 postcode areas.
               </p>
               <a
                 href="/about/"

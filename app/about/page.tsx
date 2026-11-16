@@ -4,7 +4,7 @@ import { generateCanonicalMetadata } from "../lib/metadata";
 
 export const metadata = generateCanonicalMetadata("/about", {
   title: "About Us | Oliver Charles Garden Design | Family-Owned Landscapers",
-  description: "Meet Oliver Charles Garden Design & Build - your trusted family-owned landscaping specialists in Amersham. 10+ years experience, 5-year guarantee."
+  description: "Meet Oliver Charles Garden Design & Build - your trusted family-owned landscaping specialists in Amersham. 12+ years experience, 5-year guarantee."
 });
 
 export default function AboutPage() {
@@ -34,7 +34,7 @@ export default function AboutPage() {
               '@context': 'https://schema.org',
               '@type': 'AboutPage',
               name: 'About Us | Oliver Charles Garden Design | Family-Owned Landscapers',
-              description: 'Meet Oliver Charles Garden Design & Build - your trusted family-owned landscaping specialists in Amersham. 10+ years experience, 5-year guarantee.',
+              description: 'Meet Oliver Charles Garden Design & Build - your trusted family-owned landscaping specialists in Amersham. 12+ years experience, 5-year guarantee.',
               url: 'https://www.olivercharlesgardendesign.com/about/',
               mainEntity: {
                 '@type': 'Organization',
@@ -153,22 +153,25 @@ export default function AboutPage() {
                 MEET THE FOUNDER
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-medium text-[var(--color-text)] mb-2">
-                Oliver Charles
+                Twelve years of construction. One standard: properly built.
               </h2>
               <p className="text-xl text-[var(--color-bronze)] italic font-serif mb-8">
-                Founder & Director
+                Oliver Charles, Founder & Director
               </p>
-              <div className="space-y-5 text-[var(--color-text-light)] leading-relaxed mb-8">
+              <div className="space-y-5 text-[var(--color-text-light)] leading-relaxed">
                 <p>
-                  I started Oliver Charles because I believed homeowners deserved a better experience.
+                  Oliver Charles Garden Design & Build was founded by Oliver, a fully qualified bricklayer who served a three-year apprenticeship before spending over a decade in the construction industry — building extensions, managing major structural projects, and ultimately running his own construction company.
                 </p>
                 <p>
-                  Not just beautiful gardens. But thoughtful communication, honest advice and craftsmanship that stands the test of time.
+                  That background is the difference you&rsquo;ll notice in our work. Most landscapers can lay a patio. Far fewer understand what sits beneath it — the groundworks, drainage, retaining structures and brickwork that decide whether a garden still looks right in ten years. After twelve years building extensions and running construction projects, structural work isn&rsquo;t a subcontractor&rsquo;s job to us. It&rsquo;s home turf.
+                </p>
+                <p>
+                  It&rsquo;s also why we take on the projects other firms walk away from: split-level gardens, basement plots, restricted-access builds, structural retaining walls. The harder the job, the more that twelve years counts.
+                </p>
+                <p>
+                  Every project is personally managed by Oliver, from first consultation to final clean-down — the same standard, on every job, whether it&rsquo;s a fence or a full garden transformation.
                 </p>
               </div>
-              <p className="text-3xl font-serif italic text-[var(--color-text)]">
-                Oliver Charles
-              </p>
             </div>
           </div>
         </div>
